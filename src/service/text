@@ -1,0 +1,24 @@
+make the validate fubction that validate the following properties of the user:
+1>check that all fields must not be emty
+2>check that the email isan actual emaile
+
+
+
+// After: OrderController throwing BadRequestException
+public async updateOrder(req: Request, res: Response) {
+    const id = req.params.id;
+    if (!id) {
+        throw new BadRequestException("Id is required to update order", {
+            idNotDefined: true // Detail!
+        });
+    }
+    // ...
+    if (order.getId() !== id) {
+        throw new BadRequestException("Id in body is different from id in param", {
+            idNotSame: true, // More details!
+            idInBody: order.getId(),
+            idInParam: id
+        });
+    }
+    // ...
+}

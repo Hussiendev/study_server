@@ -1,0 +1,5 @@
+{"level":"info","message":"Logger initialized successfully.","timestamp":"2025-12-28 16:32:10"}
+{"level":"info","message":"GET / 200","timestamp":"2025-12-30 14:11:47"}
+{"level":"warn","message":"GET /bi 404","timestamp":"2026-01-01 18:19:21"}
+{"level":"warn","message":"GET / 404","timestamp":"2026-01-01 18:19:28"}
+{"level":"warn","message":"GET / 404","timestamp":"2026-01-01 18:19:34"}
