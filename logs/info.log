@@ -3,3 +3,820 @@
 {"level":"warn","message":"GET /bi 404","timestamp":"2026-01-01 18:19:21"}
 {"level":"warn","message":"GET / 404","timestamp":"2026-01-01 18:19:28"}
 {"level":"warn","message":"GET / 404","timestamp":"2026-01-01 18:19:34"}
+{"level":"info","message":"Server is running at http://localhost:4000","timestamp":"2026-02-04 22:46:12"}
+{"level":"info","message":"Server is running at http://localhost:4000","timestamp":"2026-02-04 22:46:15"}
+{"level":"error","message":" BadRequestException [400] \"Invalid email format.\" { email: 'hussien zoughaib' }","timestamp":"2026-02-04 23:03:00"}
+{"level":"warn","message":"POST /users/ 400","timestamp":"2026-02-04 23:03:00"}
+{"level":"error","message":" BadRequestException [400] \"Invalid email format.\" { email: 'hussien zoughaib' }","timestamp":"2026-02-04 23:03:30"}
+{"level":"warn","message":"POST /users/ 400","timestamp":"2026-02-04 23:03:30"}
+{"level":"error","message":" BadRequestException [400] \"Invalid email format.\" { email: 'hussien zoughaib' }","timestamp":"2026-02-04 23:04:29"}
+{"level":"warn","message":"POST /users/ 400","timestamp":"2026-02-04 23:04:29"}
+{"level":"info","message":"Server is running at http://localhost:4000","timestamp":"2026-02-04 23:14:32"}
+{"level":"info","message":"Server is running at http://localhost:4000","timestamp":"2026-02-04 23:16:04"}
+{"level":"info","message":"Validating user with email: hussien zoughaib","timestamp":"2026-02-04 23:17:51"}
+{"level":"error","message":" BadRequestException [400] \"Invalid email format.\" { email: 'hussien zoughaib' }","timestamp":"2026-02-04 23:17:51"}
+{"level":"warn","message":"POST /users/ 400","timestamp":"2026-02-04 23:17:51"}
+{"level":"info","message":"Server is running at http://localhost:4000","timestamp":"2026-02-04 23:21:56"}
+{"level":"info","message":"Server is running at http://localhost:4000","timestamp":"2026-02-04 23:22:03"}
+{"level":"info","message":"Validating user with email: hussien zoughaib","timestamp":"2026-02-04 23:22:12"}
+{"level":"error","message":" BadRequestException [400] \"Invalid email format.\" { email: 'hussien zoughaib' }","timestamp":"2026-02-04 23:22:12"}
+{"level":"warn","message":"POST /users/ 400","timestamp":"2026-02-04 23:22:12"}
+{"level":"info","message":"Server is running at http://localhost:4000","timestamp":"2026-02-04 23:24:16"}
+{"level":"info","message":"Server is running at http://localhost:4000","timestamp":"2026-02-04 23:24:18"}
+{"level":"info","message":"Server is running at http://localhost:4000","timestamp":"2026-02-04 23:24:22"}
+{"level":"info","message":"Validating user with email: hussien zoughaib","timestamp":"2026-02-04 23:24:36"}
+{"level":"error","message":" BadRequestException [400] \"Invalid email format.\" { email: 'hussien zoughaib' }","timestamp":"2026-02-04 23:24:36"}
+{"level":"warn","message":"POST /users/ 400","timestamp":"2026-02-04 23:24:36"}
+{"level":"info","message":"Server is running at http://localhost:4000","timestamp":"2026-02-04 23:25:43"}
+{"level":"info","message":"Setting email in UserBuilder: hussienzoughaib@gmail.com","timestamp":"2026-02-04 23:25:47"}
+{"level":"info","message":"Validating user with email: hussien zoughaib","timestamp":"2026-02-04 23:25:47"}
+{"level":"error","message":" BadRequestException [400] \"Invalid email format.\" { email: 'hussien zoughaib' }","timestamp":"2026-02-04 23:25:47"}
+{"level":"warn","message":"POST /users/ 400","timestamp":"2026-02-04 23:25:47"}
+{"level":"info","message":"Server is running at http://localhost:4000","timestamp":"2026-02-05 01:21:49"}
+{"level":"info","message":"Setting email in UserBuilder: hussienzoughaib@gmail.com","timestamp":"2026-02-05 01:22:40"}
+{"level":"info","message":"Validating user with email: hussien zoughaib","timestamp":"2026-02-05 01:22:40"}
+{"level":"error","message":" BadRequestException [400] \"Invalid email format.\" { email: 'hussien zoughaib' }","timestamp":"2026-02-05 01:22:41"}
+{"level":"warn","message":"POST /users/ 400","timestamp":"2026-02-05 01:22:41"}
+{"level":"info","message":"Server is running at http://localhost:4000","timestamp":"2026-02-05 01:24:14"}
+{"level":"info","message":"Server is running at http://localhost:4000","timestamp":"2026-02-05 01:24:37"}
+{"level":"info","message":"Setting email in UserBuilder: hussienzoughaib@gmail.com","timestamp":"2026-02-05 01:24:46"}
+{"level":"info","message":"Received request to create user with email: hussien zoughaib","timestamp":"2026-02-05 01:24:46"}
+{"level":"info","message":"Validating user with email: hussien zoughaib","timestamp":"2026-02-05 01:24:46"}
+{"level":"error","message":" BadRequestException [400] \"Invalid email format.\" { email: 'hussien zoughaib' }","timestamp":"2026-02-05 01:24:46"}
+{"level":"warn","message":"POST /users/ 400","timestamp":"2026-02-05 01:24:46"}
+{"level":"info","message":"Server is running at http://localhost:4000","timestamp":"2026-02-05 01:26:06"}
+{"level":"info","message":"Mapping JSON to User: {\"email\":\"hussienzoughaib@gmail.com\",\"password\":\"mynameishussien313A!\",\"name\":\"hussien zoughaib\"}","timestamp":"2026-02-05 01:27:08"}
+{"level":"info","message":"Setting email in UserBuilder: hussienzoughaib@gmail.com","timestamp":"2026-02-05 01:27:08"}
+{"level":"info","message":"Received request to create user with email: hussien zoughaib","timestamp":"2026-02-05 01:27:08"}
+{"level":"info","message":"Validating user with email: hussien zoughaib","timestamp":"2026-02-05 01:27:08"}
+{"level":"error","message":" BadRequestException [400] \"Invalid email format.\" { email: 'hussien zoughaib' }","timestamp":"2026-02-05 01:27:08"}
+{"level":"warn","message":"POST /users/ 400","timestamp":"2026-02-05 01:27:08"}
+{"level":"info","message":"Server is running at http://localhost:4000","timestamp":"2026-02-05 01:29:25"}
+{"level":"info","message":"Server is running at http://localhost:4000","timestamp":"2026-02-05 01:31:53"}
+{"level":"info","message":"Server is running at http://localhost:4000","timestamp":"2026-02-05 01:31:56"}
+{"level":"info","message":"Mapping JSON to User: {\"email\":\"hussienzoughaib@gmail.com\",\"password\":\"mynameishussien313A!\",\"name\":\"hussien zoughaib\"}","timestamp":"2026-02-05 01:32:06"}
+{"level":"info","message":"Setting email in UserBuilder: hussienzoughaib@gmail.com","timestamp":"2026-02-05 01:32:06"}
+{"level":"info","message":"Received request to create user with email: hussien zoughaib","timestamp":"2026-02-05 01:32:06"}
+{"level":"info","message":"Creating user with email: hussien zoughaib","timestamp":"2026-02-05 01:32:06"}
+{"level":"info","message":"Validating user with email: hussien zoughaib","timestamp":"2026-02-05 01:32:06"}
+{"level":"error","message":" BadRequestException [400] \"Invalid email format.\" { email: 'hussien zoughaib' }","timestamp":"2026-02-05 01:32:06"}
+{"level":"warn","message":"POST /users/ 400","timestamp":"2026-02-05 01:32:06"}
+{"level":"info","message":"Server is running at http://localhost:4000","timestamp":"2026-02-05 01:36:03"}
+{"level":"info","message":"Server is running at http://localhost:4000","timestamp":"2026-02-05 01:36:06"}
+{"level":"info","message":"Mapping JSON to User: {\"email\":\"hussienzoughaib@gmail.com\",\"password\":\"mynameishussien313A!\",\"name\":\"hussien zoughaib\"}","timestamp":"2026-02-05 01:36:11"}
+{"level":"info","message":"Setting email in UserBuilder: hussienzoughaib@gmail.com","timestamp":"2026-02-05 01:36:11"}
+{"level":"info","message":"Received request to create user with email: hussienzoughaib@gmail.com","timestamp":"2026-02-05 01:36:11"}
+{"level":"info","message":"Creating user with email: hussienzoughaib@gmail.com","timestamp":"2026-02-05 01:36:11"}
+{"level":"info","message":"Validating user with email: hussienzoughaib@gmail.com","timestamp":"2026-02-05 01:36:11"}
+{"level":"info","message":"PostgreSQL pool initialized (Neon)","timestamp":"2026-02-05 01:36:11"}
+{"level":"info","message":"PostgreSQL connection established","timestamp":"2026-02-05 01:36:14"}
+{"level":"info","message":"Orders table ensured in the database","timestamp":"2026-02-05 01:36:15"}
+{"level":"info","message":"PostgreSQL connection established","timestamp":"2026-02-05 01:36:15"}
+{"code":"22P02","file":"numutils.c","length":184,"level":"error","line":"616","message":"invalid input syntax for type integer: \"user-357c0704-9ef2-43bb-af93-5be6dd625daa\"","name":"error","routine":"pg_strtoint32_safe","severity":"ERROR","stack":"error: invalid input syntax for type integer: \"user-357c0704-9ef2-43bb-af93-5be6dd625daa\"\n    at C:\\cv project\\study_server\\node_modules\\pg\\lib\\client.js:545:17\n    at processTicksAndRejections (node:internal/process/task_queues:105:5)","timestamp":"2026-02-05 01:36:15","where":"unnamed portal parameter $1 = '...'"}
+{"level":"error","message":"Unhandled Error: ERROR during creation: invalid input syntax for type integer: \"user-357c0704-9ef2-43bb-af93-5be6dd625daa\"","timestamp":"2026-02-05 01:36:15"}
+{"level":"error","message":"POST /users/ 500","timestamp":"2026-02-05 01:36:15"}
+{"level":"info","message":"Server is running at http://localhost:4000","timestamp":"2026-02-05 01:36:50"}
+{"level":"info","message":"Mapping JSON to User: {\"email\":\"hussienzoughaib@gmail.com\",\"password\":\"mynameishussien313A!\",\"name\":\"hussien zoughaib\"}","timestamp":"2026-02-05 01:36:55"}
+{"level":"info","message":"Setting email in UserBuilder: hussienzoughaib@gmail.com","timestamp":"2026-02-05 01:36:55"}
+{"level":"info","message":"Received request to create user with email: hussienzoughaib@gmail.com","timestamp":"2026-02-05 01:36:55"}
+{"level":"info","message":"Creating user with email: hussienzoughaib@gmail.com","timestamp":"2026-02-05 01:36:55"}
+{"level":"info","message":"Validating user with email: hussienzoughaib@gmail.com","timestamp":"2026-02-05 01:36:55"}
+{"level":"info","message":"PostgreSQL pool initialized (Neon)","timestamp":"2026-02-05 01:36:55"}
+{"level":"info","message":"PostgreSQL connection established","timestamp":"2026-02-05 01:36:59"}
+{"code":"42P07","file":"heap.c","length":98,"level":"error","line":"1160","message":"Failed to initialize the repository relation \"user\" already exists","name":"error","routine":"heap_create_with_catalog","severity":"ERROR","stack":"error: relation \"user\" already exists\n    at C:\\cv project\\study_server\\node_modules\\pg\\lib\\client.js:545:17\n    at processTicksAndRejections (node:internal/process/task_queues:105:5)","timestamp":"2026-02-05 01:36:59"}
+{"level":"error","message":"Unhandled Error: Failed to initialize the repository: relation \"user\" already exists","timestamp":"2026-02-05 01:36:59"}
+{"level":"error","message":"POST /users/ 500","timestamp":"2026-02-05 01:36:59"}
+{"level":"info","message":"Mapping JSON to User: {\"email\":\"hussienzoughaib@gmail.com\",\"password\":\"mynameishussien313A!\",\"name\":\"hussien zoughaib\"}","timestamp":"2026-02-05 01:39:49"}
+{"level":"info","message":"Setting email in UserBuilder: hussienzoughaib@gmail.com","timestamp":"2026-02-05 01:39:49"}
+{"level":"info","message":"Received request to create user with email: hussienzoughaib@gmail.com","timestamp":"2026-02-05 01:39:49"}
+{"level":"info","message":"Creating user with email: hussienzoughaib@gmail.com","timestamp":"2026-02-05 01:39:49"}
+{"level":"info","message":"Validating user with email: hussienzoughaib@gmail.com","timestamp":"2026-02-05 01:39:49"}
+{"level":"info","message":"PostgreSQL connection established","timestamp":"2026-02-05 01:39:50"}
+{"level":"info","message":"Orders table ensured in the database","timestamp":"2026-02-05 01:39:50"}
+{"level":"info","message":"PostgreSQL connection established","timestamp":"2026-02-05 01:39:50"}
+{"level":"info","message":"User created successfully with email: hussienzoughaib@gmail.com","timestamp":"2026-02-05 01:39:51"}
+{"level":"error","message":"Unhandled Error: input.getId is not a function","timestamp":"2026-02-05 01:39:51"}
+{"level":"error","message":"POST /users/ 500","timestamp":"2026-02-05 01:39:51"}
+{"level":"info","message":"Server is running at http://localhost:4000","timestamp":"2026-02-05 01:42:27"}
+{"level":"info","message":"Server is running at http://localhost:4000","timestamp":"2026-02-05 01:42:44"}
+{"level":"info","message":"Server is running at http://localhost:4000","timestamp":"2026-02-05 01:42:49"}
+{"level":"info","message":"Mapping JSON to User: {\"email\":\"hussienzoughaib@gmail.com\",\"password\":\"mynameishussien313A!\",\"name\":\"hussien zoughaib\"}","timestamp":"2026-02-05 01:43:16"}
+{"level":"info","message":"Setting email in UserBuilder: hussienzoughaib@gmail.com","timestamp":"2026-02-05 01:43:16"}
+{"level":"info","message":"Received request to create user with email: hussienzoughaib@gmail.com","timestamp":"2026-02-05 01:43:16"}
+{"level":"info","message":"Creating user with email: hussienzoughaib@gmail.com","timestamp":"2026-02-05 01:43:16"}
+{"level":"info","message":"Validating user with email: hussienzoughaib@gmail.com","timestamp":"2026-02-05 01:43:16"}
+{"level":"info","message":"PostgreSQL pool initialized (Neon)","timestamp":"2026-02-05 01:43:16"}
+{"level":"info","message":"PostgreSQL connection established","timestamp":"2026-02-05 01:43:18"}
+{"level":"info","message":"Orders table ensured in the database","timestamp":"2026-02-05 01:43:18"}
+{"level":"info","message":"PostgreSQL connection established","timestamp":"2026-02-05 01:43:18"}
+{"level":"info","message":"User created successfully with email: hussienzoughaib@gmail.com","timestamp":"2026-02-05 01:43:19"}
+{"level":"error","message":"Unhandled Error: input.getId is not a function","timestamp":"2026-02-05 01:43:19"}
+{"level":"error","message":"POST /users/ 500","timestamp":"2026-02-05 01:43:19"}
+{"level":"info","message":"Mapping JSON to User: {\"email\":\"hussienzoughaib@gmail.com\",\"password\":\"mynameishussien313A!\",\"name\":\"hussien zoughaib\"}","timestamp":"2026-02-05 01:43:59"}
+{"level":"info","message":"Setting email in UserBuilder: hussienzoughaib@gmail.com","timestamp":"2026-02-05 01:43:59"}
+{"level":"info","message":"Received request to create user with email: hussienzoughaib@gmail.com","timestamp":"2026-02-05 01:43:59"}
+{"level":"info","message":"Creating user with email: hussienzoughaib@gmail.com","timestamp":"2026-02-05 01:43:59"}
+{"level":"info","message":"Validating user with email: hussienzoughaib@gmail.com","timestamp":"2026-02-05 01:43:59"}
+{"level":"info","message":"PostgreSQL connection established","timestamp":"2026-02-05 01:44:00"}
+{"code":"23505","constraint":"user_email_key","detail":"Key (email)=(hussienzoughaib@gmail.com) already exists.","file":"nbtinsert.c","length":214,"level":"error","line":"667","message":"duplicate key value violates unique constraint \"user_email_key\"","name":"error","routine":"_bt_check_unique","schema":"public","severity":"ERROR","stack":"error: duplicate key value violates unique constraint \"user_email_key\"\n    at C:\\cv project\\study_server\\node_modules\\pg\\lib\\client.js:545:17\n    at processTicksAndRejections (node:internal/process/task_queues:105:5)","table":"user","timestamp":"2026-02-05 01:44:01"}
+{"level":"error","message":"Unhandled Error: ERROR during creation: duplicate key value violates unique constraint \"user_email_key\"","timestamp":"2026-02-05 01:44:01"}
+{"level":"error","message":"POST /users/ 500","timestamp":"2026-02-05 01:44:01"}
+{"level":"info","message":"Mapping JSON to User: {\"email\":\"hussienzoughaib@gmail.com\",\"password\":\"mynameishussien313A!\",\"name\":\"hussien zoughaib\"}","timestamp":"2026-02-05 01:44:27"}
+{"level":"info","message":"Setting email in UserBuilder: hussienzoughaib@gmail.com","timestamp":"2026-02-05 01:44:27"}
+{"level":"info","message":"Received request to create user with email: hussienzoughaib@gmail.com","timestamp":"2026-02-05 01:44:27"}
+{"level":"info","message":"Creating user with email: hussienzoughaib@gmail.com","timestamp":"2026-02-05 01:44:27"}
+{"level":"info","message":"Validating user with email: hussienzoughaib@gmail.com","timestamp":"2026-02-05 01:44:27"}
+{"level":"info","message":"PostgreSQL connection established","timestamp":"2026-02-05 01:44:29"}
+{"level":"info","message":"User created successfully with email: hussienzoughaib@gmail.com","timestamp":"2026-02-05 01:44:29"}
+{"level":"error","message":"Unhandled Error: input.getId is not a function","timestamp":"2026-02-05 01:44:29"}
+{"level":"error","message":"POST /users/ 500","timestamp":"2026-02-05 01:44:29"}
+{"level":"info","message":"Server is running at http://localhost:4000","timestamp":"2026-02-05 02:00:22"}
+{"level":"info","message":"Server is running at http://localhost:4000","timestamp":"2026-02-05 02:00:27"}
+{"level":"info","message":"Mapping JSON to User: {\"email\":\"hussienzoughaib@gmail.com\",\"password\":\"mynameishussien313A!\",\"name\":\"hussien zoughaib\"}","timestamp":"2026-02-05 02:01:38"}
+{"level":"info","message":"Setting email in UserBuilder: hussienzoughaib@gmail.com","timestamp":"2026-02-05 02:01:38"}
+{"level":"info","message":"Received request to create user with email: hussienzoughaib@gmail.com","timestamp":"2026-02-05 02:01:38"}
+{"level":"info","message":"Creating user with email: hussienzoughaib@gmail.com","timestamp":"2026-02-05 02:01:38"}
+{"level":"info","message":"Validating user with email: hussienzoughaib@gmail.com","timestamp":"2026-02-05 02:01:38"}
+{"level":"info","message":"PostgreSQL pool initialized (Neon)","timestamp":"2026-02-05 02:01:38"}
+{"level":"info","message":"PostgreSQL connection established","timestamp":"2026-02-05 02:01:40"}
+{"code":"42P07","file":"heap.c","length":98,"level":"error","line":"1160","message":"Failed to initialize the repository relation \"user\" already exists","name":"error","routine":"heap_create_with_catalog","severity":"ERROR","stack":"error: relation \"user\" already exists\n    at C:\\cv project\\study_server\\node_modules\\pg\\lib\\client.js:545:17\n    at processTicksAndRejections (node:internal/process/task_queues:105:5)","timestamp":"2026-02-05 02:01:40"}
+{"level":"error","message":"Unhandled Error: Failed to initialize the repository: relation \"user\" already exists","timestamp":"2026-02-05 02:01:40"}
+{"level":"error","message":"POST /users/ 500","timestamp":"2026-02-05 02:01:40"}
+{"level":"info","message":"Mapping JSON to User: {\"email\":\"hussienzoughaib@gmail.com\",\"password\":\"mynameishussien313A!\",\"name\":\"hussien zoughaib\"}","timestamp":"2026-02-05 02:02:03"}
+{"level":"info","message":"Setting email in UserBuilder: hussienzoughaib@gmail.com","timestamp":"2026-02-05 02:02:03"}
+{"level":"info","message":"Received request to create user with email: hussienzoughaib@gmail.com","timestamp":"2026-02-05 02:02:03"}
+{"level":"info","message":"Creating user with email: hussienzoughaib@gmail.com","timestamp":"2026-02-05 02:02:03"}
+{"level":"info","message":"Validating user with email: hussienzoughaib@gmail.com","timestamp":"2026-02-05 02:02:03"}
+{"level":"info","message":"PostgreSQL connection established","timestamp":"2026-02-05 02:02:10"}
+{"level":"info","message":"Orders table ensured in the database","timestamp":"2026-02-05 02:02:10"}
+{"level":"info","message":"PostgreSQL connection established","timestamp":"2026-02-05 02:02:10"}
+{"level":"info","message":"User created successfully with email: hussienzoughaib@gmail.com","timestamp":"2026-02-05 02:02:11"}
+{"level":"error","message":"Unhandled Error: input.getId is not a function","timestamp":"2026-02-05 02:02:11"}
+{"level":"error","message":"POST /users/ 500","timestamp":"2026-02-05 02:02:11"}
+{"level":"info","message":"Server is running at http://localhost:4000","timestamp":"2026-02-05 02:06:15"}
+{"level":"info","message":"Server is running at http://localhost:4000","timestamp":"2026-02-05 02:06:17"}
+{"level":"info","message":"Server is running at http://localhost:4000","timestamp":"2026-02-05 02:08:07"}
+{"level":"info","message":"Server is running at http://localhost:4000","timestamp":"2026-02-05 02:08:29"}
+{"level":"info","message":"Mapping JSON to User: {\"email\":\"hussienzoughaib@gmail.com\",\"password\":\"mynameishussien313A!\",\"name\":\"hussien zoughaib\"}","timestamp":"2026-02-05 02:08:59"}
+{"level":"info","message":"Setting email in UserBuilder: hussienzoughaib@gmail.com","timestamp":"2026-02-05 02:08:59"}
+{"level":"info","message":"Received request to create user with email: hussienzoughaib@gmail.com","timestamp":"2026-02-05 02:08:59"}
+{"level":"info","message":"Creating user with email: hussienzoughaib@gmail.com","timestamp":"2026-02-05 02:08:59"}
+{"level":"info","message":"Validating user with email: hussienzoughaib@gmail.com","timestamp":"2026-02-05 02:08:59"}
+{"level":"info","message":"PostgreSQL pool initialized (Neon)","timestamp":"2026-02-05 02:08:59"}
+{"level":"info","message":"PostgreSQL connection established","timestamp":"2026-02-05 02:09:00"}
+{"level":"info","message":"Orders table ensured in the database","timestamp":"2026-02-05 02:09:00"}
+{"level":"info","message":"PostgreSQL connection established","timestamp":"2026-02-05 02:09:00"}
+{"level":"info","message":"User created successfully with email: hussienzoughaib@gmail.com","timestamp":"2026-02-05 02:09:01"}
+{"level":"error","message":"Unhandled Error: input.getEmail is not a function","timestamp":"2026-02-05 02:09:01"}
+{"level":"error","message":"POST /users/ 500","timestamp":"2026-02-05 02:09:01"}
+{"level":"info","message":"Server is running at http://localhost:4000","timestamp":"2026-02-05 02:11:19"}
+{"level":"info","message":"Server is running at http://localhost:4000","timestamp":"2026-02-05 02:11:30"}
+{"level":"info","message":"Server is running at http://localhost:4000","timestamp":"2026-02-05 02:11:38"}
+{"level":"info","message":"Server is running at http://localhost:4000","timestamp":"2026-02-05 02:11:45"}
+{"level":"info","message":"Server is running at http://localhost:4000","timestamp":"2026-02-05 02:11:49"}
+{"level":"info","message":"Server is running at http://localhost:4000","timestamp":"2026-02-05 02:11:59"}
+{"level":"info","message":"Server is running at http://localhost:4000","timestamp":"2026-02-05 02:12:47"}
+{"level":"info","message":"Mapping JSON to User: {\"name\":\"John Doe\",\"email\":\"john.doe@example.com\",\"password\":\"StrongPassword123\"}","timestamp":"2026-02-05 02:14:13"}
+{"level":"info","message":"Setting email in UserBuilder: john.doe@example.com","timestamp":"2026-02-05 02:14:13"}
+{"level":"info","message":"Received request to create user with email: John Doe","timestamp":"2026-02-05 02:14:13"}
+{"level":"info","message":"Creating user with email: John Doe","timestamp":"2026-02-05 02:14:13"}
+{"level":"info","message":"Validating user with email: John Doe","timestamp":"2026-02-05 02:14:13"}
+{"level":"error","message":" BadRequestException [400] \"Invalid email format.\" { email: 'John Doe' }","timestamp":"2026-02-05 02:14:13"}
+{"level":"warn","message":"POST /users/ 400","timestamp":"2026-02-05 02:14:13"}
+{"level":"info","message":"Server is running at http://localhost:4000","timestamp":"2026-02-05 02:16:50"}
+{"level":"info","message":"Server is running at http://localhost:4000","timestamp":"2026-02-05 02:16:53"}
+{"level":"info","message":"Server is running at http://localhost:4000","timestamp":"2026-02-05 02:16:57"}
+{"level":"info","message":"Server is running at http://localhost:4000","timestamp":"2026-02-05 02:17:05"}
+{"level":"info","message":"Server is running at http://localhost:4000","timestamp":"2026-02-05 02:17:08"}
+{"level":"info","message":"Server is running at http://localhost:4000","timestamp":"2026-02-05 02:17:12"}
+{"level":"info","message":"Server is running at http://localhost:4000","timestamp":"2026-02-05 02:18:59"}
+{"level":"info","message":"Server is running at http://localhost:4000","timestamp":"2026-02-05 02:19:10"}
+{"level":"info","message":"Mapping JSON to User: {\"name\":\"John Doe\",\"email\":\"john.doe@example.com\",\"password\":\"StrongPassword123\"}","timestamp":"2026-02-05 02:19:22"}
+{"level":"info","message":"Setting email in UserBuilder: john.doe@example.com","timestamp":"2026-02-05 02:19:22"}
+{"level":"info","message":"Received request to create user with email: john.doe@example.com","timestamp":"2026-02-05 02:19:22"}
+{"level":"info","message":"Creating user with email: john.doe@example.com","timestamp":"2026-02-05 02:19:22"}
+{"level":"info","message":"Validating user with email: john.doe@example.com","timestamp":"2026-02-05 02:19:22"}
+{"level":"info","message":"PostgreSQL pool initialized (Neon)","timestamp":"2026-02-05 02:19:22"}
+{"level":"info","message":"PostgreSQL connection established","timestamp":"2026-02-05 02:19:25"}
+{"level":"info","message":"Orders table ensured in the database","timestamp":"2026-02-05 02:19:25"}
+{"level":"info","message":"PostgreSQL connection established","timestamp":"2026-02-05 02:19:25"}
+{"level":"info","message":"User created successfully with email: john.doe@example.com","timestamp":"2026-02-05 02:19:26"}
+{"level":"error","message":"Unhandled Error: input.getEmail is not a function","timestamp":"2026-02-05 02:19:26"}
+{"level":"error","message":"POST /users/ 500","timestamp":"2026-02-05 02:19:26"}
+{"level":"info","message":"Server is running at http://localhost:4000","timestamp":"2026-02-05 02:21:11"}
+{"level":"info","message":"Server is running at http://localhost:4000","timestamp":"2026-02-05 02:21:27"}
+{"level":"info","message":"Server is running at http://localhost:4000","timestamp":"2026-02-05 02:21:30"}
+{"level":"info","message":"Mapping JSON to User: {\"name\":\"John Doe\",\"email\":\"john.doe@example.com\",\"password\":\"StrongPassword123\"}","timestamp":"2026-02-05 02:22:19"}
+{"level":"info","message":"Setting email in UserBuilder: john.doe@example.com","timestamp":"2026-02-05 02:22:19"}
+{"level":"info","message":"Received request to create user with email: john.doe@example.com","timestamp":"2026-02-05 02:22:19"}
+{"level":"info","message":"Creating user with email: john.doe@example.com","timestamp":"2026-02-05 02:22:19"}
+{"level":"info","message":"Validating user with email: john.doe@example.com","timestamp":"2026-02-05 02:22:19"}
+{"level":"info","message":"PostgreSQL pool initialized (Neon)","timestamp":"2026-02-05 02:22:19"}
+{"level":"info","message":"PostgreSQL connection established","timestamp":"2026-02-05 02:22:20"}
+{"level":"info","message":"Orders table ensured in the database","timestamp":"2026-02-05 02:22:20"}
+{"level":"info","message":"PostgreSQL connection established","timestamp":"2026-02-05 02:22:20"}
+{"level":"info","message":"User created successfully with email: john.doe@example.com","timestamp":"2026-02-05 02:22:21"}
+{"level":"error","message":"Unhandled Error: input.getName is not a function","timestamp":"2026-02-05 02:22:21"}
+{"level":"error","message":"POST /users/ 500","timestamp":"2026-02-05 02:22:21"}
+{"level":"info","message":"Server is running at http://localhost:4000","timestamp":"2026-02-05 02:27:31"}
+{"level":"info","message":"Server is running at http://localhost:4000","timestamp":"2026-02-05 02:30:12"}
+{"level":"info","message":"Mapping JSON to User: {\"name\":\"John Doe\",\"email\":\"john.doe@example.com\",\"password\":\"StrongPassword123\"}","timestamp":"2026-02-05 02:30:18"}
+{"level":"info","message":"Setting email in UserBuilder: john.doe@example.com","timestamp":"2026-02-05 02:30:18"}
+{"level":"info","message":"Received request to create user with email: john.doe@example.com","timestamp":"2026-02-05 02:30:18"}
+{"level":"info","message":"Creating user with email: john.doe@example.com","timestamp":"2026-02-05 02:30:18"}
+{"level":"info","message":"Validating user with email: john.doe@example.com","timestamp":"2026-02-05 02:30:18"}
+{"level":"info","message":"PostgreSQL pool initialized (Neon)","timestamp":"2026-02-05 02:30:18"}
+{"level":"info","message":"PostgreSQL connection established","timestamp":"2026-02-05 02:30:20"}
+{"level":"info","message":"Orders table ensured in the database","timestamp":"2026-02-05 02:30:21"}
+{"level":"info","message":"PostgreSQL connection established","timestamp":"2026-02-05 02:30:21"}
+{"level":"info","message":"User created successfully with email: john.doe@example.com","timestamp":"2026-02-05 02:30:21"}
+{"level":"error","message":"Unhandled Error: input.getName is not a function","timestamp":"2026-02-05 02:30:21"}
+{"level":"error","message":"POST /users/ 500","timestamp":"2026-02-05 02:30:21"}
+{"level":"info","message":"Server is running at http://localhost:4000","timestamp":"2026-02-05 02:32:31"}
+{"level":"info","message":"Mapping JSON to User: {\"name\":\"John Doe\",\"email\":\"john.doe@example.com\",\"password\":\"StrongPassword123\"}","timestamp":"2026-02-05 02:32:46"}
+{"level":"info","message":"Setting email in UserBuilder: john.doe@example.com","timestamp":"2026-02-05 02:32:46"}
+{"level":"info","message":"Received request to create user with email: john.doe@example.com","timestamp":"2026-02-05 02:32:46"}
+{"level":"info","message":"Creating user with email: john.doe@example.com","timestamp":"2026-02-05 02:32:46"}
+{"level":"info","message":"Validating user with email: john.doe@example.com","timestamp":"2026-02-05 02:32:46"}
+{"level":"info","message":"PostgreSQL pool initialized (Neon)","timestamp":"2026-02-05 02:32:46"}
+{"level":"info","message":"PostgreSQL connection established","timestamp":"2026-02-05 02:32:48"}
+{"level":"info","message":"Orders table ensured in the database","timestamp":"2026-02-05 02:32:48"}
+{"level":"info","message":"PostgreSQL connection established","timestamp":"2026-02-05 02:32:48"}
+{"level":"info","message":"User created successfully with email: john.doe@example.com","timestamp":"2026-02-05 02:32:48"}
+{"level":"error","message":"Unhandled Error: input.getId is not a function","timestamp":"2026-02-05 02:32:48"}
+{"level":"error","message":"POST /users/ 500","timestamp":"2026-02-05 02:32:49"}
+{"level":"info","message":"Server is running at http://localhost:4000","timestamp":"2026-02-05 02:33:50"}
+{"level":"info","message":"Server is running at http://localhost:4000","timestamp":"2026-02-05 02:33:52"}
+{"level":"info","message":"Mapping JSON to User: {\"name\":\"John Doe\",\"email\":\"john.doe@example.com\",\"password\":\"StrongPassword123\"}","timestamp":"2026-02-05 02:34:21"}
+{"level":"info","message":"Setting email in UserBuilder: john.doe@example.com","timestamp":"2026-02-05 02:34:21"}
+{"level":"info","message":"Received request to create user with email: john.doe@example.com","timestamp":"2026-02-05 02:34:21"}
+{"level":"info","message":"Creating user with email: john.doe@example.com","timestamp":"2026-02-05 02:34:21"}
+{"level":"info","message":"Validating user with email: john.doe@example.com","timestamp":"2026-02-05 02:34:21"}
+{"level":"info","message":"PostgreSQL pool initialized (Neon)","timestamp":"2026-02-05 02:34:21"}
+{"level":"info","message":"PostgreSQL connection established","timestamp":"2026-02-05 02:34:22"}
+{"level":"info","message":"Orders table ensured in the database","timestamp":"2026-02-05 02:34:22"}
+{"level":"info","message":"PostgreSQL connection established","timestamp":"2026-02-05 02:34:22"}
+{"level":"info","message":"User created successfully with email: john.doe@example.com","timestamp":"2026-02-05 02:34:23"}
+{"level":"error","message":"Unhandled Error: input.getId is not a function","timestamp":"2026-02-05 02:34:23"}
+{"level":"error","message":"POST /users/ 500","timestamp":"2026-02-05 02:34:23"}
+{"level":"info","message":"Server is running at http://localhost:4000","timestamp":"2026-02-05 02:35:41"}
+{"level":"info","message":"Server is running at http://localhost:4000","timestamp":"2026-02-05 02:35:45"}
+{"level":"info","message":"Mapping JSON to User: {\"name\":\"John Doe\",\"email\":\"john.doe@example.com\",\"password\":\"StrongPassword123\"}","timestamp":"2026-02-05 02:36:08"}
+{"level":"info","message":"Setting email in UserBuilder: john.doe@example.com","timestamp":"2026-02-05 02:36:08"}
+{"level":"info","message":"Received request to create user with email: john.doe@example.com","timestamp":"2026-02-05 02:36:08"}
+{"level":"info","message":"Creating user with email: john.doe@example.com","timestamp":"2026-02-05 02:36:08"}
+{"level":"info","message":"Validating user with email: john.doe@example.com","timestamp":"2026-02-05 02:36:08"}
+{"level":"info","message":"PostgreSQL pool initialized (Neon)","timestamp":"2026-02-05 02:36:08"}
+{"level":"info","message":"PostgreSQL connection established","timestamp":"2026-02-05 02:36:10"}
+{"level":"info","message":"Orders table ensured in the database","timestamp":"2026-02-05 02:36:10"}
+{"level":"info","message":"PostgreSQL connection established","timestamp":"2026-02-05 02:36:10"}
+{"level":"info","message":"User created successfully with email: john.doe@example.com","timestamp":"2026-02-05 02:36:11"}
+{"level":"error","message":"Unhandled Error: input.getId is not a function","timestamp":"2026-02-05 02:36:11"}
+{"level":"error","message":"POST /users/ 500","timestamp":"2026-02-05 02:36:11"}
+{"level":"info","message":"Server is running at http://localhost:4000","timestamp":"2026-02-05 02:36:38"}
+{"level":"info","message":"Server is running at http://localhost:4000","timestamp":"2026-02-05 02:36:57"}
+{"level":"info","message":"Mapping JSON to User: {\"name\":\"John Doe\",\"email\":\"john.doe@example.com\",\"password\":\"StrongPassword123\"}","timestamp":"2026-02-05 02:38:06"}
+{"level":"info","message":"Setting email in UserBuilder: john.doe@example.com","timestamp":"2026-02-05 02:38:06"}
+{"level":"info","message":"Received request to create user with email: john.doe@example.com","timestamp":"2026-02-05 02:38:06"}
+{"level":"info","message":"Creating user with email: john.doe@example.com","timestamp":"2026-02-05 02:38:06"}
+{"level":"info","message":"Validating user with email: john.doe@example.com","timestamp":"2026-02-05 02:38:06"}
+{"level":"info","message":"PostgreSQL pool initialized (Neon)","timestamp":"2026-02-05 02:38:06"}
+{"level":"info","message":"PostgreSQL connection established","timestamp":"2026-02-05 02:38:07"}
+{"level":"info","message":"Orders table ensured in the database","timestamp":"2026-02-05 02:38:08"}
+{"level":"info","message":"PostgreSQL connection established","timestamp":"2026-02-05 02:38:08"}
+{"level":"info","message":"User created successfully with email: john.doe@example.com","timestamp":"2026-02-05 02:38:08"}
+{"level":"error","message":"Unhandled Error: input.getId is not a function","timestamp":"2026-02-05 02:38:08"}
+{"level":"error","message":"POST /users/ 500","timestamp":"2026-02-05 02:38:08"}
+{"level":"info","message":"Server is running at http://localhost:4000","timestamp":"2026-02-05 02:39:37"}
+{"level":"info","message":"Mapping JSON to User: {\"name\":\"John Doe\",\"email\":\"john.doe@example.com\",\"password\":\"StrongPassword123\"}","timestamp":"2026-02-05 02:39:57"}
+{"level":"info","message":"Setting email in UserBuilder: john.doe@example.com","timestamp":"2026-02-05 02:39:57"}
+{"level":"info","message":"Received request to create user with email: john.doe@example.com","timestamp":"2026-02-05 02:39:57"}
+{"level":"info","message":"Creating user with email: john.doe@example.com","timestamp":"2026-02-05 02:39:57"}
+{"level":"info","message":"Validating user with email: john.doe@example.com","timestamp":"2026-02-05 02:39:57"}
+{"level":"info","message":"PostgreSQL pool initialized (Neon)","timestamp":"2026-02-05 02:39:57"}
+{"level":"info","message":"PostgreSQL connection established","timestamp":"2026-02-05 02:39:59"}
+{"level":"info","message":"Orders table ensured in the database","timestamp":"2026-02-05 02:39:59"}
+{"level":"info","message":"PostgreSQL connection established","timestamp":"2026-02-05 02:39:59"}
+{"level":"info","message":"User created successfully with email: john.doe@example.com","timestamp":"2026-02-05 02:40:00"}
+{"level":"error","message":"Unhandled Error: input.getName is not a function","timestamp":"2026-02-05 02:40:00"}
+{"level":"error","message":"POST /users/ 500","timestamp":"2026-02-05 02:40:00"}
+{"level":"info","message":"Mapping JSON to User: {\"name\":\"John Doe\",\"email\":\"john.doe@example.com\",\"password\":\"StrongPassword123\"}","timestamp":"2026-02-05 02:44:52"}
+{"level":"info","message":"Setting email in UserBuilder: john.doe@example.com","timestamp":"2026-02-05 02:44:52"}
+{"level":"info","message":"Received request to create user with email: john.doe@example.com","timestamp":"2026-02-05 02:44:52"}
+{"level":"info","message":"Creating user with email: john.doe@example.com","timestamp":"2026-02-05 02:44:52"}
+{"level":"info","message":"Validating user with email: john.doe@example.com","timestamp":"2026-02-05 02:44:52"}
+{"level":"info","message":"PostgreSQL connection established","timestamp":"2026-02-05 02:44:54"}
+{"code":"42P01","file":"parse_relation.c","length":103,"level":"error","line":"1449","message":"relation \"user\" does not exist","name":"error","position":"14","routine":"parserOpenTable","severity":"ERROR","stack":"error: relation \"user\" does not exist\n    at C:\\cv project\\study_server\\node_modules\\pg\\lib\\client.js:545:17\n    at processTicksAndRejections (node:internal/process/task_queues:105:5)","timestamp":"2026-02-05 02:44:54"}
+{"level":"error","message":"Unhandled Error: ERROR during creation: relation \"user\" does not exist","timestamp":"2026-02-05 02:44:54"}
+{"level":"error","message":"POST /users/ 500","timestamp":"2026-02-05 02:44:54"}
+{"level":"info","message":"Server is running at http://localhost:4000","timestamp":"2026-02-05 02:45:05"}
+{"level":"info","message":"Server is running at http://localhost:4000","timestamp":"2026-02-05 02:46:06"}
+{"level":"info","message":"Mapping JSON to User: {\"name\":\"John Doe\",\"email\":\"john.doe@example.com\",\"password\":\"StrongPassword123\"}","timestamp":"2026-02-05 02:46:49"}
+{"level":"info","message":"Setting email in UserBuilder: john.doe@example.com","timestamp":"2026-02-05 02:46:49"}
+{"level":"info","message":"Received request to create user with email: john.doe@example.com","timestamp":"2026-02-05 02:46:49"}
+{"level":"info","message":"Creating user with email: john.doe@example.com","timestamp":"2026-02-05 02:46:49"}
+{"level":"info","message":"Validating user with email: john.doe@example.com","timestamp":"2026-02-05 02:46:49"}
+{"level":"info","message":"PostgreSQL connection established","timestamp":"2026-02-05 02:46:51"}
+{"code":"42P01","file":"parse_relation.c","length":103,"level":"error","line":"1449","message":"relation \"user\" does not exist","name":"error","position":"14","routine":"parserOpenTable","severity":"ERROR","stack":"error: relation \"user\" does not exist\n    at C:\\cv project\\study_server\\node_modules\\pg\\lib\\client.js:545:17\n    at processTicksAndRejections (node:internal/process/task_queues:105:5)","timestamp":"2026-02-05 02:46:51"}
+{"level":"error","message":"Unhandled Error: ERROR during creation: relation \"user\" does not exist","timestamp":"2026-02-05 02:46:51"}
+{"level":"error","message":"POST /users/ 500","timestamp":"2026-02-05 02:46:51"}
+{"level":"info","message":"Server is running at http://localhost:4000","timestamp":"2026-02-05 02:50:46"}
+{"level":"info","message":"Mapping JSON to User: {\"name\":\"John Doe\",\"email\":\"john.doe@example.com\",\"password\":\"StrongPassword123\"}","timestamp":"2026-02-05 02:50:51"}
+{"level":"info","message":"Setting email in UserBuilder: john.doe@example.com","timestamp":"2026-02-05 02:50:51"}
+{"level":"info","message":"Received request to create user with email: john.doe@example.com","timestamp":"2026-02-05 02:50:51"}
+{"level":"info","message":"Creating user with email: john.doe@example.com","timestamp":"2026-02-05 02:50:51"}
+{"level":"info","message":"Validating user with email: john.doe@example.com","timestamp":"2026-02-05 02:50:51"}
+{"level":"info","message":"PostgreSQL pool initialized (Neon)","timestamp":"2026-02-05 02:50:51"}
+{"level":"info","message":"PostgreSQL connection established","timestamp":"2026-02-05 02:50:52"}
+{"level":"info","message":"Orders table ensured in the database","timestamp":"2026-02-05 02:50:52"}
+{"level":"info","message":"PostgreSQL connection established","timestamp":"2026-02-05 02:50:52"}
+{"level":"info","message":"User created successfully with email: john.doe@example.com","timestamp":"2026-02-05 02:50:53"}
+{"level":"error","message":"Unhandled Error: input.getName is not a function","timestamp":"2026-02-05 02:50:53"}
+{"level":"error","message":"POST /users/ 500","timestamp":"2026-02-05 02:50:53"}
+{"level":"info","message":"Server is running at http://localhost:4000","timestamp":"2026-02-05 02:53:01"}
+{"level":"info","message":"Server is running at http://localhost:4000","timestamp":"2026-02-05 02:53:21"}
+{"level":"info","message":"Server is running at http://localhost:4000","timestamp":"2026-02-05 02:54:16"}
+{"level":"info","message":"Server is running at http://localhost:4000","timestamp":"2026-02-05 02:54:31"}
+{"level":"info","message":"Server is running at http://localhost:4000","timestamp":"2026-02-05 02:54:34"}
+{"level":"info","message":"Mapping JSON to User: {\"name\":\"John Doe\",\"email\":\"john.doe@example.com\",\"password\":\"StrongPassword123\"}","timestamp":"2026-02-05 02:55:07"}
+{"level":"info","message":"Setting email in UserBuilder: john.doe@example.com","timestamp":"2026-02-05 02:55:07"}
+{"level":"info","message":"Received request to create user with email: john.doe@example.com","timestamp":"2026-02-05 02:55:07"}
+{"level":"info","message":"Creating user with email: john.doe@example.com","timestamp":"2026-02-05 02:55:07"}
+{"level":"info","message":"Validating user with email: john.doe@example.com","timestamp":"2026-02-05 02:55:07"}
+{"level":"info","message":"PostgreSQL pool initialized (Neon)","timestamp":"2026-02-05 02:55:07"}
+{"level":"info","message":"PostgreSQL connection established","timestamp":"2026-02-05 02:55:09"}
+{"level":"info","message":"Orders table ensured in the database","timestamp":"2026-02-05 02:55:09"}
+{"level":"info","message":"PostgreSQL connection established","timestamp":"2026-02-05 02:55:09"}
+{"level":"info","message":"User created successfully with email: john.doe@example.com","timestamp":"2026-02-05 02:55:10"}
+{"level":"info","message":"POST / 201","timestamp":"2026-02-05 02:55:10"}
+{"level":"info","message":"Server is running at http://localhost:4000","timestamp":"2026-02-06 01:19:52"}
+{"level":"info","message":"Received request to get all users","timestamp":"2026-02-06 01:21:20"}
+{"level":"info","message":"Fetching all users","timestamp":"2026-02-06 01:21:20"}
+{"level":"info","message":"PostgreSQL pool initialized (Neon)","timestamp":"2026-02-06 01:21:20"}
+{"level":"info","message":"PostgreSQL connection established","timestamp":"2026-02-06 01:21:22"}
+{"code":"42P07","file":"heap.c","length":98,"level":"error","line":"1160","message":"Failed to initialize the repository relation \"user\" already exists","name":"error","routine":"heap_create_with_catalog","severity":"ERROR","stack":"error: relation \"user\" already exists\n    at C:\\cv project\\study_server\\node_modules\\pg\\lib\\client.js:545:17\n    at processTicksAndRejections (node:internal/process/task_queues:105:5)","timestamp":"2026-02-06 01:21:22"}
+{"level":"error","message":"Error fetching all users Failed to initialize the repository: relation \"user\" already exists","name":"RepositoryInitializationException","stack":"error: relation \"user\" already exists\n    at C:\\cv project\\study_server\\node_modules\\pg\\lib\\client.js:545:17\n    at processTicksAndRejections (node:internal/process/task_queues:105:5)","timestamp":"2026-02-06 01:21:22"}
+{"level":"error","message":"Unhandled Error: Failed to initialize the repository: relation \"user\" already exists","timestamp":"2026-02-06 01:21:22"}
+{"level":"error","message":"GET /users/ 500","timestamp":"2026-02-06 01:21:22"}
+{"level":"info","message":"Server is running at http://localhost:4000","timestamp":"2026-02-06 02:43:55"}
+{"level":"info","message":"Received request to get all users","timestamp":"2026-02-06 02:43:59"}
+{"level":"info","message":"Fetching all users","timestamp":"2026-02-06 02:44:00"}
+{"level":"info","message":"PostgreSQL pool initialized (Neon)","timestamp":"2026-02-06 02:44:00"}
+{"level":"info","message":"PostgreSQL connection established","timestamp":"2026-02-06 02:44:03"}
+{"code":"42P07","file":"heap.c","length":98,"level":"error","line":"1160","message":"Failed to initialize the repository relation \"user\" already exists","name":"error","routine":"heap_create_with_catalog","severity":"ERROR","stack":"error: relation \"user\" already exists\n    at C:\\cv project\\study_server\\node_modules\\pg\\lib\\client.js:545:17\n    at processTicksAndRejections (node:internal/process/task_queues:105:5)","timestamp":"2026-02-06 02:44:04"}
+{"level":"error","message":"Error fetching all users Failed to initialize the repository: relation \"user\" already exists","name":"RepositoryInitializationException","stack":"error: relation \"user\" already exists\n    at C:\\cv project\\study_server\\node_modules\\pg\\lib\\client.js:545:17\n    at processTicksAndRejections (node:internal/process/task_queues:105:5)","timestamp":"2026-02-06 02:44:04"}
+{"level":"error","message":"Unhandled Error: Failed to initialize the repository: relation \"user\" already exists","timestamp":"2026-02-06 02:44:04"}
+{"level":"error","message":"GET /users/ 500","timestamp":"2026-02-06 02:44:04"}
+{"level":"info","message":"Server is running at http://localhost:4000","timestamp":"2026-02-06 02:44:41"}
+{"level":"info","message":"Received request to get all users","timestamp":"2026-02-06 02:45:32"}
+{"level":"info","message":"Fetching all users","timestamp":"2026-02-06 02:45:32"}
+{"level":"info","message":"PostgreSQL pool initialized (Neon)","timestamp":"2026-02-06 02:45:32"}
+{"level":"info","message":"PostgreSQL connection established","timestamp":"2026-02-06 02:45:34"}
+{"code":"42P07","file":"heap.c","length":98,"level":"error","line":"1160","message":"Failed to initialize the repository relation \"user\" already exists","name":"error","routine":"heap_create_with_catalog","severity":"ERROR","stack":"error: relation \"user\" already exists\n    at C:\\cv project\\study_server\\node_modules\\pg\\lib\\client.js:545:17\n    at processTicksAndRejections (node:internal/process/task_queues:105:5)","timestamp":"2026-02-06 02:45:34"}
+{"level":"error","message":"Error fetching all users Failed to initialize the repository: relation \"user\" already exists","name":"RepositoryInitializationException","stack":"error: relation \"user\" already exists\n    at C:\\cv project\\study_server\\node_modules\\pg\\lib\\client.js:545:17\n    at processTicksAndRejections (node:internal/process/task_queues:105:5)","timestamp":"2026-02-06 02:45:34"}
+{"level":"error","message":"Unhandled Error: Failed to initialize the repository: relation \"user\" already exists","timestamp":"2026-02-06 02:45:34"}
+{"level":"error","message":"GET /users/ 500","timestamp":"2026-02-06 02:45:34"}
+{"level":"info","message":"Server is running at http://localhost:4000","timestamp":"2026-02-06 02:47:58"}
+{"level":"info","message":"Server is running at http://localhost:4000","timestamp":"2026-02-06 02:48:01"}
+{"level":"info","message":"Server is running at http://localhost:4000","timestamp":"2026-02-06 02:48:04"}
+{"level":"info","message":"Received request to get all users","timestamp":"2026-02-06 02:48:10"}
+{"level":"info","message":"Fetching all users","timestamp":"2026-02-06 02:48:10"}
+{"level":"info","message":"PostgreSQL pool initialized (Neon)","timestamp":"2026-02-06 02:48:10"}
+{"level":"info","message":"PostgreSQL connection established","timestamp":"2026-02-06 02:48:11"}
+{"level":"info","message":"Orders table ensured in the database","timestamp":"2026-02-06 02:48:11"}
+{"level":"info","message":"PostgreSQL connection established","timestamp":"2026-02-06 02:48:11"}
+{"level":"info","message":"Setting email in UserBuilder: john.doe@example.com","timestamp":"2026-02-06 02:48:11"}
+{"level":"info","message":"GET / 200","timestamp":"2026-02-06 02:48:11"}
+{"level":"info","message":"Received request to update user with id: user-0d22ade6-6826-49b9-b850-206c9628bbbc","timestamp":"2026-02-06 02:53:11"}
+{"level":"info","message":"Mapping JSON to User: {\"name\":\"John\",\"email\":\"john.doe@example.com\",\"password\":\"StrongPassword123\"}","timestamp":"2026-02-06 02:53:11"}
+{"level":"info","message":"Setting email in UserBuilder: john.doe@example.com","timestamp":"2026-02-06 02:53:11"}
+{"level":"info","message":"Updating user with id: user-0d22ade6-6826-49b9-b850-206c9628bbbc","timestamp":"2026-02-06 02:53:11"}
+{"level":"info","message":"Validating user with email: john.doe@example.com","timestamp":"2026-02-06 02:53:11"}
+{"level":"info","message":"PostgreSQL connection established","timestamp":"2026-02-06 02:53:12"}
+{"level":"info","message":"User updated successfully with id: user-0d22ade6-6826-49b9-b850-206c9628bbbc","timestamp":"2026-02-06 02:53:12"}
+{"level":"info","message":"PUT /user-0d22ade6-6826-49b9-b850-206c9628bbbc 200","timestamp":"2026-02-06 02:53:13"}
+{"level":"info","message":"Received request to get all users","timestamp":"2026-02-06 02:53:24"}
+{"level":"info","message":"Fetching all users","timestamp":"2026-02-06 02:53:24"}
+{"level":"info","message":"PostgreSQL connection established","timestamp":"2026-02-06 02:53:25"}
+{"level":"info","message":"Setting email in UserBuilder: john.doe@example.com","timestamp":"2026-02-06 02:53:25"}
+{"level":"info","message":"GET / 200","timestamp":"2026-02-06 02:53:25"}
+{"level":"info","message":"Received request to delete user with id: user-0d22ade6-6826-49b9-b850-206c9628bbbc","timestamp":"2026-02-06 02:56:04"}
+{"level":"info","message":"Deleting user with id: user-0d22ade6-6826-49b9-b850-206c9628bbbc","timestamp":"2026-02-06 02:56:04"}
+{"level":"info","message":"PostgreSQL connection established","timestamp":"2026-02-06 02:56:05"}
+{"level":"info","message":"User deleted successfully with id: user-0d22ade6-6826-49b9-b850-206c9628bbbc","timestamp":"2026-02-06 02:56:05"}
+{"level":"info","message":"DELETE /user-0d22ade6-6826-49b9-b850-206c9628bbbc 200","timestamp":"2026-02-06 02:56:05"}
+{"level":"info","message":"Received request to get all users","timestamp":"2026-02-06 02:56:12"}
+{"level":"info","message":"Fetching all users","timestamp":"2026-02-06 02:56:12"}
+{"level":"info","message":"PostgreSQL connection established","timestamp":"2026-02-06 02:56:12"}
+{"level":"warn","message":"No users found","timestamp":"2026-02-06 02:56:12"}
+{"level":"info","message":"GET / 200","timestamp":"2026-02-06 02:56:12"}
+{"level":"info","message":"Server is running at http://localhost:4000","timestamp":"2026-02-06 03:09:39"}
+{"level":"info","message":"Server is running at http://localhost:4000","timestamp":"2026-02-06 03:10:08"}
+{"level":"info","message":"Server is running at http://localhost:4000","timestamp":"2026-02-06 03:14:16"}
+{"level":"info","message":"Server is running at http://localhost:4000","timestamp":"2026-02-06 03:19:12"}
+{"level":"info","message":"Server is running at http://localhost:4000","timestamp":"2026-02-06 03:20:44"}
+{"level":"info","message":"Mapping JSON to User: {\"name\":\"John Doe\",\"email\":\"john.doe@example.com\",\"password\":\"StrongPassword123\"}","timestamp":"2026-02-06 03:21:17"}
+{"level":"info","message":"Setting email in UserBuilder: john.doe@example.com","timestamp":"2026-02-06 03:21:17"}
+{"level":"info","message":"Received request to create user with email: john.doe@example.com","timestamp":"2026-02-06 03:21:17"}
+{"level":"info","message":"Creating user with email: john.doe@example.com","timestamp":"2026-02-06 03:21:17"}
+{"level":"info","message":"Validating user with email: john.doe@example.com","timestamp":"2026-02-06 03:21:17"}
+{"level":"info","message":"PostgreSQL pool initialized (Neon)","timestamp":"2026-02-06 03:21:17"}
+{"level":"info","message":"PostgreSQL connection established","timestamp":"2026-02-06 03:21:18"}
+{"level":"info","message":"Orders table ensured in the database","timestamp":"2026-02-06 03:21:18"}
+{"level":"info","message":"PostgreSQL connection established","timestamp":"2026-02-06 03:21:18"}
+{"level":"info","message":"User created successfully with email: john.doe@example.com","timestamp":"2026-02-06 03:21:19"}
+{"level":"info","message":"POST / 201","timestamp":"2026-02-06 03:21:19"}
+{"level":"info","message":"Received request to get all users","timestamp":"2026-02-06 03:21:26"}
+{"level":"info","message":"Fetching all users","timestamp":"2026-02-06 03:21:26"}
+{"level":"info","message":"PostgreSQL connection established","timestamp":"2026-02-06 03:21:26"}
+{"level":"info","message":"Setting email in UserBuilder: john.doe@example.com","timestamp":"2026-02-06 03:21:26"}
+{"level":"info","message":"GET / 200","timestamp":"2026-02-06 03:21:26"}
+{"level":"info","message":"Received request to delete user with id: user-0d22ade6-6826-49b9-b850-206c9628bbbc","timestamp":"2026-02-06 03:21:35"}
+{"level":"info","message":"Deleting user with id: user-0d22ade6-6826-49b9-b850-206c9628bbbc","timestamp":"2026-02-06 03:21:35"}
+{"level":"info","message":"PostgreSQL connection established","timestamp":"2026-02-06 03:21:35"}
+{"level":"error","message":"User with id user-0d22ade6-6826-49b9-b850-206c9628bbbc not found","timestamp":"2026-02-06 03:21:36"}
+{"details":{"userId":"user-0d22ade6-6826-49b9-b850-206c9628bbbc"},"level":"error","message":"User with id user-0d22ade6-6826-49b9-b850-206c9628bbbc not found","name":"NotFoundException","stack":"NotFoundException: User with id user-0d22ade6-6826-49b9-b850-206c9628bbbc not found\n    at UserRepo.<anonymous> (C:\\cv project\\study_server\\src\\repository\\User.repo.ts:173:27)\n    at Generator.next (<anonymous>)\n    at fulfilled (C:\\cv project\\study_server\\src\\repository\\User.repo.ts:5:58)\n    at processTicksAndRejections (node:internal/process/task_queues:105:5)","status":404,"timestamp":"2026-02-06 03:21:36"}
+{"level":"error","message":"Error deleting user with id user-0d22ade6-6826-49b9-b850-206c9628bbbc ERROR during delete: User with id user-0d22ade6-6826-49b9-b850-206c9628bbbc not found","name":"DBException","stack":"NotFoundException: User with id user-0d22ade6-6826-49b9-b850-206c9628bbbc not found\n    at UserRepo.<anonymous> (C:\\cv project\\study_server\\src\\repository\\User.repo.ts:173:27)\n    at Generator.next (<anonymous>)\n    at fulfilled (C:\\cv project\\study_server\\src\\repository\\User.repo.ts:5:58)\n    at processTicksAndRejections (node:internal/process/task_queues:105:5)","timestamp":"2026-02-06 03:21:36"}
+{"level":"error","message":"Unhandled Error: ERROR during delete: User with id user-0d22ade6-6826-49b9-b850-206c9628bbbc not found","timestamp":"2026-02-06 03:21:36"}
+{"level":"error","message":"DELETE /users/user-0d22ade6-6826-49b9-b850-206c9628bbbc 500","timestamp":"2026-02-06 03:21:36"}
+{"level":"info","message":"Received request to delete user with id: user-8cff90eb-e194-4a7c-95b7-fd1c926cba7f","timestamp":"2026-02-06 03:22:13"}
+{"level":"info","message":"Deleting user with id: user-8cff90eb-e194-4a7c-95b7-fd1c926cba7f","timestamp":"2026-02-06 03:22:13"}
+{"level":"info","message":"PostgreSQL connection established","timestamp":"2026-02-06 03:22:14"}
+{"level":"info","message":"User deleted successfully with id: user-8cff90eb-e194-4a7c-95b7-fd1c926cba7f","timestamp":"2026-02-06 03:22:14"}
+{"level":"info","message":"DELETE /user-8cff90eb-e194-4a7c-95b7-fd1c926cba7f 200","timestamp":"2026-02-06 03:22:14"}
+{"level":"info","message":"Server is running at http://localhost:4000","timestamp":"2026-02-07 01:42:36"}
+{"level":"info","message":"Mapping JSON to User: {\"name\":\"John Doe\",\"email\":\"john.doe@example.com\",\"password\":\"StrongPassword123\"}","timestamp":"2026-02-07 01:55:26"}
+{"level":"info","message":"Setting email in UserBuilder: john.doe@example.com","timestamp":"2026-02-07 01:55:26"}
+{"level":"info","message":"Received request to create user with email: john.doe@example.com","timestamp":"2026-02-07 01:55:26"}
+{"level":"info","message":"Creating user with email: john.doe@example.com","timestamp":"2026-02-07 01:55:26"}
+{"level":"info","message":"Validating user with email: john.doe@example.com","timestamp":"2026-02-07 01:55:26"}
+{"level":"info","message":"PostgreSQL pool initialized (Neon)","timestamp":"2026-02-07 01:55:26"}
+{"level":"info","message":"PostgreSQL connection established","timestamp":"2026-02-07 01:55:30"}
+{"level":"info","message":"Orders table ensured in the database","timestamp":"2026-02-07 01:55:30"}
+{"level":"info","message":"PostgreSQL connection established","timestamp":"2026-02-07 01:55:30"}
+{"level":"info","message":"User created successfully with email: john.doe@example.com","timestamp":"2026-02-07 01:55:31"}
+{"level":"info","message":"POST / 201","timestamp":"2026-02-07 01:55:31"}
+{"level":"info","message":"PostgreSQL connection established","timestamp":"2026-02-07 01:59:04"}
+{"level":"info","message":"Orders table ensured in the database","timestamp":"2026-02-07 01:59:04"}
+{"level":"info","message":"PostgreSQL connection established","timestamp":"2026-02-07 01:59:04"}
+{"level":"info","message":"Setting email in UserBuilder: john.doe@example.com","timestamp":"2026-02-07 01:59:05"}
+{"level":"error","message":" NotFoundException [404] \"User not found\" {}","timestamp":"2026-02-07 01:59:05"}
+{"level":"warn","message":"POST /auth/login 404","timestamp":"2026-02-07 01:59:05"}
+{"level":"info","message":"Server is running at http://localhost:4000","timestamp":"2026-02-07 02:01:25"}
+{"level":"info","message":"Server is running at http://localhost:4000","timestamp":"2026-02-07 02:01:28"}
+{"level":"info","message":"PostgreSQL pool initialized (Neon)","timestamp":"2026-02-07 02:02:12"}
+{"level":"info","message":"PostgreSQL connection established","timestamp":"2026-02-07 02:02:13"}
+{"level":"info","message":"Orders table ensured in the database","timestamp":"2026-02-07 02:02:13"}
+{"level":"info","message":"PostgreSQL connection established","timestamp":"2026-02-07 02:02:13"}
+{"level":"info","message":"Setting email in UserBuilder: john.doe@example.com","timestamp":"2026-02-07 02:02:13"}
+{"level":"info","message":"Validating user with email: john.doe@example.com","timestamp":"2026-02-07 02:02:13"}
+{"level":"error","message":" NotFoundException [404] \"User not found\" {}","timestamp":"2026-02-07 02:02:13"}
+{"level":"warn","message":"POST /auth/login 404","timestamp":"2026-02-07 02:02:13"}
+{"level":"info","message":"Server is running at http://localhost:4000","timestamp":"2026-02-07 02:12:38"}
+{"level":"info","message":"Server is running at http://localhost:4000","timestamp":"2026-02-07 02:15:17"}
+{"level":"info","message":"Server is running at http://localhost:4000","timestamp":"2026-02-07 02:17:49"}
+{"level":"info","message":"PostgreSQL pool initialized (Neon)","timestamp":"2026-02-07 02:18:15"}
+{"level":"info","message":"PostgreSQL connection established","timestamp":"2026-02-07 02:18:18"}
+{"level":"info","message":"Orders table ensured in the database","timestamp":"2026-02-07 02:18:18"}
+{"level":"info","message":"PostgreSQL connection established","timestamp":"2026-02-07 02:18:18"}
+{"level":"info","message":"Setting email in UserBuilder: john.doe@example.com","timestamp":"2026-02-07 02:18:18"}
+{"level":"info","message":"Validating user with email: john.doe@example.com","timestamp":"2026-02-07 02:18:18"}
+{"level":"error","message":"Unhandled Error: User not found","timestamp":"2026-02-07 02:18:18"}
+{"level":"error","message":"POST /auth/login 500","timestamp":"2026-02-07 02:18:18"}
+{"level":"info","message":"Server is running at http://localhost:4000","timestamp":"2026-02-07 02:19:08"}
+{"level":"info","message":"Server is running at http://localhost:4000","timestamp":"2026-02-07 02:19:52"}
+{"level":"info","message":"PostgreSQL pool initialized (Neon)","timestamp":"2026-02-07 02:21:10"}
+{"level":"info","message":"PostgreSQL connection established","timestamp":"2026-02-07 02:21:11"}
+{"level":"info","message":"Orders table ensured in the database","timestamp":"2026-02-07 02:21:11"}
+{"level":"info","message":"PostgreSQL connection established","timestamp":"2026-02-07 02:21:11"}
+{"level":"info","message":"Setting email in UserBuilder: john.doe@example.com","timestamp":"2026-02-07 02:21:12"}
+{"level":"info","message":"Validating user with email: john.doe@example.com","timestamp":"2026-02-07 02:21:12"}
+{"level":"error","message":"Unhandled Error: User not found","timestamp":"2026-02-07 02:21:12"}
+{"level":"error","message":"POST /auth/login 500","timestamp":"2026-02-07 02:21:12"}
+{"level":"info","message":"Server is running at http://localhost:4000","timestamp":"2026-02-07 02:23:04"}
+{"level":"info","message":"Server is running at http://localhost:4000","timestamp":"2026-02-07 02:23:29"}
+{"level":"info","message":"PostgreSQL pool initialized (Neon)","timestamp":"2026-02-07 02:23:34"}
+{"level":"info","message":"PostgreSQL connection established","timestamp":"2026-02-07 02:23:35"}
+{"level":"info","message":"Orders table ensured in the database","timestamp":"2026-02-07 02:23:36"}
+{"level":"info","message":"PostgreSQL connection established","timestamp":"2026-02-07 02:23:36"}
+{"level":"info","message":"Setting email in UserBuilder: john.doe@example.com","timestamp":"2026-02-07 02:23:36"}
+{"level":"info","message":"Validating user with email: john.doe@example.com","timestamp":"2026-02-07 02:23:36"}
+{"level":"error","message":" BadRequestException [400] \"Invalid password\" {}","timestamp":"2026-02-07 02:23:36"}
+{"level":"warn","message":"POST /auth/login 400","timestamp":"2026-02-07 02:23:36"}
+{"level":"info","message":"Server is running at http://localhost:4000","timestamp":"2026-02-07 02:24:19"}
+{"level":"info","message":"Server is running at http://localhost:4000","timestamp":"2026-02-07 02:29:13"}
+{"level":"info","message":"PostgreSQL pool initialized (Neon)","timestamp":"2026-02-07 02:37:06"}
+{"level":"info","message":"PostgreSQL connection established","timestamp":"2026-02-07 02:37:08"}
+{"level":"info","message":"Orders table ensured in the database","timestamp":"2026-02-07 02:37:08"}
+{"level":"info","message":"PostgreSQL connection established","timestamp":"2026-02-07 02:37:08"}
+{"level":"info","message":"Setting email in UserBuilder: john.doe@example.com","timestamp":"2026-02-07 02:37:09"}
+{"level":"info","message":"Validating user with email: john.doe@example.com","timestamp":"2026-02-07 02:37:09"}
+{"level":"info","message":"POST /login 200","timestamp":"2026-02-07 02:37:09"}
+{"level":"info","message":"Server is running at http://localhost:4000","timestamp":"2026-02-09 22:58:45"}
+{"level":"info","message":"Server is running at http://localhost:4000","timestamp":"2026-02-09 22:59:02"}
+{"level":"info","message":"Server is running at http://localhost:4000","timestamp":"2026-02-09 23:11:29"}
+{"level":"info","message":"Server is running at http://localhost:4000","timestamp":"2026-02-09 23:11:50"}
+{"level":"info","message":"Server is running at http://localhost:4000","timestamp":"2026-02-10 23:24:22"}
+{"level":"info","message":"PostgreSQL pool initialized (Neon)","timestamp":"2026-02-10 23:26:05"}
+{"level":"info","message":"PostgreSQL connection established","timestamp":"2026-02-10 23:26:12"}
+{"level":"info","message":"Orders table ensured in the database","timestamp":"2026-02-10 23:26:12"}
+{"level":"info","message":"PostgreSQL connection established","timestamp":"2026-02-10 23:26:12"}
+{"level":"info","message":"Setting email in UserBuilder: john.doe@example.com","timestamp":"2026-02-10 23:26:12"}
+{"level":"info","message":"Validating user with email: john.doe@example.com","timestamp":"2026-02-10 23:26:12"}
+{"level":"info","message":"POST /login 200","timestamp":"2026-02-10 23:26:12"}
+{"level":"info","message":"GET /logout 200","timestamp":"2026-02-10 23:28:59"}
+{"level":"info","message":"Server is running at http://localhost:4000","timestamp":"2026-02-11 14:34:29"}
+{"level":"info","message":"PostgreSQL pool initialized (Neon)","timestamp":"2026-02-11 14:41:49"}
+{"level":"info","message":"PostgreSQL connection established","timestamp":"2026-02-11 14:41:51"}
+{"level":"info","message":"Orders table ensured in the database","timestamp":"2026-02-11 14:41:51"}
+{"level":"info","message":"PostgreSQL connection established","timestamp":"2026-02-11 14:41:51"}
+{"level":"info","message":"Setting email in UserBuilder: john.doe@example.com","timestamp":"2026-02-11 14:41:51"}
+{"level":"info","message":"Validating user with email: john.doe@example.com","timestamp":"2026-02-11 14:41:51"}
+{"level":"info","message":"POST /login 200","timestamp":"2026-02-11 14:41:52"}
+{"level":"info","message":"Server is running at http://localhost:4000","timestamp":"2026-02-11 14:43:51"}
+{"level":"info","message":"Server is running at http://localhost:4000","timestamp":"2026-02-11 14:44:03"}
+{"level":"info","message":"Server is running at http://localhost:4000","timestamp":"2026-02-11 14:44:08"}
+{"level":"info","message":"PostgreSQL pool initialized (Neon)","timestamp":"2026-02-11 14:44:26"}
+{"level":"info","message":"PostgreSQL connection established","timestamp":"2026-02-11 14:44:27"}
+{"level":"info","message":"Orders table ensured in the database","timestamp":"2026-02-11 14:44:27"}
+{"level":"info","message":"PostgreSQL connection established","timestamp":"2026-02-11 14:44:27"}
+{"level":"info","message":"Setting email in UserBuilder: john.doe@example.com","timestamp":"2026-02-11 14:44:27"}
+{"level":"info","message":"Validating user with email: john.doe@example.com","timestamp":"2026-02-11 14:44:27"}
+{"level":"info","message":"POST /login 200","timestamp":"2026-02-11 14:44:27"}
+{"0":"e","1":"y","10":"J","100":"x","101":"O","102":"T","103":"Q","104":"0","105":"Z","106":"C","107":"I","108":"s","109":"I","11":"I","110":"m","111":"l","112":"h","113":"d","114":"C","115":"I","116":"6","117":"M","118":"T","119":"c","12":"U","120":"3","121":"M","122":"D","123":"g","124":"x","125":"M","126":"z","127":"g","128":"2","129":"N","13":"z","130":"y","131":"w","132":"i","133":"Z","134":"X","135":"h","136":"w","137":"I","138":"j","139":"o","14":"I","140":"x","141":"N","142":"z","143":"c","144":"x","145":"N","146":"D","147":"E","148":"4","149":"N","15":"1","150":"j","151":"Y","152":"3","153":"f","154":"Q","155":".","156":"I","157":"a","158":"r","159":"C","16":"N","160":"2","161":"h","162":"p","163":"r","164":"6","165":"u","166":"g","167":"P","168":"Q","169":"n","17":"i","170":"Z","171":"W","172":"7","173":"u","174":"O","175":"w","176":"K","177":"r","178":"1","179":"N","18":"I","180":"H","181":"X","182":"Z","183":"U","184":"b","185":"F","186":"R","187":"Z","188":"f","189":"U","19":"s","190":"M","191":"u","192":"r","193":"9","194":"e","195":"f","196":"8","197":"-","198":"A","2":"J","20":"I","21":"n","22":"R","23":"5","24":"c","25":"C","26":"I","27":"6","28":"I","29":"k","3":"h","30":"p","31":"X","32":"V","33":"C","34":"J","35":"9","36":".","37":"e","38":"y","39":"J","4":"b","40":"1","41":"c","42":"2","43":"V","44":"y","45":"S","46":"W","47":"Q","48":"i","49":"O","5":"G","50":"i","51":"J","52":"1","53":"c","54":"2","55":"V","56":"y","57":"L","58":"W","59":"U","6":"c","60":"3","61":"Y","62":"z","63":"Q","64":"5","65":"M","66":"D","67":"g","68":"1","69":"L","7":"i","70":"T","71":"I","72":"z","73":"M","74":"G","75":"Y","76":"t","77":"N","78":"D","79":"M","8":"O","80":"4","81":"M","82":"i","83":"0","84":"5","85":"N","86":"m","87":"Q","88":"5","89":"L","9":"i","90":"T","91":"V","92":"j","93":"M","94":"T","95":"c","96":"3","97":"Y","98":"T","99":"I","level":"info","message":"authToken:","timestamp":"2026-02-11 14:44:55"}
+{"level":"info","message":"GET /logout 200","timestamp":"2026-02-11 14:44:55"}
+{"level":"info","message":"Server is running at http://localhost:4000","timestamp":"2026-02-12 01:32:09"}
+{"level":"info","message":"Server is running at http://localhost:4000","timestamp":"2026-02-13 02:39:11"}
+{"level":"info","message":"Mapping JSON to User: {\"name\":\"John Doe\",\"email\":\"john.doe@example.com\",\"password\":\"StrongPassword123\"}","timestamp":"2026-02-13 02:49:48"}
+{"level":"info","message":"Setting email in UserBuilder: john.doe@example.com","timestamp":"2026-02-13 02:49:48"}
+{"level":"info","message":"Received request to create user with email: john.doe@example.com","timestamp":"2026-02-13 02:49:48"}
+{"level":"info","message":"Creating user with email: john.doe@example.com","timestamp":"2026-02-13 02:49:48"}
+{"level":"info","message":"Validating user with email: john.doe@example.com","timestamp":"2026-02-13 02:49:48"}
+{"level":"info","message":"PostgreSQL pool initialized (Neon)","timestamp":"2026-02-13 02:49:48"}
+{"level":"info","message":"PostgreSQL connection established","timestamp":"2026-02-13 02:49:50"}
+{"level":"info","message":"Orders table ensured in the database","timestamp":"2026-02-13 02:49:50"}
+{"level":"info","message":"PostgreSQL connection established","timestamp":"2026-02-13 02:49:50"}
+{"code":"42703","file":"parse_target.c","length":121,"level":"error","line":"1065","message":"column \"role\" of relation \"user\" does not exist","name":"error","position":"46","routine":"checkInsertTargets","severity":"ERROR","stack":"error: column \"role\" of relation \"user\" does not exist\n    at C:\\cv project\\study_server\\node_modules\\pg\\lib\\client.js:545:17\n    at processTicksAndRejections (node:internal/process/task_queues:105:5)","timestamp":"2026-02-13 02:49:51"}
+{"level":"error","message":"Unhandled Error: ERROR during creation: column \"role\" of relation \"user\" does not exist","timestamp":"2026-02-13 02:49:51"}
+{"level":"error","message":"POST /users/ 500","timestamp":"2026-02-13 02:49:51"}
+{"level":"info","message":"Server is running at http://localhost:4000","timestamp":"2026-02-13 02:51:59"}
+{"level":"info","message":"Server is running at http://localhost:4000","timestamp":"2026-02-13 02:52:05"}
+{"level":"info","message":"Server is running at http://localhost:4000","timestamp":"2026-02-13 02:52:55"}
+{"level":"info","message":"Mapping JSON to User: {\"name\":\"John Doe\",\"email\":\"john.doe@example.com\",\"password\":\"StrongPassword123\"}","timestamp":"2026-02-13 02:53:06"}
+{"level":"info","message":"Setting email in UserBuilder: john.doe@example.com","timestamp":"2026-02-13 02:53:06"}
+{"level":"info","message":"Received request to create user with email: john.doe@example.com","timestamp":"2026-02-13 02:53:06"}
+{"level":"info","message":"Creating user with email: john.doe@example.com","timestamp":"2026-02-13 02:53:06"}
+{"level":"info","message":"Validating user with email: john.doe@example.com","timestamp":"2026-02-13 02:53:06"}
+{"level":"info","message":"PostgreSQL pool initialized (Neon)","timestamp":"2026-02-13 02:53:06"}
+{"level":"info","message":"PostgreSQL connection established","timestamp":"2026-02-13 02:53:08"}
+{"level":"info","message":"Orders table ensured in the database","timestamp":"2026-02-13 02:53:08"}
+{"level":"info","message":"PostgreSQL connection established","timestamp":"2026-02-13 02:53:08"}
+{"level":"info","message":"User created successfully with email: john.doe@example.com","timestamp":"2026-02-13 02:53:08"}
+{"level":"info","message":"POST / 201","timestamp":"2026-02-13 02:53:08"}
+{"0":"r","1":"e","10":"e","11":"n","12":":","2":"f","3":"r","4":"e","5":"s","6":"h","7":"T","8":"o","9":"k","level":"info","message":"authToken:","timestamp":"2026-02-13 03:14:06"}
+{"level":"error","message":" AuthenticationFailedException [401] \"Authentication failed\" {}","timestamp":"2026-02-13 03:14:06"}
+{"level":"warn","message":"GET /users/ 401","timestamp":"2026-02-13 03:14:06"}
+{"level":"info","message":"PostgreSQL connection established","timestamp":"2026-02-13 03:14:29"}
+{"level":"info","message":"Orders table ensured in the database","timestamp":"2026-02-13 03:14:29"}
+{"level":"info","message":"PostgreSQL connection established","timestamp":"2026-02-13 03:14:29"}
+{"level":"info","message":"Setting email in UserBuilder: john.doe@example.com","timestamp":"2026-02-13 03:14:29"}
+{"level":"info","message":"Validating user with email: john.doe@example.com","timestamp":"2026-02-13 03:14:29"}
+{"level":"info","message":"POST /login 200","timestamp":"2026-02-13 03:14:29"}
+{"level":"info","message":"Mapping JSON to User: {\"email\":\"john.doe@example.com\",\"password\":\"StrongPassword123\"}","timestamp":"2026-02-13 03:14:48"}
+{"level":"info","message":"Setting email in UserBuilder: john.doe@example.com","timestamp":"2026-02-13 03:14:48"}
+{"level":"error","message":"Unhandled Error: Missing required fields to build User","timestamp":"2026-02-13 03:14:48"}
+{"level":"error","message":"POST /users/ 500","timestamp":"2026-02-13 03:14:48"}
+{"level":"info","message":"Server is running at http://localhost:4000","timestamp":"2026-02-13 03:15:51"}
+{"level":"info","message":"Server is running at http://localhost:4000","timestamp":"2026-02-13 03:16:02"}
+{"level":"info","message":"Server is running at http://localhost:4000","timestamp":"2026-02-13 03:16:15"}
+{"level":"info","message":"Server is running at http://localhost:4000","timestamp":"2026-02-13 03:16:46"}
+{"level":"error","message":" BadRequestException [400] \"Name, email, and password are required\" {\n  invalidData: { email: 'john.doe@example.com', password: 'StrongPassword123' }\n}","timestamp":"2026-02-13 03:17:44"}
+{"level":"warn","message":"POST /users/ 400","timestamp":"2026-02-13 03:17:45"}
+{"0":"e","1":"y","10":"J","100":"i","101":"N","102":"j","103":"Q","104":"x","105":"Y","106":"S","107":"I","108":"s","109":"I","11":"I","110":"m","111":"l","112":"h","113":"d","114":"C","115":"I","116":"6","117":"M","118":"T","119":"c","12":"U","120":"3","121":"M","122":"D","123":"k","124":"0","125":"N","126":"T","127":"I","128":"2","129":"O","13":"z","130":"S","131":"w","132":"i","133":"Z","134":"X","135":"h","136":"w","137":"I","138":"j","139":"o","14":"I","140":"x","141":"N","142":"z","143":"c","144":"x","145":"N","146":"T","147":"U","148":"w","149":"M","15":"1","150":"D","151":"Y","152":"5","153":"f","154":"Q","155":".","156":"z","157":"x","158":"c","159":"Z","16":"N","160":"j","161":"E","162":"P","163":"n","164":"-","165":"f","166":"S","167":"U","168":"B","169":"s","17":"i","170":"M","171":"B","172":"x","173":"X","174":"B","175":"w","176":"D","177":"i","178":"N","179":"X","18":"I","180":"e","181":"o","182":"3","183":"M","184":"V","185":"C","186":"8","187":"w","188":"Z","189":"o","19":"s","190":"a","191":"1","192":"o","193":"I","194":"v","195":"3","196":"J","197":"F","198":"s","2":"J","20":"I","21":"n","22":"R","23":"5","24":"c","25":"C","26":"I","27":"6","28":"I","29":"k","3":"h","30":"p","31":"X","32":"V","33":"C","34":"J","35":"9","36":".","37":"e","38":"y","39":"J","4":"b","40":"1","41":"c","42":"2","43":"V","44":"y","45":"S","46":"W","47":"Q","48":"i","49":"O","5":"G","50":"i","51":"J","52":"1","53":"c","54":"2","55":"V","56":"y","57":"L","58":"W","59":"Y","6":"c","60":"2","61":"M","62":"T","63":"B","64":"h","65":"M","66":"2","67":"M","68":"z","69":"L","7":"i","70":"T","71":"l","72":"j","73":"M","74":"T","75":"I","76":"t","77":"N","78":"D","79":"d","8":"O","80":"j","81":"Y","82":"y","83":"1","84":"h","85":"Z","86":"j","87":"N","88":"k","89":"L","9":"i","90":"T","91":"E","92":"3","93":"Y","94":"W","95":"I","96":"4","97":"N","98":"m","99":"V","level":"info","message":"authToken:","timestamp":"2026-02-13 03:17:59"}
+{"level":"info","message":"Received request to get all users","timestamp":"2026-02-13 03:17:59"}
+{"level":"info","message":"Fetching all users","timestamp":"2026-02-13 03:17:59"}
+{"level":"info","message":"PostgreSQL pool initialized (Neon)","timestamp":"2026-02-13 03:17:59"}
+{"level":"info","message":"PostgreSQL connection established","timestamp":"2026-02-13 03:18:00"}
+{"level":"info","message":"User table ensured in the database","timestamp":"2026-02-13 03:18:01"}
+{"level":"info","message":"PostgreSQL connection established","timestamp":"2026-02-13 03:18:01"}
+{"level":"info","message":"Setting email in UserBuilder: john.doe@example.com","timestamp":"2026-02-13 03:18:01"}
+{"level":"info","message":"GET / 200","timestamp":"2026-02-13 03:18:01"}
+{"0":"e","1":"y","10":"J","100":"i","101":"N","102":"j","103":"Q","104":"x","105":"Y","106":"S","107":"I","108":"s","109":"I","11":"I","110":"m","111":"l","112":"h","113":"d","114":"C","115":"I","116":"6","117":"M","118":"T","119":"c","12":"U","120":"3","121":"M","122":"D","123":"k","124":"0","125":"N","126":"T","127":"I","128":"2","129":"O","13":"z","130":"S","131":"w","132":"i","133":"Z","134":"X","135":"h","136":"w","137":"I","138":"j","139":"o","14":"I","140":"x","141":"N","142":"z","143":"c","144":"x","145":"N","146":"T","147":"U","148":"w","149":"M","15":"1","150":"D","151":"Y","152":"5","153":"f","154":"Q","155":".","156":"z","157":"x","158":"c","159":"Z","16":"N","160":"j","161":"E","162":"P","163":"n","164":"-","165":"f","166":"S","167":"U","168":"B","169":"s","17":"i","170":"M","171":"B","172":"x","173":"X","174":"B","175":"w","176":"D","177":"i","178":"N","179":"X","18":"I","180":"e","181":"o","182":"3","183":"M","184":"V","185":"C","186":"8","187":"w","188":"Z","189":"o","19":"s","190":"a","191":"1","192":"o","193":"I","194":"v","195":"3","196":"J","197":"F","198":"s","2":"J","20":"I","21":"n","22":"R","23":"5","24":"c","25":"C","26":"I","27":"6","28":"I","29":"k","3":"h","30":"p","31":"X","32":"V","33":"C","34":"J","35":"9","36":".","37":"e","38":"y","39":"J","4":"b","40":"1","41":"c","42":"2","43":"V","44":"y","45":"S","46":"W","47":"Q","48":"i","49":"O","5":"G","50":"i","51":"J","52":"1","53":"c","54":"2","55":"V","56":"y","57":"L","58":"W","59":"Y","6":"c","60":"2","61":"M","62":"T","63":"B","64":"h","65":"M","66":"2","67":"M","68":"z","69":"L","7":"i","70":"T","71":"l","72":"j","73":"M","74":"T","75":"I","76":"t","77":"N","78":"D","79":"d","8":"O","80":"j","81":"Y","82":"y","83":"1","84":"h","85":"Z","86":"j","87":"N","88":"k","89":"L","9":"i","90":"T","91":"E","92":"3","93":"Y","94":"W","95":"I","96":"4","97":"N","98":"m","99":"V","level":"info","message":"authToken:","timestamp":"2026-02-13 03:18:39"}
+{"level":"info","message":"Received request to get user with id: user-f610a3c3-9c12-47cc-af3d-17ab86eb641a","timestamp":"2026-02-13 03:18:39"}
+{"level":"info","message":"Fetching user with id: user-f610a3c3-9c12-47cc-af3d-17ab86eb641a","timestamp":"2026-02-13 03:18:39"}
+{"level":"info","message":"PostgreSQL connection established","timestamp":"2026-02-13 03:18:41"}
+{"level":"info","message":"Setting email in UserBuilder: john.doe@example.com","timestamp":"2026-02-13 03:18:41"}
+{"level":"info","message":"GET /user-f610a3c3-9c12-47cc-af3d-17ab86eb641a 200","timestamp":"2026-02-13 03:18:41"}
+{"0":"e","1":"y","10":"J","100":"i","101":"N","102":"j","103":"Q","104":"x","105":"Y","106":"S","107":"I","108":"s","109":"I","11":"I","110":"m","111":"l","112":"h","113":"d","114":"C","115":"I","116":"6","117":"M","118":"T","119":"c","12":"U","120":"3","121":"M","122":"D","123":"k","124":"0","125":"N","126":"T","127":"I","128":"2","129":"O","13":"z","130":"S","131":"w","132":"i","133":"Z","134":"X","135":"h","136":"w","137":"I","138":"j","139":"o","14":"I","140":"x","141":"N","142":"z","143":"c","144":"x","145":"N","146":"T","147":"U","148":"w","149":"M","15":"1","150":"D","151":"Y","152":"5","153":"f","154":"Q","155":".","156":"z","157":"x","158":"c","159":"Z","16":"N","160":"j","161":"E","162":"P","163":"n","164":"-","165":"f","166":"S","167":"U","168":"B","169":"s","17":"i","170":"M","171":"B","172":"x","173":"X","174":"B","175":"w","176":"D","177":"i","178":"N","179":"X","18":"I","180":"e","181":"o","182":"3","183":"M","184":"V","185":"C","186":"8","187":"w","188":"Z","189":"o","19":"s","190":"a","191":"1","192":"o","193":"I","194":"v","195":"3","196":"J","197":"F","198":"s","2":"J","20":"I","21":"n","22":"R","23":"5","24":"c","25":"C","26":"I","27":"6","28":"I","29":"k","3":"h","30":"p","31":"X","32":"V","33":"C","34":"J","35":"9","36":".","37":"e","38":"y","39":"J","4":"b","40":"1","41":"c","42":"2","43":"V","44":"y","45":"S","46":"W","47":"Q","48":"i","49":"O","5":"G","50":"i","51":"J","52":"1","53":"c","54":"2","55":"V","56":"y","57":"L","58":"W","59":"Y","6":"c","60":"2","61":"M","62":"T","63":"B","64":"h","65":"M","66":"2","67":"M","68":"z","69":"L","7":"i","70":"T","71":"l","72":"j","73":"M","74":"T","75":"I","76":"t","77":"N","78":"D","79":"d","8":"O","80":"j","81":"Y","82":"y","83":"1","84":"h","85":"Z","86":"j","87":"N","88":"k","89":"L","9":"i","90":"T","91":"E","92":"3","93":"Y","94":"W","95":"I","96":"4","97":"N","98":"m","99":"V","level":"info","message":"authToken:","timestamp":"2026-02-13 03:19:17"}
+{"level":"info","message":"Received request to update user with id: user-f610a3c3-9c12-47cc-af3d-17ab86eb641a","timestamp":"2026-02-13 03:19:17"}
+{"level":"info","message":"Mapping JSON to User: {\"name\":\"ali\",\"email\":\"john.doe@example.com\",\"password\":\"StrongPassword123\"}","timestamp":"2026-02-13 03:19:17"}
+{"level":"info","message":"Setting email in UserBuilder: john.doe@example.com","timestamp":"2026-02-13 03:19:17"}
+{"level":"info","message":"Updating user with id: user-f610a3c3-9c12-47cc-af3d-17ab86eb641a","timestamp":"2026-02-13 03:19:17"}
+{"level":"info","message":"Validating user with email: john.doe@example.com","timestamp":"2026-02-13 03:19:17"}
+{"level":"info","message":"PostgreSQL connection established","timestamp":"2026-02-13 03:19:18"}
+{"level":"info","message":"User updated successfully with id: user-f610a3c3-9c12-47cc-af3d-17ab86eb641a","timestamp":"2026-02-13 03:19:18"}
+{"level":"info","message":"PUT /user-f610a3c3-9c12-47cc-af3d-17ab86eb641a 200","timestamp":"2026-02-13 03:19:18"}
+{"0":"e","1":"y","10":"J","100":"i","101":"N","102":"j","103":"Q","104":"x","105":"Y","106":"S","107":"I","108":"s","109":"I","11":"I","110":"m","111":"l","112":"h","113":"d","114":"C","115":"I","116":"6","117":"M","118":"T","119":"c","12":"U","120":"3","121":"M","122":"D","123":"k","124":"0","125":"N","126":"T","127":"I","128":"2","129":"O","13":"z","130":"S","131":"w","132":"i","133":"Z","134":"X","135":"h","136":"w","137":"I","138":"j","139":"o","14":"I","140":"x","141":"N","142":"z","143":"c","144":"x","145":"N","146":"T","147":"U","148":"w","149":"M","15":"1","150":"D","151":"Y","152":"5","153":"f","154":"Q","155":".","156":"z","157":"x","158":"c","159":"Z","16":"N","160":"j","161":"E","162":"P","163":"n","164":"-","165":"f","166":"S","167":"U","168":"B","169":"s","17":"i","170":"M","171":"B","172":"x","173":"X","174":"B","175":"w","176":"D","177":"i","178":"N","179":"X","18":"I","180":"e","181":"o","182":"3","183":"M","184":"V","185":"C","186":"8","187":"w","188":"Z","189":"o","19":"s","190":"a","191":"1","192":"o","193":"I","194":"v","195":"3","196":"J","197":"F","198":"s","2":"J","20":"I","21":"n","22":"R","23":"5","24":"c","25":"C","26":"I","27":"6","28":"I","29":"k","3":"h","30":"p","31":"X","32":"V","33":"C","34":"J","35":"9","36":".","37":"e","38":"y","39":"J","4":"b","40":"1","41":"c","42":"2","43":"V","44":"y","45":"S","46":"W","47":"Q","48":"i","49":"O","5":"G","50":"i","51":"J","52":"1","53":"c","54":"2","55":"V","56":"y","57":"L","58":"W","59":"Y","6":"c","60":"2","61":"M","62":"T","63":"B","64":"h","65":"M","66":"2","67":"M","68":"z","69":"L","7":"i","70":"T","71":"l","72":"j","73":"M","74":"T","75":"I","76":"t","77":"N","78":"D","79":"d","8":"O","80":"j","81":"Y","82":"y","83":"1","84":"h","85":"Z","86":"j","87":"N","88":"k","89":"L","9":"i","90":"T","91":"E","92":"3","93":"Y","94":"W","95":"I","96":"4","97":"N","98":"m","99":"V","level":"info","message":"authToken:","timestamp":"2026-02-13 03:19:29"}
+{"level":"info","message":"Received request to delete user with id: user-f610a3c3-9c12-47cc-af3d-17ab86eb641a","timestamp":"2026-02-13 03:19:29"}
+{"level":"info","message":"Deleting user with id: user-f610a3c3-9c12-47cc-af3d-17ab86eb641a","timestamp":"2026-02-13 03:19:29"}
+{"level":"info","message":"PostgreSQL connection established","timestamp":"2026-02-13 03:19:30"}
+{"level":"info","message":"User deleted successfully with id: user-f610a3c3-9c12-47cc-af3d-17ab86eb641a","timestamp":"2026-02-13 03:19:31"}
+{"level":"info","message":"DELETE /user-f610a3c3-9c12-47cc-af3d-17ab86eb641a 200","timestamp":"2026-02-13 03:19:31"}
+{"0":"e","1":"y","10":"J","100":"i","101":"N","102":"j","103":"Q","104":"x","105":"Y","106":"S","107":"I","108":"s","109":"I","11":"I","110":"m","111":"l","112":"h","113":"d","114":"C","115":"I","116":"6","117":"M","118":"T","119":"c","12":"U","120":"3","121":"M","122":"D","123":"k","124":"0","125":"N","126":"T","127":"I","128":"2","129":"O","13":"z","130":"S","131":"w","132":"i","133":"Z","134":"X","135":"h","136":"w","137":"I","138":"j","139":"o","14":"I","140":"x","141":"N","142":"z","143":"c","144":"x","145":"N","146":"T","147":"U","148":"w","149":"M","15":"1","150":"D","151":"Y","152":"5","153":"f","154":"Q","155":".","156":"z","157":"x","158":"c","159":"Z","16":"N","160":"j","161":"E","162":"P","163":"n","164":"-","165":"f","166":"S","167":"U","168":"B","169":"s","17":"i","170":"M","171":"B","172":"x","173":"X","174":"B","175":"w","176":"D","177":"i","178":"N","179":"X","18":"I","180":"e","181":"o","182":"3","183":"M","184":"V","185":"C","186":"8","187":"w","188":"Z","189":"o","19":"s","190":"a","191":"1","192":"o","193":"I","194":"v","195":"3","196":"J","197":"F","198":"s","2":"J","20":"I","21":"n","22":"R","23":"5","24":"c","25":"C","26":"I","27":"6","28":"I","29":"k","3":"h","30":"p","31":"X","32":"V","33":"C","34":"J","35":"9","36":".","37":"e","38":"y","39":"J","4":"b","40":"1","41":"c","42":"2","43":"V","44":"y","45":"S","46":"W","47":"Q","48":"i","49":"O","5":"G","50":"i","51":"J","52":"1","53":"c","54":"2","55":"V","56":"y","57":"L","58":"W","59":"Y","6":"c","60":"2","61":"M","62":"T","63":"B","64":"h","65":"M","66":"2","67":"M","68":"z","69":"L","7":"i","70":"T","71":"l","72":"j","73":"M","74":"T","75":"I","76":"t","77":"N","78":"D","79":"d","8":"O","80":"j","81":"Y","82":"y","83":"1","84":"h","85":"Z","86":"j","87":"N","88":"k","89":"L","9":"i","90":"T","91":"E","92":"3","93":"Y","94":"W","95":"I","96":"4","97":"N","98":"m","99":"V","level":"info","message":"authToken:","timestamp":"2026-02-13 03:19:37"}
+{"level":"info","message":"Received request to get user with id: user-f610a3c3-9c12-47cc-af3d-17ab86eb641a","timestamp":"2026-02-13 03:19:37"}
+{"level":"info","message":"Fetching user with id: user-f610a3c3-9c12-47cc-af3d-17ab86eb641a","timestamp":"2026-02-13 03:19:37"}
+{"level":"info","message":"PostgreSQL connection established","timestamp":"2026-02-13 03:19:37"}
+{"level":"error","message":"user  not found","timestamp":"2026-02-13 03:19:37"}
+{"level":"error","message":"Error fetching user with id user-f610a3c3-9c12-47cc-af3d-17ab86eb641a ERROR fetching the user of id   NotFoundException: User with id user-f610a3c3-9c12-47cc-af3d-17ab86eb641a not found\n    at UserRepo.<anonymous> (C:\\cv project\\study_server\\src\\repository\\User.repo.ts:104:23)\n    at Generator.next (<anonymous>)\n    at fulfilled (C:\\cv project\\study_server\\src\\repository\\User.repo.ts:5:58)\n    at processTicksAndRejections (node:internal/process/task_queues:105:5) {\n  [stack]: [Getter/Setter],\n  [message]: 'ERROR fetching the user of id   %o: User with id user-f610a3c3-9c12-47cc-af3d-17ab86eb641a not found',\n  name: 'DBException'\n}: User with id user-f610a3c3-9c12-47cc-af3d-17ab86eb641a not found","name":"DBException","stack":"NotFoundException: User with id user-f610a3c3-9c12-47cc-af3d-17ab86eb641a not found\n    at UserRepo.<anonymous> (C:\\cv project\\study_server\\src\\repository\\User.repo.ts:104:23)\n    at Generator.next (<anonymous>)\n    at fulfilled (C:\\cv project\\study_server\\src\\repository\\User.repo.ts:5:58)\n    at processTicksAndRejections (node:internal/process/task_queues:105:5)","timestamp":"2026-02-13 03:19:37"}
+{"level":"error","message":"Unhandled Error: ERROR fetching the user of id   %o: User with id user-f610a3c3-9c12-47cc-af3d-17ab86eb641a not found","timestamp":"2026-02-13 03:19:37"}
+{"level":"error","message":"GET /users/user-f610a3c3-9c12-47cc-af3d-17ab86eb641a 500","timestamp":"2026-02-13 03:19:37"}
+{"0":"e","1":"y","10":"J","100":"i","101":"N","102":"j","103":"Q","104":"x","105":"Y","106":"S","107":"I","108":"s","109":"I","11":"I","110":"m","111":"l","112":"h","113":"d","114":"C","115":"I","116":"6","117":"M","118":"T","119":"c","12":"U","120":"3","121":"M","122":"D","123":"k","124":"0","125":"N","126":"T","127":"I","128":"2","129":"O","13":"z","130":"S","131":"w","132":"i","133":"Z","134":"X","135":"h","136":"w","137":"I","138":"j","139":"o","14":"I","140":"x","141":"N","142":"z","143":"c","144":"x","145":"N","146":"T","147":"U","148":"w","149":"M","15":"1","150":"D","151":"Y","152":"5","153":"f","154":"Q","155":".","156":"z","157":"x","158":"c","159":"Z","16":"N","160":"j","161":"E","162":"P","163":"n","164":"-","165":"f","166":"S","167":"U","168":"B","169":"s","17":"i","170":"M","171":"B","172":"x","173":"X","174":"B","175":"w","176":"D","177":"i","178":"N","179":"X","18":"I","180":"e","181":"o","182":"3","183":"M","184":"V","185":"C","186":"8","187":"w","188":"Z","189":"o","19":"s","190":"a","191":"1","192":"o","193":"I","194":"v","195":"3","196":"J","197":"F","198":"s","2":"J","20":"I","21":"n","22":"R","23":"5","24":"c","25":"C","26":"I","27":"6","28":"I","29":"k","3":"h","30":"p","31":"X","32":"V","33":"C","34":"J","35":"9","36":".","37":"e","38":"y","39":"J","4":"b","40":"1","41":"c","42":"2","43":"V","44":"y","45":"S","46":"W","47":"Q","48":"i","49":"O","5":"G","50":"i","51":"J","52":"1","53":"c","54":"2","55":"V","56":"y","57":"L","58":"W","59":"Y","6":"c","60":"2","61":"M","62":"T","63":"B","64":"h","65":"M","66":"2","67":"M","68":"z","69":"L","7":"i","70":"T","71":"l","72":"j","73":"M","74":"T","75":"I","76":"t","77":"N","78":"D","79":"d","8":"O","80":"j","81":"Y","82":"y","83":"1","84":"h","85":"Z","86":"j","87":"N","88":"k","89":"L","9":"i","90":"T","91":"E","92":"3","93":"Y","94":"W","95":"I","96":"4","97":"N","98":"m","99":"V","level":"info","message":"authToken:","timestamp":"2026-02-13 03:32:13"}
+{"level":"info","message":"New authToken generated from refresh token","timestamp":"2026-02-13 03:32:13"}
+{"level":"info","message":"Received request to get user with id: user-f610a3c3-9c12-47cc-af3d-17ab86eb641a","timestamp":"2026-02-13 03:32:13"}
+{"level":"info","message":"Fetching user with id: user-f610a3c3-9c12-47cc-af3d-17ab86eb641a","timestamp":"2026-02-13 03:32:13"}
+{"level":"info","message":"PostgreSQL connection established","timestamp":"2026-02-13 03:32:15"}
+{"level":"error","message":"user  not found","timestamp":"2026-02-13 03:32:15"}
+{"level":"error","message":"Error fetching user with id user-f610a3c3-9c12-47cc-af3d-17ab86eb641a ERROR fetching the user of id   NotFoundException: User with id user-f610a3c3-9c12-47cc-af3d-17ab86eb641a not found\n    at UserRepo.<anonymous> (C:\\cv project\\study_server\\src\\repository\\User.repo.ts:104:23)\n    at Generator.next (<anonymous>)\n    at fulfilled (C:\\cv project\\study_server\\src\\repository\\User.repo.ts:5:58)\n    at processTicksAndRejections (node:internal/process/task_queues:105:5) {\n  [stack]: [Getter/Setter],\n  [message]: 'ERROR fetching the user of id   %o: User with id user-f610a3c3-9c12-47cc-af3d-17ab86eb641a not found',\n  name: 'DBException'\n}: User with id user-f610a3c3-9c12-47cc-af3d-17ab86eb641a not found","name":"DBException","stack":"NotFoundException: User with id user-f610a3c3-9c12-47cc-af3d-17ab86eb641a not found\n    at UserRepo.<anonymous> (C:\\cv project\\study_server\\src\\repository\\User.repo.ts:104:23)\n    at Generator.next (<anonymous>)\n    at fulfilled (C:\\cv project\\study_server\\src\\repository\\User.repo.ts:5:58)\n    at processTicksAndRejections (node:internal/process/task_queues:105:5)","timestamp":"2026-02-13 03:32:15"}
+{"level":"error","message":"Unhandled Error: ERROR fetching the user of id   %o: User with id user-f610a3c3-9c12-47cc-af3d-17ab86eb641a not found","timestamp":"2026-02-13 03:32:15"}
+{"level":"error","message":"GET /users/user-f610a3c3-9c12-47cc-af3d-17ab86eb641a 500","timestamp":"2026-02-13 03:32:15"}
+{"level":"info","message":"Server is running at http://localhost:4000","timestamp":"2026-02-13 03:33:46"}
+{"level":"info","message":"Server is running at http://localhost:4000","timestamp":"2026-02-13 03:34:01"}
+{"0":"e","1":"y","10":"J","100":"i","101":"N","102":"j","103":"Q","104":"x","105":"Y","106":"S","107":"I","108":"s","109":"I","11":"I","110":"m","111":"l","112":"h","113":"d","114":"C","115":"I","116":"6","117":"M","118":"T","119":"c","12":"U","120":"3","121":"M","122":"D","123":"k","124":"0","125":"N","126":"T","127":"I","128":"2","129":"O","13":"z","130":"S","131":"w","132":"i","133":"Z","134":"X","135":"h","136":"w","137":"I","138":"j","139":"o","14":"I","140":"x","141":"N","142":"z","143":"c","144":"x","145":"N","146":"T","147":"U","148":"w","149":"M","15":"1","150":"D","151":"Y","152":"5","153":"f","154":"Q","155":".","156":"z","157":"x","158":"c","159":"Z","16":"N","160":"j","161":"E","162":"P","163":"n","164":"-","165":"f","166":"S","167":"U","168":"B","169":"s","17":"i","170":"M","171":"B","172":"x","173":"X","174":"B","175":"w","176":"D","177":"i","178":"N","179":"X","18":"I","180":"e","181":"o","182":"3","183":"M","184":"V","185":"C","186":"8","187":"w","188":"Z","189":"o","19":"s","190":"a","191":"1","192":"o","193":"I","194":"v","195":"3","196":"J","197":"F","198":"s","2":"J","20":"I","21":"n","22":"R","23":"5","24":"c","25":"C","26":"I","27":"6","28":"I","29":"k","3":"h","30":"p","31":"X","32":"V","33":"C","34":"J","35":"9","36":".","37":"e","38":"y","39":"J","4":"b","40":"1","41":"c","42":"2","43":"V","44":"y","45":"S","46":"W","47":"Q","48":"i","49":"O","5":"G","50":"i","51":"J","52":"1","53":"c","54":"2","55":"V","56":"y","57":"L","58":"W","59":"Y","6":"c","60":"2","61":"M","62":"T","63":"B","64":"h","65":"M","66":"2","67":"M","68":"z","69":"L","7":"i","70":"T","71":"l","72":"j","73":"M","74":"T","75":"I","76":"t","77":"N","78":"D","79":"d","8":"O","80":"j","81":"Y","82":"y","83":"1","84":"h","85":"Z","86":"j","87":"N","88":"k","89":"L","9":"i","90":"T","91":"E","92":"3","93":"Y","94":"W","95":"I","96":"4","97":"N","98":"m","99":"V","level":"info","message":"authToken:","timestamp":"2026-02-13 03:34:05"}
+{"level":"info","message":"Received request to get user with id: user-f610a3c3-9c12-47cc-af3d-17ab86eb641a","timestamp":"2026-02-13 03:34:05"}
+{"level":"info","message":"Fetching user with id: user-f610a3c3-9c12-47cc-af3d-17ab86eb641a","timestamp":"2026-02-13 03:34:05"}
+{"level":"info","message":"PostgreSQL pool initialized (Neon)","timestamp":"2026-02-13 03:34:05"}
+{"level":"info","message":"PostgreSQL connection established","timestamp":"2026-02-13 03:34:06"}
+{"level":"info","message":"User table ensured in the database","timestamp":"2026-02-13 03:34:07"}
+{"level":"info","message":"PostgreSQL connection established","timestamp":"2026-02-13 03:34:07"}
+{"level":"error","message":"user  not found","timestamp":"2026-02-13 03:34:07"}
+{"level":"error","message":"Error fetching user with id user-f610a3c3-9c12-47cc-af3d-17ab86eb641a ERROR fetching the user of id   NotFoundException: User with id user-f610a3c3-9c12-47cc-af3d-17ab86eb641a not found\n    at UserRepo.<anonymous> (C:\\cv project\\study_server\\src\\repository\\User.repo.ts:104:23)\n    at Generator.next (<anonymous>)\n    at fulfilled (C:\\cv project\\study_server\\src\\repository\\User.repo.ts:5:58)\n    at processTicksAndRejections (node:internal/process/task_queues:105:5) {\n  [stack]: [Getter/Setter],\n  [message]: 'ERROR fetching the user of id   %o: User with id user-f610a3c3-9c12-47cc-af3d-17ab86eb641a not found',\n  name: 'DBException'\n}: User with id user-f610a3c3-9c12-47cc-af3d-17ab86eb641a not found","name":"DBException","stack":"NotFoundException: User with id user-f610a3c3-9c12-47cc-af3d-17ab86eb641a not found\n    at UserRepo.<anonymous> (C:\\cv project\\study_server\\src\\repository\\User.repo.ts:104:23)\n    at Generator.next (<anonymous>)\n    at fulfilled (C:\\cv project\\study_server\\src\\repository\\User.repo.ts:5:58)\n    at processTicksAndRejections (node:internal/process/task_queues:105:5)","timestamp":"2026-02-13 03:34:07"}
+{"level":"error","message":"Unhandled Error: ERROR fetching the user of id   %o: User with id user-f610a3c3-9c12-47cc-af3d-17ab86eb641a not found","timestamp":"2026-02-13 03:34:07"}
+{"level":"error","message":"GET /users/user-f610a3c3-9c12-47cc-af3d-17ab86eb641a 500","timestamp":"2026-02-13 03:34:07"}
+{"level":"info","message":"Server is running at http://localhost:4000","timestamp":"2026-02-13 03:34:43"}
+{"level":"info","message":"Server is running at http://localhost:4000","timestamp":"2026-02-13 03:34:57"}
+{"0":"e","1":"y","10":"J","100":"i","101":"N","102":"j","103":"Q","104":"x","105":"Y","106":"S","107":"I","108":"s","109":"I","11":"I","110":"m","111":"l","112":"h","113":"d","114":"C","115":"I","116":"6","117":"M","118":"T","119":"c","12":"U","120":"3","121":"M","122":"D","123":"k","124":"0","125":"N","126":"T","127":"I","128":"2","129":"O","13":"z","130":"S","131":"w","132":"i","133":"Z","134":"X","135":"h","136":"w","137":"I","138":"j","139":"o","14":"I","140":"x","141":"N","142":"z","143":"c","144":"x","145":"N","146":"T","147":"U","148":"w","149":"M","15":"1","150":"D","151":"Y","152":"5","153":"f","154":"Q","155":".","156":"z","157":"x","158":"c","159":"Z","16":"N","160":"j","161":"E","162":"P","163":"n","164":"-","165":"f","166":"S","167":"U","168":"B","169":"s","17":"i","170":"M","171":"B","172":"x","173":"X","174":"B","175":"w","176":"D","177":"i","178":"N","179":"X","18":"I","180":"e","181":"o","182":"3","183":"M","184":"V","185":"C","186":"8","187":"w","188":"Z","189":"o","19":"s","190":"a","191":"1","192":"o","193":"I","194":"v","195":"3","196":"J","197":"F","198":"s","2":"J","20":"I","21":"n","22":"R","23":"5","24":"c","25":"C","26":"I","27":"6","28":"I","29":"k","3":"h","30":"p","31":"X","32":"V","33":"C","34":"J","35":"9","36":".","37":"e","38":"y","39":"J","4":"b","40":"1","41":"c","42":"2","43":"V","44":"y","45":"S","46":"W","47":"Q","48":"i","49":"O","5":"G","50":"i","51":"J","52":"1","53":"c","54":"2","55":"V","56":"y","57":"L","58":"W","59":"Y","6":"c","60":"2","61":"M","62":"T","63":"B","64":"h","65":"M","66":"2","67":"M","68":"z","69":"L","7":"i","70":"T","71":"l","72":"j","73":"M","74":"T","75":"I","76":"t","77":"N","78":"D","79":"d","8":"O","80":"j","81":"Y","82":"y","83":"1","84":"h","85":"Z","86":"j","87":"N","88":"k","89":"L","9":"i","90":"T","91":"E","92":"3","93":"Y","94":"W","95":"I","96":"4","97":"N","98":"m","99":"V","level":"info","message":"authToken:","timestamp":"2026-02-13 03:34:59"}
+{"level":"info","message":"Received request to get user with id: user-f610a3c3-9c12-47cc-af3d-17ab86eb641a","timestamp":"2026-02-13 03:34:59"}
+{"level":"info","message":"Fetching user with id: user-f610a3c3-9c12-47cc-af3d-17ab86eb641a","timestamp":"2026-02-13 03:34:59"}
+{"level":"info","message":"Fetching user with id: user-f610a3c3-9c12-47cc-af3d-17ab86eb641a","timestamp":"2026-02-13 03:34:59"}
+{"level":"info","message":"PostgreSQL pool initialized (Neon)","timestamp":"2026-02-13 03:34:59"}
+{"level":"info","message":"PostgreSQL connection established","timestamp":"2026-02-13 03:35:01"}
+{"level":"info","message":"User table ensured in the database","timestamp":"2026-02-13 03:35:01"}
+{"level":"info","message":"PostgreSQL connection established","timestamp":"2026-02-13 03:35:01"}
+{"level":"error","message":"user  not found","timestamp":"2026-02-13 03:35:02"}
+{"level":"error","message":"Error fetching user with id user-f610a3c3-9c12-47cc-af3d-17ab86eb641a ERROR fetching the user of id   NotFoundException: User with id user-f610a3c3-9c12-47cc-af3d-17ab86eb641a not found\n    at UserRepo.<anonymous> (C:\\cv project\\study_server\\src\\repository\\User.repo.ts:104:23)\n    at Generator.next (<anonymous>)\n    at fulfilled (C:\\cv project\\study_server\\src\\repository\\User.repo.ts:5:58)\n    at processTicksAndRejections (node:internal/process/task_queues:105:5) {\n  [stack]: [Getter/Setter],\n  [message]: 'ERROR fetching the user of id   %o: User with id user-f610a3c3-9c12-47cc-af3d-17ab86eb641a not found',\n  name: 'DBException'\n}: User with id user-f610a3c3-9c12-47cc-af3d-17ab86eb641a not found","name":"DBException","stack":"NotFoundException: User with id user-f610a3c3-9c12-47cc-af3d-17ab86eb641a not found\n    at UserRepo.<anonymous> (C:\\cv project\\study_server\\src\\repository\\User.repo.ts:104:23)\n    at Generator.next (<anonymous>)\n    at fulfilled (C:\\cv project\\study_server\\src\\repository\\User.repo.ts:5:58)\n    at processTicksAndRejections (node:internal/process/task_queues:105:5)","timestamp":"2026-02-13 03:35:02"}
+{"level":"error","message":"Unhandled Error: ERROR fetching the user of id   %o: User with id user-f610a3c3-9c12-47cc-af3d-17ab86eb641a not found","timestamp":"2026-02-13 03:35:02"}
+{"level":"error","message":"GET /users/user-f610a3c3-9c12-47cc-af3d-17ab86eb641a 500","timestamp":"2026-02-13 03:35:02"}
+{"level":"info","message":"Server is running at http://localhost:4000","timestamp":"2026-02-13 03:35:33"}
+{"0":"e","1":"y","10":"J","100":"i","101":"N","102":"j","103":"Q","104":"x","105":"Y","106":"S","107":"I","108":"s","109":"I","11":"I","110":"m","111":"l","112":"h","113":"d","114":"C","115":"I","116":"6","117":"M","118":"T","119":"c","12":"U","120":"3","121":"M","122":"D","123":"k","124":"0","125":"N","126":"T","127":"I","128":"2","129":"O","13":"z","130":"S","131":"w","132":"i","133":"Z","134":"X","135":"h","136":"w","137":"I","138":"j","139":"o","14":"I","140":"x","141":"N","142":"z","143":"c","144":"x","145":"N","146":"T","147":"U","148":"w","149":"M","15":"1","150":"D","151":"Y","152":"5","153":"f","154":"Q","155":".","156":"z","157":"x","158":"c","159":"Z","16":"N","160":"j","161":"E","162":"P","163":"n","164":"-","165":"f","166":"S","167":"U","168":"B","169":"s","17":"i","170":"M","171":"B","172":"x","173":"X","174":"B","175":"w","176":"D","177":"i","178":"N","179":"X","18":"I","180":"e","181":"o","182":"3","183":"M","184":"V","185":"C","186":"8","187":"w","188":"Z","189":"o","19":"s","190":"a","191":"1","192":"o","193":"I","194":"v","195":"3","196":"J","197":"F","198":"s","2":"J","20":"I","21":"n","22":"R","23":"5","24":"c","25":"C","26":"I","27":"6","28":"I","29":"k","3":"h","30":"p","31":"X","32":"V","33":"C","34":"J","35":"9","36":".","37":"e","38":"y","39":"J","4":"b","40":"1","41":"c","42":"2","43":"V","44":"y","45":"S","46":"W","47":"Q","48":"i","49":"O","5":"G","50":"i","51":"J","52":"1","53":"c","54":"2","55":"V","56":"y","57":"L","58":"W","59":"Y","6":"c","60":"2","61":"M","62":"T","63":"B","64":"h","65":"M","66":"2","67":"M","68":"z","69":"L","7":"i","70":"T","71":"l","72":"j","73":"M","74":"T","75":"I","76":"t","77":"N","78":"D","79":"d","8":"O","80":"j","81":"Y","82":"y","83":"1","84":"h","85":"Z","86":"j","87":"N","88":"k","89":"L","9":"i","90":"T","91":"E","92":"3","93":"Y","94":"W","95":"I","96":"4","97":"N","98":"m","99":"V","level":"info","message":"authToken:","timestamp":"2026-02-13 03:35:38"}
+{"level":"info","message":"Received request to get user with id: user-f610a3c3-9c12-47cc-af3d-17ab86eb641a","timestamp":"2026-02-13 03:35:38"}
+{"level":"info","message":"Fetching user with id: user-f610a3c3-9c12-47cc-af3d-17ab86eb641a","timestamp":"2026-02-13 03:35:38"}
+{"level":"info","message":"Fetching user with id: user-f610a3c3-9c12-47cc-af3d-17ab86eb641a","timestamp":"2026-02-13 03:35:38"}
+{"level":"info","message":"PostgreSQL pool initialized (Neon)","timestamp":"2026-02-13 03:35:38"}
+{"level":"info","message":"PostgreSQL connection established","timestamp":"2026-02-13 03:35:39"}
+{"level":"info","message":"User table ensured in the database","timestamp":"2026-02-13 03:35:40"}
+{"level":"info","message":"PostgreSQL connection established","timestamp":"2026-02-13 03:35:40"}
+{"level":"error","message":"user  not found","timestamp":"2026-02-13 03:35:40"}
+{"level":"error","message":"Error fetching user with id user-f610a3c3-9c12-47cc-af3d-17ab86eb641a ERROR fetching the user of id   NotFoundException: User with id user-f610a3c3-9c12-47cc-af3d-17ab86eb641a not found\n    at UserRepo.<anonymous> (C:\\cv project\\study_server\\src\\repository\\User.repo.ts:104:23)\n    at Generator.next (<anonymous>)\n    at fulfilled (C:\\cv project\\study_server\\src\\repository\\User.repo.ts:5:58)\n    at processTicksAndRejections (node:internal/process/task_queues:105:5) {\n  [stack]: [Getter/Setter],\n  [message]: 'ERROR fetching the user of id   %o: User with id user-f610a3c3-9c12-47cc-af3d-17ab86eb641a not found',\n  name: 'DBException'\n}: User with id user-f610a3c3-9c12-47cc-af3d-17ab86eb641a not found","name":"DBException","stack":"NotFoundException: User with id user-f610a3c3-9c12-47cc-af3d-17ab86eb641a not found\n    at UserRepo.<anonymous> (C:\\cv project\\study_server\\src\\repository\\User.repo.ts:104:23)\n    at Generator.next (<anonymous>)\n    at fulfilled (C:\\cv project\\study_server\\src\\repository\\User.repo.ts:5:58)\n    at processTicksAndRejections (node:internal/process/task_queues:105:5)","timestamp":"2026-02-13 03:35:40"}
+{"level":"error","message":"Unhandled Error: ERROR fetching the user of id   %o: User with id user-f610a3c3-9c12-47cc-af3d-17ab86eb641a not found","timestamp":"2026-02-13 03:35:40"}
+{"level":"error","message":"GET /users/user-f610a3c3-9c12-47cc-af3d-17ab86eb641a 500","timestamp":"2026-02-13 03:35:40"}
+{"level":"info","message":"Server is running at http://localhost:4000","timestamp":"2026-02-13 03:37:24"}
+{"0":"e","1":"y","10":"J","100":"i","101":"N","102":"j","103":"Q","104":"x","105":"Y","106":"S","107":"I","108":"s","109":"I","11":"I","110":"m","111":"l","112":"h","113":"d","114":"C","115":"I","116":"6","117":"M","118":"T","119":"c","12":"U","120":"3","121":"M","122":"D","123":"k","124":"0","125":"N","126":"T","127":"I","128":"2","129":"O","13":"z","130":"S","131":"w","132":"i","133":"Z","134":"X","135":"h","136":"w","137":"I","138":"j","139":"o","14":"I","140":"x","141":"N","142":"z","143":"c","144":"x","145":"N","146":"T","147":"U","148":"w","149":"M","15":"1","150":"D","151":"Y","152":"5","153":"f","154":"Q","155":".","156":"z","157":"x","158":"c","159":"Z","16":"N","160":"j","161":"E","162":"P","163":"n","164":"-","165":"f","166":"S","167":"U","168":"B","169":"s","17":"i","170":"M","171":"B","172":"x","173":"X","174":"B","175":"w","176":"D","177":"i","178":"N","179":"X","18":"I","180":"e","181":"o","182":"3","183":"M","184":"V","185":"C","186":"8","187":"w","188":"Z","189":"o","19":"s","190":"a","191":"1","192":"o","193":"I","194":"v","195":"3","196":"J","197":"F","198":"s","2":"J","20":"I","21":"n","22":"R","23":"5","24":"c","25":"C","26":"I","27":"6","28":"I","29":"k","3":"h","30":"p","31":"X","32":"V","33":"C","34":"J","35":"9","36":".","37":"e","38":"y","39":"J","4":"b","40":"1","41":"c","42":"2","43":"V","44":"y","45":"S","46":"W","47":"Q","48":"i","49":"O","5":"G","50":"i","51":"J","52":"1","53":"c","54":"2","55":"V","56":"y","57":"L","58":"W","59":"Y","6":"c","60":"2","61":"M","62":"T","63":"B","64":"h","65":"M","66":"2","67":"M","68":"z","69":"L","7":"i","70":"T","71":"l","72":"j","73":"M","74":"T","75":"I","76":"t","77":"N","78":"D","79":"d","8":"O","80":"j","81":"Y","82":"y","83":"1","84":"h","85":"Z","86":"j","87":"N","88":"k","89":"L","9":"i","90":"T","91":"E","92":"3","93":"Y","94":"W","95":"I","96":"4","97":"N","98":"m","99":"V","level":"info","message":"authToken:","timestamp":"2026-02-13 03:37:27"}
+{"level":"info","message":"Received request to get user with id: user-f610a3c3-9c12-47cc-af3d-17ab86eb641a","timestamp":"2026-02-13 03:37:27"}
+{"level":"info","message":"Fetching user with id: user-f610a3c3-9c12-47cc-af3d-17ab86eb641a","timestamp":"2026-02-13 03:37:27"}
+{"level":"info","message":"Fetching user with id: user-f610a3c3-9c12-47cc-af3d-17ab86eb641a","timestamp":"2026-02-13 03:37:27"}
+{"level":"info","message":"PostgreSQL pool initialized (Neon)","timestamp":"2026-02-13 03:37:27"}
+{"level":"info","message":"PostgreSQL connection established","timestamp":"2026-02-13 03:37:27"}
+{"level":"info","message":"User table ensured in the database","timestamp":"2026-02-13 03:37:28"}
+{"level":"info","message":"PostgreSQL connection established","timestamp":"2026-02-13 03:37:28"}
+{"level":"error","message":"user  not found","timestamp":"2026-02-13 03:37:28"}
+{"level":"error","message":"Unhandled Error: ERROR fetching the user of id   %o: User with id user-f610a3c3-9c12-47cc-af3d-17ab86eb641a not found","timestamp":"2026-02-13 03:37:28"}
+{"level":"error","message":"GET /users/user-f610a3c3-9c12-47cc-af3d-17ab86eb641a 500","timestamp":"2026-02-13 03:37:28"}
+{"level":"info","message":"Server is running at http://localhost:4000","timestamp":"2026-02-13 03:43:57"}
+{"0":"e","1":"y","10":"J","100":"i","101":"N","102":"j","103":"Q","104":"x","105":"Y","106":"S","107":"I","108":"s","109":"I","11":"I","110":"m","111":"l","112":"h","113":"d","114":"C","115":"I","116":"6","117":"M","118":"T","119":"c","12":"U","120":"3","121":"M","122":"D","123":"k","124":"0","125":"N","126":"T","127":"I","128":"2","129":"O","13":"z","130":"S","131":"w","132":"i","133":"Z","134":"X","135":"h","136":"w","137":"I","138":"j","139":"o","14":"I","140":"x","141":"N","142":"z","143":"c","144":"x","145":"N","146":"T","147":"U","148":"w","149":"M","15":"1","150":"D","151":"Y","152":"5","153":"f","154":"Q","155":".","156":"z","157":"x","158":"c","159":"Z","16":"N","160":"j","161":"E","162":"P","163":"n","164":"-","165":"f","166":"S","167":"U","168":"B","169":"s","17":"i","170":"M","171":"B","172":"x","173":"X","174":"B","175":"w","176":"D","177":"i","178":"N","179":"X","18":"I","180":"e","181":"o","182":"3","183":"M","184":"V","185":"C","186":"8","187":"w","188":"Z","189":"o","19":"s","190":"a","191":"1","192":"o","193":"I","194":"v","195":"3","196":"J","197":"F","198":"s","2":"J","20":"I","21":"n","22":"R","23":"5","24":"c","25":"C","26":"I","27":"6","28":"I","29":"k","3":"h","30":"p","31":"X","32":"V","33":"C","34":"J","35":"9","36":".","37":"e","38":"y","39":"J","4":"b","40":"1","41":"c","42":"2","43":"V","44":"y","45":"S","46":"W","47":"Q","48":"i","49":"O","5":"G","50":"i","51":"J","52":"1","53":"c","54":"2","55":"V","56":"y","57":"L","58":"W","59":"Y","6":"c","60":"2","61":"M","62":"T","63":"B","64":"h","65":"M","66":"2","67":"M","68":"z","69":"L","7":"i","70":"T","71":"l","72":"j","73":"M","74":"T","75":"I","76":"t","77":"N","78":"D","79":"d","8":"O","80":"j","81":"Y","82":"y","83":"1","84":"h","85":"Z","86":"j","87":"N","88":"k","89":"L","9":"i","90":"T","91":"E","92":"3","93":"Y","94":"W","95":"I","96":"4","97":"N","98":"m","99":"V","level":"info","message":"authToken:","timestamp":"2026-02-13 03:44:05"}
+{"level":"info","message":"Received request to get user with id: user-f610a3c3-9c12-47cc-af3d-17ab86eb641a","timestamp":"2026-02-13 03:44:05"}
+{"level":"info","message":"Fetching user with id: user-f610a3c3-9c12-47cc-af3d-17ab86eb641a","timestamp":"2026-02-13 03:44:05"}
+{"level":"info","message":"Fetching user with id: user-f610a3c3-9c12-47cc-af3d-17ab86eb641a","timestamp":"2026-02-13 03:44:05"}
+{"level":"info","message":"PostgreSQL pool initialized (Neon)","timestamp":"2026-02-13 03:44:05"}
+{"level":"info","message":"PostgreSQL connection established","timestamp":"2026-02-13 03:44:07"}
+{"level":"info","message":"User table ensured in the database","timestamp":"2026-02-13 03:44:07"}
+{"level":"info","message":"PostgreSQL connection established","timestamp":"2026-02-13 03:44:07"}
+{"level":"error","message":" NotFoundException [404] \"User with id user-f610a3c3-9c12-47cc-af3d-17ab86eb641a not found\" { userId: 'user-f610a3c3-9c12-47cc-af3d-17ab86eb641a' }","timestamp":"2026-02-13 03:44:07"}
+{"level":"warn","message":"GET /users/user-f610a3c3-9c12-47cc-af3d-17ab86eb641a 404","timestamp":"2026-02-13 03:44:07"}
+{"level":"info","message":"Server is running at http://localhost:4000","timestamp":"2026-02-13 04:06:32"}
+{"level":"info","message":"Server is running at http://localhost:4000","timestamp":"2026-02-13 04:07:45"}
+{"level":"info","message":"Server is running at http://localhost:4000","timestamp":"2026-02-13 04:08:30"}
+{"level":"info","message":"Server running at http://localhost:4000","timestamp":"2026-02-13 04:11:18"}
+{"level":"info","message":"Server running at http://localhost:4000","timestamp":"2026-02-13 04:11:25"}
+{"level":"info","message":"Received request to create user","timestamp":"2026-02-13 04:16:32"}
+{"level":"info","message":"Mapping JSON to User: {\"name\":\"ali\",\"email\":\"john.doe@example.com\",\"password\":\"StrongPassword123\"}","timestamp":"2026-02-13 04:16:32"}
+{"level":"info","message":"Setting email in UserBuilder: john.doe@example.com","timestamp":"2026-02-13 04:16:32"}
+{"level":"info","message":"Creating user with email: john.doe@example.com","timestamp":"2026-02-13 04:16:32"}
+{"level":"info","message":"PostgreSQL pool initialized (Neon)","timestamp":"2026-02-13 04:16:32"}
+{"level":"info","message":"PostgreSQL connection established","timestamp":"2026-02-13 04:16:33"}
+{"level":"info","message":"User table ensured in the database","timestamp":"2026-02-13 04:16:34"}
+{"level":"info","message":"PostgreSQL connection established","timestamp":"2026-02-13 04:16:34"}
+{"level":"info","message":"User created successfully: user-69c21f7a-b7c2-4d6e-b3fe-cc182458bdf9","timestamp":"2026-02-13 04:16:34"}
+{"level":"info","message":"POST / 201","timestamp":"2026-02-13 04:16:34"}
+{"0":"e","1":"y","10":"J","100":"i","101":"N","102":"j","103":"Q","104":"x","105":"Y","106":"S","107":"I","108":"s","109":"I","11":"I","110":"m","111":"l","112":"h","113":"d","114":"C","115":"I","116":"6","117":"M","118":"T","119":"c","12":"U","120":"3","121":"M","122":"D","123":"k","124":"0","125":"N","126":"T","127":"I","128":"2","129":"O","13":"z","130":"S","131":"w","132":"i","133":"Z","134":"X","135":"h","136":"w","137":"I","138":"j","139":"o","14":"I","140":"x","141":"N","142":"z","143":"c","144":"x","145":"N","146":"T","147":"U","148":"w","149":"M","15":"1","150":"D","151":"Y","152":"5","153":"f","154":"Q","155":".","156":"z","157":"x","158":"c","159":"Z","16":"N","160":"j","161":"E","162":"P","163":"n","164":"-","165":"f","166":"S","167":"U","168":"B","169":"s","17":"i","170":"M","171":"B","172":"x","173":"X","174":"B","175":"w","176":"D","177":"i","178":"N","179":"X","18":"I","180":"e","181":"o","182":"3","183":"M","184":"V","185":"C","186":"8","187":"w","188":"Z","189":"o","19":"s","190":"a","191":"1","192":"o","193":"I","194":"v","195":"3","196":"J","197":"F","198":"s","2":"J","20":"I","21":"n","22":"R","23":"5","24":"c","25":"C","26":"I","27":"6","28":"I","29":"k","3":"h","30":"p","31":"X","32":"V","33":"C","34":"J","35":"9","36":".","37":"e","38":"y","39":"J","4":"b","40":"1","41":"c","42":"2","43":"V","44":"y","45":"S","46":"W","47":"Q","48":"i","49":"O","5":"G","50":"i","51":"J","52":"1","53":"c","54":"2","55":"V","56":"y","57":"L","58":"W","59":"Y","6":"c","60":"2","61":"M","62":"T","63":"B","64":"h","65":"M","66":"2","67":"M","68":"z","69":"L","7":"i","70":"T","71":"l","72":"j","73":"M","74":"T","75":"I","76":"t","77":"N","78":"D","79":"d","8":"O","80":"j","81":"Y","82":"y","83":"1","84":"h","85":"Z","86":"j","87":"N","88":"k","89":"L","9":"i","90":"T","91":"E","92":"3","93":"Y","94":"W","95":"I","96":"4","97":"N","98":"m","99":"V","level":"info","message":"authToken:","timestamp":"2026-02-13 04:16:42"}
+{"level":"info","message":"New authToken generated from refresh token","timestamp":"2026-02-13 04:16:42"}
+{"level":"info","message":"Fetching all users","timestamp":"2026-02-13 04:16:42"}
+{"level":"info","message":"Fetching all users","timestamp":"2026-02-13 04:16:42"}
+{"level":"info","message":"PostgreSQL connection established","timestamp":"2026-02-13 04:16:42"}
+{"level":"info","message":"Setting email in UserBuilder: john.doe@example.com","timestamp":"2026-02-13 04:16:42"}
+{"level":"info","message":"GET / 200","timestamp":"2026-02-13 04:16:42"}
+{"0":"r","1":"e","10":"e","11":"n","12":":","2":"f","3":"r","4":"e","5":"s","6":"h","7":"T","8":"o","9":"k","level":"info","message":"authToken:","timestamp":"2026-02-13 04:17:31"}
+{"level":"error","message":"AuthenticationFailedException [401] \"Authentication failed\" {}","timestamp":"2026-02-13 04:17:31"}
+{"level":"warn","message":"GET /users/ 401","timestamp":"2026-02-13 04:17:31"}
+{"level":"info","message":"Server running at http://localhost:4000","timestamp":"2026-02-13 04:17:55"}
+{"level":"info","message":"Received request to create user","timestamp":"2026-02-13 04:17:59"}
+{"level":"info","message":"Mapping JSON to User: {\"name\":\"ali\",\"email\":\"john.doe@example.com\",\"password\":\"StrongPassword123\"}","timestamp":"2026-02-13 04:17:59"}
+{"level":"info","message":"Setting email in UserBuilder: john.doe@example.com","timestamp":"2026-02-13 04:17:59"}
+{"level":"info","message":"Creating user with email: john.doe@example.com","timestamp":"2026-02-13 04:17:59"}
+{"level":"info","message":"PostgreSQL pool initialized (Neon)","timestamp":"2026-02-13 04:17:59"}
+{"level":"info","message":"PostgreSQL connection established","timestamp":"2026-02-13 04:18:00"}
+{"level":"info","message":"User table ensured in the database","timestamp":"2026-02-13 04:18:01"}
+{"level":"info","message":"PostgreSQL connection established","timestamp":"2026-02-13 04:18:01"}
+{"level":"info","message":"User created successfully: user-0d3d32f4-5ad4-4821-89b7-c1a75be9f8c8","timestamp":"2026-02-13 04:18:01"}
+{"level":"info","message":"POST / 201","timestamp":"2026-02-13 04:18:01"}
+{"0":"r","1":"e","10":"e","11":"n","12":":","2":"f","3":"r","4":"e","5":"s","6":"h","7":"T","8":"o","9":"k","level":"info","message":"authToken:","timestamp":"2026-02-13 04:18:13"}
+{"level":"error","message":"AuthenticationFailedException [401] \"Authentication failed\" {}","timestamp":"2026-02-13 04:18:13"}
+{"level":"warn","message":"GET /users/ 401","timestamp":"2026-02-13 04:18:13"}
+{"level":"info","message":"Validating user with email: john.doe@example.com","timestamp":"2026-02-13 04:18:27"}
+{"level":"info","message":"PostgreSQL connection established","timestamp":"2026-02-13 04:18:28"}
+{"level":"info","message":"User table ensured in the database","timestamp":"2026-02-13 04:18:29"}
+{"level":"info","message":"PostgreSQL connection established","timestamp":"2026-02-13 04:18:29"}
+{"level":"info","message":"Setting email in UserBuilder: john.doe@example.com","timestamp":"2026-02-13 04:18:29"}
+{"level":"info","message":"POST /login 200","timestamp":"2026-02-13 04:18:29"}
+{"0":"e","1":"y","10":"J","100":"5","101":"Z","102":"j","103":"h","104":"j","105":"O","106":"C","107":"I","108":"s","109":"I","11":"I","110":"m","111":"l","112":"h","113":"d","114":"C","115":"I","116":"6","117":"M","118":"T","119":"c","12":"U","120":"3","121":"M","122":"D","123":"k","124":"0","125":"O","126":"T","127":"E","128":"w","129":"O","13":"z","130":"S","131":"w","132":"i","133":"Z","134":"X","135":"h","136":"w","137":"I","138":"j","139":"o","14":"I","140":"x","141":"N","142":"z","143":"c","144":"x","145":"N","146":"T","147":"U","148":"z","149":"O","15":"1","150":"T","151":"A","152":"5","153":"f","154":"Q","155":".","156":"W","157":"l","158":"8","159":"F","16":"N","160":"j","161":"C","162":"T","163":"m","164":"t","165":"d","166":"Y","167":"b","168":"9","169":"G","17":"i","170":"Y","171":"B","172":"m","173":"x","174":"0","175":"V","176":"E","177":"Q","178":"H","179":"Q","18":"I","180":"2","181":"c","182":"o","183":"4","184":"B","185":"x","186":"C","187":"H","188":"l","189":"5","19":"s","190":"q","191":"o","192":"g","193":"4","194":"3","195":"L","196":"j","197":"3","198":"I","2":"J","20":"I","21":"n","22":"R","23":"5","24":"c","25":"C","26":"I","27":"6","28":"I","29":"k","3":"h","30":"p","31":"X","32":"V","33":"C","34":"J","35":"9","36":".","37":"e","38":"y","39":"J","4":"b","40":"1","41":"c","42":"2","43":"V","44":"y","45":"S","46":"W","47":"Q","48":"i","49":"O","5":"G","50":"i","51":"J","52":"1","53":"c","54":"2","55":"V","56":"y","57":"L","58":"T","59":"B","6":"c","60":"k","61":"M","62":"2","63":"Q","64":"z","65":"M","66":"m","67":"Y","68":"0","69":"L","7":"i","70":"T","71":"V","72":"h","73":"Z","74":"D","75":"Q","76":"t","77":"N","78":"D","79":"g","8":"O","80":"y","81":"M","82":"S","83":"0","84":"4","85":"O","86":"W","87":"I","88":"3","89":"L","9":"i","90":"W","91":"M","92":"x","93":"Y","94":"T","95":"c","96":"1","97":"Y","98":"m","99":"U","level":"info","message":"authToken:","timestamp":"2026-02-13 04:18:47"}
+{"level":"info","message":"GET /logout 200","timestamp":"2026-02-13 04:18:47"}
+{"level":"error","message":"NotFoundException [404] \"Route not found\" { path: '/auth/login' }","timestamp":"2026-02-13 04:18:59"}
+{"level":"warn","message":"GET /auth/login 404","timestamp":"2026-02-13 04:18:59"}
+{"level":"info","message":"Validating user with email: john.doe@example.com","timestamp":"2026-02-13 04:19:09"}
+{"level":"info","message":"PostgreSQL connection established","timestamp":"2026-02-13 04:19:10"}
+{"level":"info","message":"Setting email in UserBuilder: john.doe@example.com","timestamp":"2026-02-13 04:19:10"}
+{"level":"info","message":"POST /login 200","timestamp":"2026-02-13 04:19:10"}
+{"level":"info","message":"Received request to create user","timestamp":"2026-02-13 04:19:21"}
+{"level":"info","message":"Mapping JSON to User: {\"email\":\"john.doe@example.com\",\"password\":\"StrongPassword123\"}","timestamp":"2026-02-13 04:19:21"}
+{"level":"info","message":"Setting email in UserBuilder: john.doe@example.com","timestamp":"2026-02-13 04:19:21"}
+{"level":"error","message":"Unhandled Error: Missing required fields to build User\nError: Missing required fields to build User\n    at UserBuilder.build (C:\\cv project\\study_server\\src\\builder\\User.builder.ts:46:23)\n    at JSONMapper.map (C:\\cv project\\study_server\\src\\mapper\\User.Mapper.ts:57:9)\n    at UserController.<anonymous> (C:\\cv project\\study_server\\src\\controller\\User.controller.ts:18:49)\n    at Generator.next (<anonymous>)\n    at C:\\cv project\\study_server\\src\\controller\\User.controller.ts:8:71\n    at new Promise (<anonymous>)\n    at __awaiter (C:\\cv project\\study_server\\src\\controller\\User.controller.ts:4:12)\n    at UserController.createUser (C:\\cv project\\study_server\\src\\controller\\User.controller.ts:28:16)\n    at C:\\cv project\\study_server\\src\\midlleware\\asynchandler.ts:7:9\n    at Layer.handleRequest (C:\\cv project\\study_server\\node_modules\\router\\lib\\layer.js:152:17)","timestamp":"2026-02-13 04:19:21"}
+{"level":"error","message":"POST /users/ 500","timestamp":"2026-02-13 04:19:21"}
+{"level":"info","message":"Received request to create user","timestamp":"2026-02-13 04:19:43"}
+{"level":"info","message":"Mapping JSON to User: {\"email\":\"john.doe@example.com\",\"password\":\"StrongPassword123\"}","timestamp":"2026-02-13 04:19:43"}
+{"level":"info","message":"Setting email in UserBuilder: john.doe@example.com","timestamp":"2026-02-13 04:19:43"}
+{"level":"error","message":"Unhandled Error: Missing required fields to build User\nError: Missing required fields to build User\n    at UserBuilder.build (C:\\cv project\\study_server\\src\\builder\\User.builder.ts:46:23)\n    at JSONMapper.map (C:\\cv project\\study_server\\src\\mapper\\User.Mapper.ts:57:9)\n    at UserController.<anonymous> (C:\\cv project\\study_server\\src\\controller\\User.controller.ts:18:49)\n    at Generator.next (<anonymous>)\n    at C:\\cv project\\study_server\\src\\controller\\User.controller.ts:8:71\n    at new Promise (<anonymous>)\n    at __awaiter (C:\\cv project\\study_server\\src\\controller\\User.controller.ts:4:12)\n    at UserController.createUser (C:\\cv project\\study_server\\src\\controller\\User.controller.ts:28:16)\n    at C:\\cv project\\study_server\\src\\midlleware\\asynchandler.ts:7:9\n    at Layer.handleRequest (C:\\cv project\\study_server\\node_modules\\router\\lib\\layer.js:152:17)","timestamp":"2026-02-13 04:19:43"}
+{"level":"error","message":"POST /users/ 500","timestamp":"2026-02-13 04:19:43"}
+{"0":"e","1":"y","10":"J","100":"5","101":"Z","102":"j","103":"h","104":"j","105":"O","106":"C","107":"I","108":"s","109":"I","11":"I","110":"m","111":"l","112":"h","113":"d","114":"C","115":"I","116":"6","117":"M","118":"T","119":"c","12":"U","120":"3","121":"M","122":"D","123":"k","124":"0","125":"O","126":"T","127":"E","128":"1","129":"M","13":"z","130":"C","131":"w","132":"i","133":"Z","134":"X","135":"h","136":"w","137":"I","138":"j","139":"o","14":"I","140":"x","141":"N","142":"z","143":"c","144":"x","145":"N","146":"T","147":"U","148":"z","149":"O","15":"1","150":"T","151":"U","152":"w","153":"f","154":"Q","155":".","156":"i","157":"b","158":"O","159":"d","16":"N","160":"g","161":"L","162":"I","163":"T","164":"O","165":"H","166":"Z","167":"I","168":"C","169":"1","17":"i","170":"d","171":"P","172":"y","173":"-","174":"F","175":"b","176":"u","177":"9","178":"W","179":"l","18":"I","180":"J","181":"u","182":"r","183":"N","184":"3","185":"5","186":"U","187":"Z","188":"C","189":"O","19":"s","190":"U","191":"u","192":"U","193":"J","194":"5","195":"S","196":"x","197":"Q","198":"U","2":"J","20":"I","21":"n","22":"R","23":"5","24":"c","25":"C","26":"I","27":"6","28":"I","29":"k","3":"h","30":"p","31":"X","32":"V","33":"C","34":"J","35":"9","36":".","37":"e","38":"y","39":"J","4":"b","40":"1","41":"c","42":"2","43":"V","44":"y","45":"S","46":"W","47":"Q","48":"i","49":"O","5":"G","50":"i","51":"J","52":"1","53":"c","54":"2","55":"V","56":"y","57":"L","58":"T","59":"B","6":"c","60":"k","61":"M","62":"2","63":"Q","64":"z","65":"M","66":"m","67":"Y","68":"0","69":"L","7":"i","70":"T","71":"V","72":"h","73":"Z","74":"D","75":"Q","76":"t","77":"N","78":"D","79":"g","8":"O","80":"y","81":"M","82":"S","83":"0","84":"4","85":"O","86":"W","87":"I","88":"3","89":"L","9":"i","90":"W","91":"M","92":"x","93":"Y","94":"T","95":"c","96":"1","97":"Y","98":"m","99":"U","level":"info","message":"authToken:","timestamp":"2026-02-13 04:19:52"}
+{"level":"info","message":"Fetching all users","timestamp":"2026-02-13 04:19:52"}
+{"level":"info","message":"Fetching all users","timestamp":"2026-02-13 04:19:52"}
+{"level":"info","message":"PostgreSQL connection established","timestamp":"2026-02-13 04:19:53"}
+{"level":"info","message":"Setting email in UserBuilder: john.doe@example.com","timestamp":"2026-02-13 04:19:53"}
+{"level":"info","message":"GET / 200","timestamp":"2026-02-13 04:19:53"}
+{"0":"e","1":"y","10":"J","100":"5","101":"Z","102":"j","103":"h","104":"j","105":"O","106":"C","107":"I","108":"s","109":"I","11":"I","110":"m","111":"l","112":"h","113":"d","114":"C","115":"I","116":"6","117":"M","118":"T","119":"c","12":"U","120":"3","121":"M","122":"D","123":"k","124":"0","125":"O","126":"T","127":"E","128":"1","129":"M","13":"z","130":"C","131":"w","132":"i","133":"Z","134":"X","135":"h","136":"w","137":"I","138":"j","139":"o","14":"I","140":"x","141":"N","142":"z","143":"c","144":"x","145":"N","146":"T","147":"U","148":"z","149":"O","15":"1","150":"T","151":"U","152":"w","153":"f","154":"Q","155":".","156":"i","157":"b","158":"O","159":"d","16":"N","160":"g","161":"L","162":"I","163":"T","164":"O","165":"H","166":"Z","167":"I","168":"C","169":"1","17":"i","170":"d","171":"P","172":"y","173":"-","174":"F","175":"b","176":"u","177":"9","178":"W","179":"l","18":"I","180":"J","181":"u","182":"r","183":"N","184":"3","185":"5","186":"U","187":"Z","188":"C","189":"O","19":"s","190":"U","191":"u","192":"U","193":"J","194":"5","195":"S","196":"x","197":"Q","198":"U","2":"J","20":"I","21":"n","22":"R","23":"5","24":"c","25":"C","26":"I","27":"6","28":"I","29":"k","3":"h","30":"p","31":"X","32":"V","33":"C","34":"J","35":"9","36":".","37":"e","38":"y","39":"J","4":"b","40":"1","41":"c","42":"2","43":"V","44":"y","45":"S","46":"W","47":"Q","48":"i","49":"O","5":"G","50":"i","51":"J","52":"1","53":"c","54":"2","55":"V","56":"y","57":"L","58":"T","59":"B","6":"c","60":"k","61":"M","62":"2","63":"Q","64":"z","65":"M","66":"m","67":"Y","68":"0","69":"L","7":"i","70":"T","71":"V","72":"h","73":"Z","74":"D","75":"Q","76":"t","77":"N","78":"D","79":"g","8":"O","80":"y","81":"M","82":"S","83":"0","84":"4","85":"O","86":"W","87":"I","88":"3","89":"L","9":"i","90":"W","91":"M","92":"x","93":"Y","94":"T","95":"c","96":"1","97":"Y","98":"m","99":"U","level":"info","message":"authToken:","timestamp":"2026-02-13 04:20:43"}
+{"level":"info","message":"Fetching user with id: user-0d3d32f4-5ad4-4821-89b7-c1a75be9f8c8","timestamp":"2026-02-13 04:20:43"}
+{"level":"info","message":"Fetching user with id: user-0d3d32f4-5ad4-4821-89b7-c1a75be9f8c8","timestamp":"2026-02-13 04:20:43"}
+{"level":"info","message":"PostgreSQL connection established","timestamp":"2026-02-13 04:20:44"}
+{"level":"info","message":"Setting email in UserBuilder: john.doe@example.com","timestamp":"2026-02-13 04:20:44"}
+{"level":"info","message":"GET /user-0d3d32f4-5ad4-4821-89b7-c1a75be9f8c8 200","timestamp":"2026-02-13 04:20:44"}
+{"0":"e","1":"y","10":"J","100":"5","101":"Z","102":"j","103":"h","104":"j","105":"O","106":"C","107":"I","108":"s","109":"I","11":"I","110":"m","111":"l","112":"h","113":"d","114":"C","115":"I","116":"6","117":"M","118":"T","119":"c","12":"U","120":"3","121":"M","122":"D","123":"k","124":"0","125":"O","126":"T","127":"E","128":"1","129":"M","13":"z","130":"C","131":"w","132":"i","133":"Z","134":"X","135":"h","136":"w","137":"I","138":"j","139":"o","14":"I","140":"x","141":"N","142":"z","143":"c","144":"x","145":"N","146":"T","147":"U","148":"z","149":"O","15":"1","150":"T","151":"U","152":"w","153":"f","154":"Q","155":".","156":"i","157":"b","158":"O","159":"d","16":"N","160":"g","161":"L","162":"I","163":"T","164":"O","165":"H","166":"Z","167":"I","168":"C","169":"1","17":"i","170":"d","171":"P","172":"y","173":"-","174":"F","175":"b","176":"u","177":"9","178":"W","179":"l","18":"I","180":"J","181":"u","182":"r","183":"N","184":"3","185":"5","186":"U","187":"Z","188":"C","189":"O","19":"s","190":"U","191":"u","192":"U","193":"J","194":"5","195":"S","196":"x","197":"Q","198":"U","2":"J","20":"I","21":"n","22":"R","23":"5","24":"c","25":"C","26":"I","27":"6","28":"I","29":"k","3":"h","30":"p","31":"X","32":"V","33":"C","34":"J","35":"9","36":".","37":"e","38":"y","39":"J","4":"b","40":"1","41":"c","42":"2","43":"V","44":"y","45":"S","46":"W","47":"Q","48":"i","49":"O","5":"G","50":"i","51":"J","52":"1","53":"c","54":"2","55":"V","56":"y","57":"L","58":"T","59":"B","6":"c","60":"k","61":"M","62":"2","63":"Q","64":"z","65":"M","66":"m","67":"Y","68":"0","69":"L","7":"i","70":"T","71":"V","72":"h","73":"Z","74":"D","75":"Q","76":"t","77":"N","78":"D","79":"g","8":"O","80":"y","81":"M","82":"S","83":"0","84":"4","85":"O","86":"W","87":"I","88":"3","89":"L","9":"i","90":"W","91":"M","92":"x","93":"Y","94":"T","95":"c","96":"1","97":"Y","98":"m","99":"U","level":"info","message":"authToken:","timestamp":"2026-02-13 04:20:49"}
+{"level":"info","message":"Fetching user with id: user-0d3d32f4-5ad4-4821-89b7-c1a75be9f8c","timestamp":"2026-02-13 04:20:49"}
+{"level":"info","message":"Fetching user with id: user-0d3d32f4-5ad4-4821-89b7-c1a75be9f8c","timestamp":"2026-02-13 04:20:49"}
+{"level":"info","message":"PostgreSQL connection established","timestamp":"2026-02-13 04:20:49"}
+{"level":"error","message":"NotFoundException [404] \"User with id user-0d3d32f4-5ad4-4821-89b7-c1a75be9f8c not found\" { userId: 'user-0d3d32f4-5ad4-4821-89b7-c1a75be9f8c' }","timestamp":"2026-02-13 04:20:49"}
+{"level":"warn","message":"GET /users/user-0d3d32f4-5ad4-4821-89b7-c1a75be9f8c 404","timestamp":"2026-02-13 04:20:49"}
+{"0":"e","1":"y","10":"J","100":"5","101":"Z","102":"j","103":"h","104":"j","105":"O","106":"C","107":"I","108":"s","109":"I","11":"I","110":"m","111":"l","112":"h","113":"d","114":"C","115":"I","116":"6","117":"M","118":"T","119":"c","12":"U","120":"3","121":"M","122":"D","123":"k","124":"0","125":"O","126":"T","127":"E","128":"1","129":"M","13":"z","130":"C","131":"w","132":"i","133":"Z","134":"X","135":"h","136":"w","137":"I","138":"j","139":"o","14":"I","140":"x","141":"N","142":"z","143":"c","144":"x","145":"N","146":"T","147":"U","148":"z","149":"O","15":"1","150":"T","151":"U","152":"w","153":"f","154":"Q","155":".","156":"i","157":"b","158":"O","159":"d","16":"N","160":"g","161":"L","162":"I","163":"T","164":"O","165":"H","166":"Z","167":"I","168":"C","169":"1","17":"i","170":"d","171":"P","172":"y","173":"-","174":"F","175":"b","176":"u","177":"9","178":"W","179":"l","18":"I","180":"J","181":"u","182":"r","183":"N","184":"3","185":"5","186":"U","187":"Z","188":"C","189":"O","19":"s","190":"U","191":"u","192":"U","193":"J","194":"5","195":"S","196":"x","197":"Q","198":"U","2":"J","20":"I","21":"n","22":"R","23":"5","24":"c","25":"C","26":"I","27":"6","28":"I","29":"k","3":"h","30":"p","31":"X","32":"V","33":"C","34":"J","35":"9","36":".","37":"e","38":"y","39":"J","4":"b","40":"1","41":"c","42":"2","43":"V","44":"y","45":"S","46":"W","47":"Q","48":"i","49":"O","5":"G","50":"i","51":"J","52":"1","53":"c","54":"2","55":"V","56":"y","57":"L","58":"T","59":"B","6":"c","60":"k","61":"M","62":"2","63":"Q","64":"z","65":"M","66":"m","67":"Y","68":"0","69":"L","7":"i","70":"T","71":"V","72":"h","73":"Z","74":"D","75":"Q","76":"t","77":"N","78":"D","79":"g","8":"O","80":"y","81":"M","82":"S","83":"0","84":"4","85":"O","86":"W","87":"I","88":"3","89":"L","9":"i","90":"W","91":"M","92":"x","93":"Y","94":"T","95":"c","96":"1","97":"Y","98":"m","99":"U","level":"info","message":"authToken:","timestamp":"2026-02-13 04:21:05"}
+{"level":"info","message":"Updating user with id: user-0d3d32f4-5ad4-4821-89b7-c1a75be9f8c8","timestamp":"2026-02-13 04:21:05"}
+{"level":"info","message":"Mapping JSON to User: {\"email\":\"john.doe@example.cm\",\"password\":\"StrongPassword123\"}","timestamp":"2026-02-13 04:21:05"}
+{"level":"info","message":"Setting email in UserBuilder: john.doe@example.cm","timestamp":"2026-02-13 04:21:05"}
+{"level":"error","message":"Unhandled Error: Missing required fields to build User\nError: Missing required fields to build User\n    at UserBuilder.build (C:\\cv project\\study_server\\src\\builder\\User.builder.ts:46:23)\n    at JSONMapper.map (C:\\cv project\\study_server\\src\\mapper\\User.Mapper.ts:57:9)\n    at UserController.<anonymous> (C:\\cv project\\study_server\\src\\controller\\User.controller.ts:81:49)\n    at Generator.next (<anonymous>)\n    at C:\\cv project\\study_server\\src\\controller\\User.controller.ts:8:71\n    at new Promise (<anonymous>)\n    at __awaiter (C:\\cv project\\study_server\\src\\controller\\User.controller.ts:4:12)\n    at UserController.updateUser (C:\\cv project\\study_server\\src\\controller\\User.controller.ts:76:16)\n    at C:\\cv project\\study_server\\src\\midlleware\\asynchandler.ts:7:9\n    at Layer.handleRequest (C:\\cv project\\study_server\\node_modules\\router\\lib\\layer.js:152:17)","timestamp":"2026-02-13 04:21:05"}
+{"level":"error","message":"PUT /users/user-0d3d32f4-5ad4-4821-89b7-c1a75be9f8c8 500","timestamp":"2026-02-13 04:21:05"}
+{"0":"e","1":"y","10":"J","100":"5","101":"Z","102":"j","103":"h","104":"j","105":"O","106":"C","107":"I","108":"s","109":"I","11":"I","110":"m","111":"l","112":"h","113":"d","114":"C","115":"I","116":"6","117":"M","118":"T","119":"c","12":"U","120":"3","121":"M","122":"D","123":"k","124":"0","125":"O","126":"T","127":"E","128":"1","129":"M","13":"z","130":"C","131":"w","132":"i","133":"Z","134":"X","135":"h","136":"w","137":"I","138":"j","139":"o","14":"I","140":"x","141":"N","142":"z","143":"c","144":"x","145":"N","146":"T","147":"U","148":"z","149":"O","15":"1","150":"T","151":"U","152":"w","153":"f","154":"Q","155":".","156":"i","157":"b","158":"O","159":"d","16":"N","160":"g","161":"L","162":"I","163":"T","164":"O","165":"H","166":"Z","167":"I","168":"C","169":"1","17":"i","170":"d","171":"P","172":"y","173":"-","174":"F","175":"b","176":"u","177":"9","178":"W","179":"l","18":"I","180":"J","181":"u","182":"r","183":"N","184":"3","185":"5","186":"U","187":"Z","188":"C","189":"O","19":"s","190":"U","191":"u","192":"U","193":"J","194":"5","195":"S","196":"x","197":"Q","198":"U","2":"J","20":"I","21":"n","22":"R","23":"5","24":"c","25":"C","26":"I","27":"6","28":"I","29":"k","3":"h","30":"p","31":"X","32":"V","33":"C","34":"J","35":"9","36":".","37":"e","38":"y","39":"J","4":"b","40":"1","41":"c","42":"2","43":"V","44":"y","45":"S","46":"W","47":"Q","48":"i","49":"O","5":"G","50":"i","51":"J","52":"1","53":"c","54":"2","55":"V","56":"y","57":"L","58":"T","59":"B","6":"c","60":"k","61":"M","62":"2","63":"Q","64":"z","65":"M","66":"m","67":"Y","68":"0","69":"L","7":"i","70":"T","71":"V","72":"h","73":"Z","74":"D","75":"Q","76":"t","77":"N","78":"D","79":"g","8":"O","80":"y","81":"M","82":"S","83":"0","84":"4","85":"O","86":"W","87":"I","88":"3","89":"L","9":"i","90":"W","91":"M","92":"x","93":"Y","94":"T","95":"c","96":"1","97":"Y","98":"m","99":"U","level":"info","message":"authToken:","timestamp":"2026-02-13 04:21:19"}
+{"level":"info","message":"Updating user with id: user-0d3d32f4-5ad4-4821-89b7-c1a75be9f8c8","timestamp":"2026-02-13 04:21:19"}
+{"level":"info","message":"Mapping JSON to User: {\"name\":\"ali\",\"email\":\"john.doe@example.cm\",\"password\":\"StrongPassword123\"}","timestamp":"2026-02-13 04:21:19"}
+{"level":"info","message":"Setting email in UserBuilder: john.doe@example.cm","timestamp":"2026-02-13 04:21:19"}
+{"level":"info","message":"Updating user with id: user-0d3d32f4-5ad4-4821-89b7-c1a75be9f8c8","timestamp":"2026-02-13 04:21:19"}
+{"level":"info","message":"PostgreSQL connection established","timestamp":"2026-02-13 04:21:20"}
+{"level":"info","message":"User updated: user-0d3d32f4-5ad4-4821-89b7-c1a75be9f8c8","timestamp":"2026-02-13 04:21:20"}
+{"level":"info","message":"PUT /user-0d3d32f4-5ad4-4821-89b7-c1a75be9f8c8 200","timestamp":"2026-02-13 04:21:20"}
+{"0":"e","1":"y","10":"J","100":"5","101":"Z","102":"j","103":"h","104":"j","105":"O","106":"C","107":"I","108":"s","109":"I","11":"I","110":"m","111":"l","112":"h","113":"d","114":"C","115":"I","116":"6","117":"M","118":"T","119":"c","12":"U","120":"3","121":"M","122":"D","123":"k","124":"0","125":"O","126":"T","127":"E","128":"1","129":"M","13":"z","130":"C","131":"w","132":"i","133":"Z","134":"X","135":"h","136":"w","137":"I","138":"j","139":"o","14":"I","140":"x","141":"N","142":"z","143":"c","144":"x","145":"N","146":"T","147":"U","148":"z","149":"O","15":"1","150":"T","151":"U","152":"w","153":"f","154":"Q","155":".","156":"i","157":"b","158":"O","159":"d","16":"N","160":"g","161":"L","162":"I","163":"T","164":"O","165":"H","166":"Z","167":"I","168":"C","169":"1","17":"i","170":"d","171":"P","172":"y","173":"-","174":"F","175":"b","176":"u","177":"9","178":"W","179":"l","18":"I","180":"J","181":"u","182":"r","183":"N","184":"3","185":"5","186":"U","187":"Z","188":"C","189":"O","19":"s","190":"U","191":"u","192":"U","193":"J","194":"5","195":"S","196":"x","197":"Q","198":"U","2":"J","20":"I","21":"n","22":"R","23":"5","24":"c","25":"C","26":"I","27":"6","28":"I","29":"k","3":"h","30":"p","31":"X","32":"V","33":"C","34":"J","35":"9","36":".","37":"e","38":"y","39":"J","4":"b","40":"1","41":"c","42":"2","43":"V","44":"y","45":"S","46":"W","47":"Q","48":"i","49":"O","5":"G","50":"i","51":"J","52":"1","53":"c","54":"2","55":"V","56":"y","57":"L","58":"T","59":"B","6":"c","60":"k","61":"M","62":"2","63":"Q","64":"z","65":"M","66":"m","67":"Y","68":"0","69":"L","7":"i","70":"T","71":"V","72":"h","73":"Z","74":"D","75":"Q","76":"t","77":"N","78":"D","79":"g","8":"O","80":"y","81":"M","82":"S","83":"0","84":"4","85":"O","86":"W","87":"I","88":"3","89":"L","9":"i","90":"W","91":"M","92":"x","93":"Y","94":"T","95":"c","96":"1","97":"Y","98":"m","99":"U","level":"info","message":"authToken:","timestamp":"2026-02-13 04:21:25"}
+{"level":"info","message":"Fetching user with id: user-0d3d32f4-5ad4-4821-89b7-c1a75be9f8c8","timestamp":"2026-02-13 04:21:25"}
+{"level":"info","message":"Fetching user with id: user-0d3d32f4-5ad4-4821-89b7-c1a75be9f8c8","timestamp":"2026-02-13 04:21:25"}
+{"level":"info","message":"PostgreSQL connection established","timestamp":"2026-02-13 04:21:25"}
+{"level":"info","message":"Setting email in UserBuilder: john.doe@example.cm","timestamp":"2026-02-13 04:21:26"}
+{"level":"info","message":"GET /user-0d3d32f4-5ad4-4821-89b7-c1a75be9f8c8 200","timestamp":"2026-02-13 04:21:26"}
+{"0":"e","1":"y","10":"J","100":"5","101":"Z","102":"j","103":"h","104":"j","105":"O","106":"C","107":"I","108":"s","109":"I","11":"I","110":"m","111":"l","112":"h","113":"d","114":"C","115":"I","116":"6","117":"M","118":"T","119":"c","12":"U","120":"3","121":"M","122":"D","123":"k","124":"0","125":"O","126":"T","127":"E","128":"1","129":"M","13":"z","130":"C","131":"w","132":"i","133":"Z","134":"X","135":"h","136":"w","137":"I","138":"j","139":"o","14":"I","140":"x","141":"N","142":"z","143":"c","144":"x","145":"N","146":"T","147":"U","148":"z","149":"O","15":"1","150":"T","151":"U","152":"w","153":"f","154":"Q","155":".","156":"i","157":"b","158":"O","159":"d","16":"N","160":"g","161":"L","162":"I","163":"T","164":"O","165":"H","166":"Z","167":"I","168":"C","169":"1","17":"i","170":"d","171":"P","172":"y","173":"-","174":"F","175":"b","176":"u","177":"9","178":"W","179":"l","18":"I","180":"J","181":"u","182":"r","183":"N","184":"3","185":"5","186":"U","187":"Z","188":"C","189":"O","19":"s","190":"U","191":"u","192":"U","193":"J","194":"5","195":"S","196":"x","197":"Q","198":"U","2":"J","20":"I","21":"n","22":"R","23":"5","24":"c","25":"C","26":"I","27":"6","28":"I","29":"k","3":"h","30":"p","31":"X","32":"V","33":"C","34":"J","35":"9","36":".","37":"e","38":"y","39":"J","4":"b","40":"1","41":"c","42":"2","43":"V","44":"y","45":"S","46":"W","47":"Q","48":"i","49":"O","5":"G","50":"i","51":"J","52":"1","53":"c","54":"2","55":"V","56":"y","57":"L","58":"T","59":"B","6":"c","60":"k","61":"M","62":"2","63":"Q","64":"z","65":"M","66":"m","67":"Y","68":"0","69":"L","7":"i","70":"T","71":"V","72":"h","73":"Z","74":"D","75":"Q","76":"t","77":"N","78":"D","79":"g","8":"O","80":"y","81":"M","82":"S","83":"0","84":"4","85":"O","86":"W","87":"I","88":"3","89":"L","9":"i","90":"W","91":"M","92":"x","93":"Y","94":"T","95":"c","96":"1","97":"Y","98":"m","99":"U","level":"info","message":"authToken:","timestamp":"2026-02-13 04:21:33"}
+{"level":"info","message":"Deleting user with id: user-0d3d32f4-5ad4-4821-89b7-c1a75be9f8c8","timestamp":"2026-02-13 04:21:33"}
+{"level":"info","message":"Deleting user with id: user-0d3d32f4-5ad4-4821-89b7-c1a75be9f8c8","timestamp":"2026-02-13 04:21:33"}
+{"level":"info","message":"PostgreSQL connection established","timestamp":"2026-02-13 04:21:33"}
+{"level":"info","message":"User deleted: user-0d3d32f4-5ad4-4821-89b7-c1a75be9f8c8","timestamp":"2026-02-13 04:21:33"}
+{"level":"info","message":"DELETE /user-0d3d32f4-5ad4-4821-89b7-c1a75be9f8c8 200","timestamp":"2026-02-13 04:21:33"}
+{"0":"e","1":"y","10":"J","100":"5","101":"Z","102":"j","103":"h","104":"j","105":"O","106":"C","107":"I","108":"s","109":"I","11":"I","110":"m","111":"l","112":"h","113":"d","114":"C","115":"I","116":"6","117":"M","118":"T","119":"c","12":"U","120":"3","121":"M","122":"D","123":"k","124":"0","125":"O","126":"T","127":"E","128":"1","129":"M","13":"z","130":"C","131":"w","132":"i","133":"Z","134":"X","135":"h","136":"w","137":"I","138":"j","139":"o","14":"I","140":"x","141":"N","142":"z","143":"c","144":"x","145":"N","146":"T","147":"U","148":"z","149":"O","15":"1","150":"T","151":"U","152":"w","153":"f","154":"Q","155":".","156":"i","157":"b","158":"O","159":"d","16":"N","160":"g","161":"L","162":"I","163":"T","164":"O","165":"H","166":"Z","167":"I","168":"C","169":"1","17":"i","170":"d","171":"P","172":"y","173":"-","174":"F","175":"b","176":"u","177":"9","178":"W","179":"l","18":"I","180":"J","181":"u","182":"r","183":"N","184":"3","185":"5","186":"U","187":"Z","188":"C","189":"O","19":"s","190":"U","191":"u","192":"U","193":"J","194":"5","195":"S","196":"x","197":"Q","198":"U","2":"J","20":"I","21":"n","22":"R","23":"5","24":"c","25":"C","26":"I","27":"6","28":"I","29":"k","3":"h","30":"p","31":"X","32":"V","33":"C","34":"J","35":"9","36":".","37":"e","38":"y","39":"J","4":"b","40":"1","41":"c","42":"2","43":"V","44":"y","45":"S","46":"W","47":"Q","48":"i","49":"O","5":"G","50":"i","51":"J","52":"1","53":"c","54":"2","55":"V","56":"y","57":"L","58":"T","59":"B","6":"c","60":"k","61":"M","62":"2","63":"Q","64":"z","65":"M","66":"m","67":"Y","68":"0","69":"L","7":"i","70":"T","71":"V","72":"h","73":"Z","74":"D","75":"Q","76":"t","77":"N","78":"D","79":"g","8":"O","80":"y","81":"M","82":"S","83":"0","84":"4","85":"O","86":"W","87":"I","88":"3","89":"L","9":"i","90":"W","91":"M","92":"x","93":"Y","94":"T","95":"c","96":"1","97":"Y","98":"m","99":"U","level":"info","message":"authToken:","timestamp":"2026-02-13 04:21:39"}
+{"level":"info","message":"Fetching user with id: user-0d3d32f4-5ad4-4821-89b7-c1a75be9f8c8","timestamp":"2026-02-13 04:21:39"}
+{"level":"info","message":"Fetching user with id: user-0d3d32f4-5ad4-4821-89b7-c1a75be9f8c8","timestamp":"2026-02-13 04:21:39"}
+{"level":"info","message":"PostgreSQL connection established","timestamp":"2026-02-13 04:21:39"}
+{"level":"error","message":"NotFoundException [404] \"User with id user-0d3d32f4-5ad4-4821-89b7-c1a75be9f8c8 not found\" { userId: 'user-0d3d32f4-5ad4-4821-89b7-c1a75be9f8c8' }","timestamp":"2026-02-13 04:21:39"}
+{"level":"warn","message":"GET /users/user-0d3d32f4-5ad4-4821-89b7-c1a75be9f8c8 404","timestamp":"2026-02-13 04:21:39"}
+{"0":"e","1":"y","10":"J","100":"5","101":"Z","102":"j","103":"h","104":"j","105":"O","106":"C","107":"I","108":"s","109":"I","11":"I","110":"m","111":"l","112":"h","113":"d","114":"C","115":"I","116":"6","117":"M","118":"T","119":"c","12":"U","120":"3","121":"M","122":"D","123":"k","124":"0","125":"O","126":"T","127":"E","128":"1","129":"M","13":"z","130":"C","131":"w","132":"i","133":"Z","134":"X","135":"h","136":"w","137":"I","138":"j","139":"o","14":"I","140":"x","141":"N","142":"z","143":"c","144":"x","145":"N","146":"T","147":"U","148":"z","149":"O","15":"1","150":"T","151":"U","152":"w","153":"f","154":"Q","155":".","156":"i","157":"b","158":"O","159":"d","16":"N","160":"g","161":"L","162":"I","163":"T","164":"O","165":"H","166":"Z","167":"I","168":"C","169":"1","17":"i","170":"d","171":"P","172":"y","173":"-","174":"F","175":"b","176":"u","177":"9","178":"W","179":"l","18":"I","180":"J","181":"u","182":"r","183":"N","184":"3","185":"5","186":"U","187":"Z","188":"C","189":"O","19":"s","190":"U","191":"u","192":"U","193":"J","194":"5","195":"S","196":"x","197":"Q","198":"U","2":"J","20":"I","21":"n","22":"R","23":"5","24":"c","25":"C","26":"I","27":"6","28":"I","29":"k","3":"h","30":"p","31":"X","32":"V","33":"C","34":"J","35":"9","36":".","37":"e","38":"y","39":"J","4":"b","40":"1","41":"c","42":"2","43":"V","44":"y","45":"S","46":"W","47":"Q","48":"i","49":"O","5":"G","50":"i","51":"J","52":"1","53":"c","54":"2","55":"V","56":"y","57":"L","58":"T","59":"B","6":"c","60":"k","61":"M","62":"2","63":"Q","64":"z","65":"M","66":"m","67":"Y","68":"0","69":"L","7":"i","70":"T","71":"V","72":"h","73":"Z","74":"D","75":"Q","76":"t","77":"N","78":"D","79":"g","8":"O","80":"y","81":"M","82":"S","83":"0","84":"4","85":"O","86":"W","87":"I","88":"3","89":"L","9":"i","90":"W","91":"M","92":"x","93":"Y","94":"T","95":"c","96":"1","97":"Y","98":"m","99":"U","level":"info","message":"authToken:","timestamp":"2026-02-13 04:21:49"}
+{"level":"info","message":"Fetching all users","timestamp":"2026-02-13 04:21:49"}
+{"level":"info","message":"Fetching all users","timestamp":"2026-02-13 04:21:49"}
+{"level":"info","message":"PostgreSQL connection established","timestamp":"2026-02-13 04:21:49"}
+{"level":"info","message":"GET / 200","timestamp":"2026-02-13 04:21:49"}

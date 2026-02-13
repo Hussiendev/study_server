@@ -1,0 +1,6 @@
+okk i wana do the following endoints:
+1>user authentication and auharization and verfication 
+2>user resert password
+4>mail service using barvo here is there link:https://app.brevo.com/
+5>make endpints for login verfry email and forget password
+6>use jtw token and give me steo by step with explanations for every deatil and what did u did

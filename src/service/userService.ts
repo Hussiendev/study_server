@@ -1,44 +1,134 @@
-import { UserRepo } from "repository/User.repo";
+import { createUserRepo, UserRepo } from "../repository/User.repo";
 import { User } from "../models/Usermodel";
+import { id } from "../repository/IRepo";
+import { BadRequestException } from "../util/exceptions/http/BadRequestException";
+import { NotFoundException } from "../util/exceptions/http/NotFoundException";
+import logger from "../util/logger";
+import bcrypt from "bcrypt";
 
-export class UserService{
-    constructor(private userRepo:UserRepo){}
-    public async CreatUser(user:User):Promise<User>{
-        try{
-            await this.Validate_User(user);
-            const new_user=await this.userRepo.create(user);
-            return user;
+export class UserService {
 
+    private userRepo!: UserRepo;
+
+    // -------------------------
+    // CREATE USER
+    // -------------------------
+    public async createUser(user: User): Promise<User> {
+        logger.info(`Creating user with email: ${user.getEmail()}`);
+
+        this.validateNewUser(user);
+
+        await (await this.getRepo()).create(user);
+
+        return user;
+    }
+
+    // -------------------------
+    // GET USER
+    // -------------------------
+    public async getUser(id: string): Promise<User> {
+        logger.info(`Fetching user with id: ${id}`);
+        return await (await this.getRepo()).get(id);
+    }
+
+    // -------------------------
+    // GET ALL USERS
+    // -------------------------
+    public async getAllUsers(): Promise<User[]> {
+        logger.info("Fetching all users");
+        return await (await this.getRepo()).getALL();
+    }
+
+    // -------------------------
+    // UPDATE USER
+    // -------------------------
+    public async updateUser(user: User): Promise<void> {
+        logger.info(`Updating user with id: ${user.getId()}`);
+
+        this.validateUpdateUser(user);
+
+        await (await this.getRepo()).update(user);
+    }
+
+    // -------------------------
+    // DELETE USER
+    // -------------------------
+    public async deleteUser(id: string): Promise<void> {
+        logger.info(`Deleting user with id: ${id}`);
+        await (await this.getRepo()).delete(id);
+    }
+
+    // -------------------------
+    // LOGIN VALIDATION
+    // -------------------------
+    public async validate(email: string, password: string): Promise<id> {
+        logger.info(`Validating user with email: ${email}`);
+
+        const user = await (await this.getRepo()).getsUserbyEmail(email);
+
+        const isMatch = await bcrypt.compare(password, user.getPassword());
+
+        if (!isMatch) {
+            throw new BadRequestException("Invalid password");
         }
-        catch(error){
-            throw error;
+
+        return user.getId();
+    }
+
+    // -------------------------
+    // VALIDATION FOR CREATE
+    // -------------------------
+    private validateNewUser(user: User): void {
+        const email = user.getEmail();
+        const name = user.getName();
+        const password = user.getPassword();
+
+        if (!name || !email || !password) {
+            throw new BadRequestException(
+                "Name, email, and password are required."
+            );
+        }
+
+        this.validateEmail(email);
+
+        if (password.length < 6) {
+            throw new BadRequestException(
+                "Password must be at least 6 characters long."
+            );
         }
     }
 
-    private validateEmail(email: string): boolean {
+    // -------------------------
+    // VALIDATION FOR UPDATE
+    // -------------------------
+    private validateUpdateUser(user: User): void {
+        if (!user.getId()) {
+            throw new BadRequestException("User ID is required for update.");
+        }
+
+        if (user.getEmail()) {
+            this.validateEmail(user.getEmail());
+        }
+
+        if (user.getPassword() && user.getPassword().length < 6) {
+            throw new BadRequestException(
+                "Password must be at least 6 characters long."
+            );
+        }
+    }
+
+    private validateEmail(email: string): void {
         const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-        return emailRegex.test(email);
-    }
 
-    private async Validate_User(user:User):Promise<void>{
-        // Check that all fields are not empty
-        if (!user.id || user.id.trim() === '') {
-            throw new Error('User ID cannot be empty');
-        }
-        if (!user.name || user.name.trim() === '') {
-            throw new Error('User name cannot be empty');
-        }
-        if (!user.email || user.email.trim() === '') {
-            throw new Error('User email cannot be empty');
-        }
-        if (!user.password || user.password.trim() === '') {
-            throw new Error('User password cannot be empty');
-        }
-
-        // Check that email is a valid email format
-        if (!this.validateEmail(user.email)) {
-            throw new Error('Email is not a valid email format');
+        if (!emailRegex.test(email)) {
+            throw new BadRequestException("Invalid email format.");
         }
     }
 
+    private async getRepo(): Promise<UserRepo> {
+        if (!this.userRepo) {
+            this.userRepo = await createUserRepo();
+        }
+        return this.userRepo;
+    }
 }

@@ -1,0 +1,1 @@
+{"version":3,"file":"NotFoundException.js","sourceRoot":"","sources":["../../../../src/util/exceptions/http/NotFoundException.ts"],"names":[],"mappings":";;;AAAA,mDAAgD;AAKhD,2BAA2B;AAC3B,MAAa,iBAAkB,SAAQ,6BAAa;IAChD,YAAY,UAAkB,oBAAoB,EAAE,OAAiC;QACjF,KAAK,CAAC,GAAG,EAAE,OAAO,EAAE,OAAO,CAAC,CAAC;QAC7B,IAAI,CAAC,IAAI,GAAG,mBAAmB,CAAC;IACpC,CAAC;CACJ;AALD,8CAKC"}

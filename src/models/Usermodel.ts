@@ -2,17 +2,19 @@ import { ID } from "repository/IRepo";
 
 export class User implements ID {
     id: string;
-    email: string;
     name: string;
+    email: string;
     password: string;    // hashed password
     createdAt: Date;
+    role: string;        // user role, default 'user'
 
     constructor(
         id: string ,
-        email: string,
         name: string,
+        email: string,
         password: string,
-        createdAt?: Date   // optional, use DB date if exists
+        createdAt?: Date,   // optional, use DB date if exists
+        role: string = 'user'  // default role
     ) {
   
         this.id = id;
@@ -20,6 +22,7 @@ export class User implements ID {
         this.name = name;
         this.password = password;
         this.createdAt = createdAt || new Date();
+        this.role = role;
     }
 
     // Getters
@@ -43,6 +46,10 @@ export class User implements ID {
         return this.createdAt;
     }
 
+    getRole(): string {
+        return this.role;
+    }
+
     // Setters
     setId(id: string): void {
         this.id = id;
@@ -62,5 +69,9 @@ export class User implements ID {
 
     setCreatedAt(date: Date): void {
         this.createdAt = date;
+    }
+
+    setRole(role: string): void {
+        this.role = role;
     }
 }
