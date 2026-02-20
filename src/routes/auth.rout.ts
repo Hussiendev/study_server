@@ -7,6 +7,8 @@ import { AuthenticationServiceSingleton } from "../service/AuthenticationService
 import { AuthController } from "../controller/AuthController";
 import { UserService } from "../service/userService";
 import { authenticate } from "../midlleware/auth";
+import { hasPermission } from "../midlleware/autharize";
+import { PERMISSION } from "../config/roles";
 const router = Router();
 const authService= AuthenticationServiceSingleton.getInstance();
 const userService= new UserService();
@@ -14,9 +16,15 @@ const authController = new AuthController(authService,userService);
 
 
 // Define your routes here
-router.route('/login')
-  .post(asyncHandler(authController.login.bind(authController)))
-  
-router.route('/logout')
-  .get(authenticate,asyncHandler(authController.logout.bind(authController)));
+router.post(
+  '/login',
+  asyncHandler(authController.login.bind(authController))
+);
+
+router.get(
+  '/logout',
+  authenticate,
+  hasPermission(PERMISSION.LOGOUT),
+  asyncHandler(authController.logout.bind(authController))
+);
 export default router;

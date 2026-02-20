@@ -5,6 +5,9 @@ import { UserService } from "../service/userService";
 import { BadRequestException } from "../util/exceptions/http/BadRequestException";
 import { Request, Response } from "express";
 import { hash } from "bcrypt";
+import { InsufficientPermissionsException } from "../util/exceptions/http/AutharizationException";
+import { ROLE } from "../config/roles";
+import { AuthRequest } from "../config/authRequest";
 
 export class UserController {
     constructor(private readonly userService: UserService) {}
@@ -32,8 +35,11 @@ export class UserController {
     // GET USER BY ID
     // -------------------------
     public async getUser(req: Request, res: Response): Promise<void> {
-        const userId = req.params.id;
+           const authReq = req as AuthRequest;
+    const userId = req.params.id;
 
+    this.enforceOwnership(authReq, userId);
+        
         if (!userId) {
             throw new BadRequestException("User ID is required", { userId });
         }
@@ -53,7 +59,9 @@ export class UserController {
     // -------------------------
     public async getAllUsers(req: Request, res: Response): Promise<void> {
         logger.info("Fetching all users");
+      
 
+   
         const users = await this.userService.getAllUsers();
         const mappedUsers = users.map(user =>
             new JSONMapper().reversemap(user)
@@ -70,7 +78,10 @@ export class UserController {
     // UPDATE USER
     // -------------------------
     public async updateUser(req: Request, res: Response): Promise<void> {
+        const authReq = req as AuthRequest;        
+    
         const userId = req.params.id;
+        this.enforceOwnership(authReq, userId);
 
         if (!userId) {
             throw new BadRequestException("User ID is required", { userId });
@@ -98,7 +109,8 @@ export class UserController {
     // -------------------------
     public async deleteUser(req: Request, res: Response): Promise<void> {
         const userId = req.params.id;
-
+            const authReq = req as AuthRequest;
+        this.enforceOwnership(authReq, userId);
         if (!userId) {
             throw new BadRequestException("User ID is required", { userId });
         }
@@ -112,4 +124,14 @@ export class UserController {
             userId
         });
     }
+    private enforceOwnership(authReq: AuthRequest, targetUserId: string) {
+    if (
+        authReq.user!.role === ROLE.USER &&
+        authReq.user!.userId !== targetUserId
+    ) {
+        throw new InsufficientPermissionsException();
+    }
 }
+
+}
+

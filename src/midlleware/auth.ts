@@ -1,30 +1,41 @@
-import { AuthenticationFailedException, ExpiredTokenException } from "../util/exceptions/http/AuthenticationException";
+import { AuthenticationFailedException} from "../util/exceptions/http/AuthenticationException";
 import { AuthenticationServiceSingleton } from "../service/AuthenticationServiceSingleton";
 import { NextFunction, Request, Response } from "express";
 import { AuthRequest } from "../config/authRequest";
-import logger from "../util/logger";
+
 // From: src/middleware/auth.ts
 const authService = AuthenticationServiceSingleton.getInstance();
 
-export function authenticate(req: Request, res: Response, next: NextFunction) {
-        let authToken = req.cookies.auth_token;
-        const refreshToken = req.cookies.refreshToken;
-        logger.info('authToken:', authToken, 'refreshToken:', refreshToken);
-       
+export async function authenticate(req: Request, res: Response, next: NextFunction) {
 
-        if (!authToken) {
-                if(!refreshToken){
-                        return next(new AuthenticationFailedException());
-                }
-         const newtoken=authService.refreshToken(refreshToken);
-         authService.setCookie(res,newtoken);
-         authToken=newtoken;
-         logger.info('New authToken generated from refresh token');       
-              
+    const authToken = req.cookies.auth_token;
+    const refreshToken = req.cookies.refreshToken;
+  
 
+    try {
+
+        if (authToken) {
+            const payload = authService.verifyAccessToken(authToken);
+            (req as AuthRequest).user = payload;
+            return next();
         }
-                const payload = authService.verifyToken(authToken);
-                (req as AuthRequest).userId = payload.userId; // Attach userId to request
-                next(); // Proceed to the next middleware or route handler
-        
+
+        if (!refreshToken) {
+            return next(new AuthenticationFailedException());
+        }
+
+        const { newAccess, newRefresh } =
+            await authService.refresh(refreshToken);
+
+        authService.setAccessCookie(res, newAccess);
+        authService.setRefreshCookie(res, newRefresh);
+
+        const payload = authService.verifyAccessToken(newAccess);
+        (req as AuthRequest).user = payload;
+
+        next();
+
+    } catch (error) {
+        return next(new AuthenticationFailedException());
+    }
 }

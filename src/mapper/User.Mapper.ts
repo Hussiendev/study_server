@@ -3,6 +3,7 @@ import { IMapper } from "./IMapper";
 import { UserBuilder } from "../builder/User.builder";
 import { idGenerater } from "../util/IDgenerater";
 import logger from "../util/logger";
+import { ROLE, toRole } from "../config/roles";
 
  export interface SQLUser {
     id: string;
@@ -11,13 +12,19 @@ import logger from "../util/logger";
     password: string;
     createdAt: Date;
     role: string;
+    is_verified?: boolean;
+    last_login?: Date;
+    reset_pass_token?: string;
+    reset_pass_expires_at?: Date;
+    refresh_token?: string;
+    refresh_token_expires_at?: Date;
 }
 export interface JSONUSER {
    
     name: string;
     email: string;
     password: string;
-    role?: string;
+    role?: ROLE;
 }
 export class SQLMapper implements IMapper<SQLUser,User > {
     map(input: SQLUser): User {
@@ -26,7 +33,7 @@ export class SQLMapper implements IMapper<SQLUser,User > {
         .setName(input.name)
         .setEmail(input.email)
         .setPassword (input.password)
-        .setRole(input.role)
+        .setRole(toRole(input.role))
         .build();
       
     }
@@ -53,7 +60,7 @@ export class JSONMapper implements IMapper<any,User > {
        .setEmail(input.email)
    
        .setPassword (input.password)
-       .setRole(input.role || 'user')
+     .setRole(input.role ? toRole(input.role) : ROLE.USER)
        .build();
     }
     reversemap(input: User):JSONUSER {

@@ -5,12 +5,12 @@
   "main": "index.js",
   "scripts": {
     "lint": "eslint src",
-    "clean": "rimraf build",
+    "clean": " npx rimraf build",
     "prebuild": "npm run clean && npm run lint",
     "build": "tsc",
     "postbuild": "echo Done",
     "prestart": "npm run build",
-    "start": "node build /index.js",
+    "start": "node build/index.js",
     "dev": "ts-node-dev --respawn src/index.ts",
     "test": " jest"
   },

@@ -1,8 +1,8 @@
 import { createUserRepo, UserRepo } from "../repository/User.repo";
 import { User } from "../models/Usermodel";
-import { id } from "../repository/IRepo";
+
 import { BadRequestException } from "../util/exceptions/http/BadRequestException";
-import { NotFoundException } from "../util/exceptions/http/NotFoundException";
+
 import logger from "../util/logger";
 import bcrypt from "bcrypt";
 
@@ -61,7 +61,7 @@ export class UserService {
     // -------------------------
     // LOGIN VALIDATION
     // -------------------------
-    public async validate(email: string, password: string): Promise<id> {
+    public async validate(email: string, password: string): Promise<User> {
         logger.info(`Validating user with email: ${email}`);
 
         const user = await (await this.getRepo()).getsUserbyEmail(email);
@@ -71,8 +71,13 @@ export class UserService {
         if (!isMatch) {
             throw new BadRequestException("Invalid password");
         }
+        
 
-        return user.getId();
+        return user;
+    }
+    async updatedLoggedUser(email:string):Promise<void>{
+        await (await this.getRepo()).Update_USER_VERF(email);
+
     }
 
     // -------------------------

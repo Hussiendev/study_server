@@ -1,5 +1,6 @@
 import logger from "../util/logger";
 import { User } from "../models/Usermodel";
+import { ROLE } from "config/roles";
 
 
 export class UserBuilder {
@@ -7,7 +8,7 @@ export class UserBuilder {
     private name!: string;
     private email!: string;
     private password!: string;
-    private role: string = 'user';
+    private role!:ROLE;
 
     public static createBuilder(): UserBuilder {
         return new UserBuilder();
@@ -34,7 +35,7 @@ export class UserBuilder {
         return this;
     }
 
-    setRole(role: string): this {
+    setRole(role: ROLE): this {
         this.role = role;
         return this;
     }

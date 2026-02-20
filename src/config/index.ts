@@ -13,7 +13,8 @@ Storage:{
 
 },
 auth:{
-    jwtSecret: process.env.JWT_SECRET || 'secret_90909090', // Sets the secret key used for signing JSON Web Tokens (JWTs). It checks if a JWT_SECRET environment variable is set; if not, it defaults to
+    jwtSecret: process.env.JWT_SECRET || 'secret_90909090',
+     RefreshSecret: process.env.JWT_REFRESH_SECRET || 'secret_90909090', // Sets the secret key used for signing JSON Web Tokens (JWTs). It checks if a JWT_SECRET environment variable is set; if not, it defaults to
     expiration:(process.env.JWT_EXPIRATION || '15m') as StringValue,
       refreshExpiration:(process.env.JWT_REFRESH_EXPIRATION || '7d') as StringValue, // Sets the expiration time for JWTs. It checks if a JWT_EXPIRATION environment variable is set; if not, it defaults to '1h' (1 hour).
 }

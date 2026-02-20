@@ -1,5 +1,5 @@
 import { User } from "../models/Usermodel";
-import { id, ID, Intiazable, IRepository } from "./IRepo";
+import { id,  Intiazable, IRepository } from "./IRepo";
 import { DBException, RepositoryInitializationException } from "../util/exceptions/RepoException";
 import logger from "../util/logger";
 import { ConnectionManager } from "./ConnectionManger";
@@ -7,6 +7,7 @@ import { NotFoundException } from "../util/exceptions/http/NotFoundException";
 
 import { idGenerater } from "../util/IDgenerater";
 import { SQLMapper, SQLUser } from "../mapper/User.Mapper";
+import { ROLE } from "../config/roles";
 
 export const createUser = `
 CREATE TABLE IF NOT EXISTS "user" (
@@ -19,8 +20,8 @@ CREATE TABLE IF NOT EXISTS "user" (
     is_verified BOOLEAN DEFAULT FALSE,
     reset_pass_token VARCHAR(255),
     reset_pass_expires_at TIMESTAMP,
-    verfication_token VARCHAR(255),
-    verfication_token_expires_at TIMESTAMP,
+    refresh_token VARCHAR(255),
+    refresh_token_expires_at TIMESTAMP,
     created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
     updated_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP
 );
@@ -31,13 +32,17 @@ INSERT INTO "user" (id,name, email,password,role)
 VALUES ($1, $2, $3,$4,$5);
 `;
 const addRoleColumn = `
-ALTER TABLE "user" ADD COLUMN IF NOT EXISTS role VARCHAR(50) DEFAULT 'user';
+ALTER TABLE "user" ADD COLUMN IF NOT EXISTS role TEXT DEFAULT '${ROLE.USER}';
 `;
 const Get_User='SELECT * FROM "user" WHERE id = $1;';
 const Get_All_Users='SELECT * FROM "user";';
 const Update_User='UPDATE "user" SET name = $1, email = $2, password = $3, role = $4, updated_at = CURRENT_TIMESTAMP WHERE id = $5;';
 const Delete_User='DELETE FROM "user" WHERE id = $1;';
 const Get_User_By_Email='SELECT * FROM "user" WHERE email = $1;';
+const Update_Refresh_Token =
+'UPDATE "user" SET refresh_token=$1,    refresh_token_expires_at=$2 WHERE id=$3;';
+const Update_VeerfyEmail='UPDATE "user" SET is_verified =$1, last_login=CURRENT_TIMESTAMP WHERE email=$2;'
+const Update_logout='UPDATE "user" SET is_verified =$1  WHERE id=$2;'
 
 export class UserRepo implements IRepository<User>, Intiazable {
 
@@ -112,6 +117,9 @@ export class UserRepo implements IRepository<User>, Intiazable {
                     { userId: id }
                 );
             }
+            row.is_verified=true;
+            row.last_login=new Date();
+
 
             return new SQLMapper().map(row);
 
@@ -144,6 +152,7 @@ export class UserRepo implements IRepository<User>, Intiazable {
                     { email }
                 );
             }
+        
 
             return new SQLMapper().map(row);
 
@@ -260,7 +269,35 @@ export class UserRepo implements IRepository<User>, Intiazable {
             connection?.release();
         }
     }
+    async updateRefreshToken(userId: string, token: string | null,expired:Date|null): Promise<void> {
+    const connection = await ConnectionManager.getConnection();
+    try {
+        await connection.query(Update_Refresh_Token, [token, expired,userId]);
+    } finally {
+        connection.release();
+    }
 }
+async Update_USER_VERF(email:string):Promise<void>{
+    const connection = await ConnectionManager.getConnection();
+    try {
+        await connection.query(Update_VeerfyEmail, [true, email]);
+    } finally {
+        connection.release();
+    }
+
+}
+async Logout(userId:string):Promise<void>{
+     const connection = await ConnectionManager.getConnection();
+try {
+        await connection.query(Update_logout, [false, userId]);
+    } finally {
+        connection.release();
+    }
+
+}
+
+}
+
 
  export async function createUserRepo(): Promise<UserRepo> {
     const repo = new UserRepo();

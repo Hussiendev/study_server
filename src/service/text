@@ -18,3 +18,7 @@ steps for authentication and authrization:
 12>download the cookie parser
 13>make refresh token so till know u have 3 tokens:login token logout and refresh token
 14>the refresh token is the same as generate token but it diifer with expiration here will put refresh token
+15>Autharzation part
+---->make role.ts file containing roles and permisions and adpat the rest of prject to it
+---->change the validate to have a user and return a user and add role tp persist function
+-->adjusgt the token payload so it have both iserid and role

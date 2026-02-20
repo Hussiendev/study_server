@@ -1,12 +1,13 @@
 import { ID } from "repository/IRepo";
-
+import { ROLE } from "../config/roles";
 export class User implements ID {
     id: string;
     name: string;
     email: string;
     password: string;    // hashed password
     createdAt: Date;
-    role: string;        // user role, default 'user'
+    role: ROLE;
+    refresh_token!:string        // user role, default 'user'
 
     constructor(
         id: string ,
@@ -14,7 +15,7 @@ export class User implements ID {
         email: string,
         password: string,
         createdAt?: Date,   // optional, use DB date if exists
-        role: string = 'user'  // default role
+        role: ROLE = ROLE.USER  // default role
     ) {
   
         this.id = id;
@@ -46,8 +47,11 @@ export class User implements ID {
         return this.createdAt;
     }
 
-    getRole(): string {
+    getRole(): ROLE {
         return this.role;
+    }
+    getRefeshToken(){
+        return this.refresh_token;
     }
 
     // Setters
@@ -71,7 +75,7 @@ export class User implements ID {
         this.createdAt = date;
     }
 
-    setRole(role: string): void {
+    setRole(role: ROLE): void {
         this.role = role;
     }
 }
