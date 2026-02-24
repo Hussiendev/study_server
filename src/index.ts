@@ -1,3 +1,4 @@
+import "dotenv/config";
 import logger from "./util/logger";
 import config from "./config";
 import express, { Request, Response, NextFunction } from "express";

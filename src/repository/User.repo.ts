@@ -18,8 +18,8 @@ CREATE TABLE IF NOT EXISTS "user" (
     role VARCHAR(50) DEFAULT 'user',
     last_login TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
     is_verified BOOLEAN DEFAULT FALSE,
-    reset_pass_token VARCHAR(255),
-    reset_pass_expires_at TIMESTAMP,
+   reset_token TEXT,
+reset_token_expiration TIMESTAMP,
     refresh_token VARCHAR(255),
     refresh_token_expires_at TIMESTAMP,
     created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
@@ -117,8 +117,7 @@ export class UserRepo implements IRepository<User>, Intiazable {
                     { userId: id }
                 );
             }
-            row.is_verified=true;
-            row.last_login=new Date();
+           
 
 
             return new SQLMapper().map(row);
@@ -294,6 +293,73 @@ try {
         connection.release();
     }
 
+}
+async updateResetToken(userId: string, token: string, expiration: Date) {
+    const connection = await ConnectionManager.getConnection();
+    try {
+        await connection.query(
+            `UPDATE "user" 
+             SET reset_token=$1, reset_token_expiration=$2 
+             WHERE id=$3`,
+            [token, expiration, userId]
+        );
+    } finally {
+        connection.release();
+    }
+}
+
+async clearResetToken(email: string): Promise<void> {
+    const connection = await ConnectionManager.getConnection();
+    try {
+        await connection.query(
+            `UPDATE "user" 
+             SET reset_token = NULL, reset_token_expiration = NULL 
+             WHERE email = $1`,
+            [email]
+        );
+    } finally {
+        connection.release();
+    }
+}
+// In User.repo.ts - ADD THIS METHOD
+async getResetDataByEmail(email: string): Promise<{ 
+    hashedToken: string; 
+    expiresAt: Date 
+} | null> {
+    const connection = await ConnectionManager.getConnection();
+    try {
+        const result = await connection.query(
+            `SELECT reset_token, reset_token_expiration 
+             FROM "user" 
+             WHERE email = $1`,
+            [email]
+        );
+        
+        if (result.rows.length === 0 || !result.rows[0].reset_token) {
+            return null;
+        }
+        
+        return {
+            hashedToken: result.rows[0].reset_token,
+            expiresAt: new Date(result.rows[0].reset_token_expiration)
+        };
+    } finally {
+        connection.release();
+    }
+}
+
+async updatePassword(email: string, newPassword: string) {
+    const connection = await ConnectionManager.getConnection();
+    try {
+        await connection.query(
+            `UPDATE "user" 
+             SET password=$1, reset_token=NULL, reset_token_expiration=NULL 
+             WHERE email=$2`,
+            [newPassword, email]
+        );
+    } finally {
+        connection.release();
+    }
 }
 
 }

@@ -18,6 +18,8 @@ export enum PERMISSION {
   // Auth
   LOGIN = 'auth:login',
   LOGOUT = 'auth:logout',
+  Forget_PASS='auth:forget_pass',
+  Update_PAsss='auth:update_pass'
 }
 
 // Map roles to their allowed permissions
@@ -37,6 +39,8 @@ export const ROLE_PERMISSIONS: RolePermissions = {
     PERMISSION.DELETE_USER,   // Can delete his own account
     PERMISSION.LOGIN,
     PERMISSION.LOGOUT,
+    PERMISSION.Forget_PASS,
+    PERMISSION.Update_PAsss
   ],
 };
 
