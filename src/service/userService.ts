@@ -41,31 +41,7 @@ export class UserService {
 
         
     }
-    async verifyResetToken(email: string, providedToken: string): Promise<boolean> {
-    // Get the stored hashed token
-    const resetData = await (await this.getRepo()).getResetDataByEmail(email);
-    
-    if (!resetData) {
-        logger.warn(`No reset token found for email: ${email}`);
-        return false;
-    }
-    
-    // Check expiration
-    if (new Date() > resetData.expiresAt) {
-        logger.warn(`Reset token expired for email: ${email}`);
-        await (await this.getRepo()).clearResetToken(email);
-        return false;
-    }
-    
-    // Compare provided token with stored hash
-    const isValid = await bcrypt.compare(providedToken, resetData.hashedToken);
-    
-    if (!isValid) {
-        logger.warn(`Invalid reset token provided for email: ${email}`);
-    }
-    
-    return isValid;
-}
+  
 
     // -------------------------
     // GET ALL USERS

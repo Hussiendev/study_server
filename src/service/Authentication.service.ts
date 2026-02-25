@@ -6,6 +6,7 @@ import { Response } from 'express';
 import bcrypt from 'bcrypt';
 import ms from 'ms';
 import crypto from 'crypto';
+import logger from '../util/logger';
 import { createUserRepo,UserRepo } from '../repository/User.repo';
 
 
@@ -55,20 +56,35 @@ generatePasswordResetToken(): { code: string; expiresAt: Date } {
             throw new InvalidTokenException();
         }
     }
-    verifyPasswordResetToken(token: string): { userId: string } {
-        try {
-            const decoded = jwt.verify(token, config.auth.jwtSecret) as { 
-                userId: string 
-            };
-            
-            return { userId: decoded.userId };
-        } catch (error) {
-            if (error instanceof jwt.TokenExpiredError) {
-                throw new AuthenticationException('Reset token has expired');
-            }
-            throw new AuthenticationException('Invalid or malformed reset token');
-        }
+    async verifyResetToken(email: string, providedToken: string): Promise<boolean> {
+    // Get the stored hashed token
+    const resetData = await (await this.getRepo()).getResetDataByEmail(email);
+    
+    if (!resetData) {
+        logger.warn(`No reset token found for email: ${email}`);
+        return false;
     }
+    
+    // Check expiration
+    if (new Date() > resetData.expiresAt) {
+        logger.warn(`Reset token expired for email: ${email}`);
+        await (await this.getRepo()).clearResetToken(email);
+        return false;
+    }
+    
+    // Compare provided token with stored hash
+    const isValid = await bcrypt.compare(providedToken, resetData.hashedToken);
+    
+    if (!isValid) {
+        logger.warn(`Invalid reset token provided for email: ${email}`);
+    }
+    
+    return isValid;
+}
+    
+    async clearResetToken(email: string): Promise<void> {
+  await (await this.getRepo()).clearResetToken(email);
+}
 
     async persistAuthentication(
         res: Response,

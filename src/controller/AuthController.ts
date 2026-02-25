@@ -58,7 +58,7 @@ public async updatePass(req: Request, res: Response): Promise<void> {
     logger.info(`Password reset attempt for email: ${email}`);
 
     // STEP 1: Verify the token FIRST
-    const isValid = await this.userService.verifyResetToken(email, token);
+    const isValid = await this.authService.verifyResetToken(email, token);
     
     if (!isValid) {
         throw new BadRequestException("Invalid or expired reset token");
@@ -68,7 +68,7 @@ public async updatePass(req: Request, res: Response): Promise<void> {
     await this.userService.updateuserpass(email, pass);
     
     // STEP 3: Clear the used token
-    await (await this.authService['getRepo']()).clearResetToken(email);
+    await  this.authService.clearResetToken(email);
 
     logger.info(`Password updated successfully for email: ${email}`);
     res.status(200).json({ message: 'Password updated successfully' });

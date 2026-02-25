@@ -5,8 +5,8 @@
   "main": "index.js",
   "scripts": {
     "lint": "eslint src",
-    "clean": " npx rimraf build",
-    "prebuild": "npm run clean && npm run lint",
+      "clean": "rm -rf build",
+    "prebuild": "npm run clean",
     "build": "tsc",
     "postbuild": "echo Done",
     "prestart": "npm run build",

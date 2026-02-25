@@ -24,7 +24,7 @@ router.put("/update-pass",authenticate,hasPermission(PERMISSION.Forget_PASS),asy
 router.get(
   '/logout',
   authenticate,
-  hasPermission(PERMISSION.LOGOUT),
+  hasPermission(PERMISSION.Update_PAsss),
   asyncHandler(authController.logout.bind(authController))
 );
 export default router;

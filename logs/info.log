@@ -1853,3 +1853,15 @@
 {"level":"info","message":"PostgreSQL connection established","timestamp":"2026-02-25 00:51:57"}
 {"level":"info","message":"POST /login 200","timestamp":"2026-02-25 00:51:57"}
 {"level":"info","message":"PostgreSQL connection established","timestamp":"2026-02-25 00:51:58"}
+{"level":"info","message":"Password reset attempt for email: test@mail.com","timestamp":"2026-02-25 21:28:47"}
+{"level":"info","message":"Password reset attempt for email: test@mail.com","timestamp":"2026-02-25 21:28:47"}
+{"level":"info","message":"Password updated successfully for email: test@mail.com","timestamp":"2026-02-25 21:28:47"}
+{"level":"info","message":"Password reset attempt for email: test@mail.com","timestamp":"2026-02-25 21:31:29"}
+{"level":"info","message":"Password reset attempt for email: test@mail.com","timestamp":"2026-02-25 21:31:29"}
+{"level":"info","message":"Password updated successfully for email: test@mail.com","timestamp":"2026-02-25 21:31:29"}
+{"level":"info","message":"Password reset attempt for email: test@mail.com","timestamp":"2026-02-25 21:32:53"}
+{"level":"info","message":"Password reset attempt for email: test@mail.com","timestamp":"2026-02-25 21:32:53"}
+{"level":"info","message":"Password updated successfully for email: test@mail.com","timestamp":"2026-02-25 21:32:53"}
+{"level":"info","message":"Password reset attempt for email: test@mail.com","timestamp":"2026-02-25 21:38:02"}
+{"level":"info","message":"Password reset attempt for email: test@mail.com","timestamp":"2026-02-25 21:38:03"}
+{"level":"info","message":"Password updated successfully for email: test@mail.com","timestamp":"2026-02-25 21:38:03"}
