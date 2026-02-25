@@ -1828,3 +1828,28 @@
 {"level":"info","message":"POST /forgot-password 200","timestamp":"2026-02-25 00:43:49"}
 {"level":"error","message":"BadRequestException [400] \"Email, token, and new password are required\" {}","timestamp":"2026-02-25 00:45:01"}
 {"level":"warn","message":"PUT /auth/update-pass 400","timestamp":"2026-02-25 00:45:01"}
+{"level":"info","message":"Server running at http://localhost:4000","timestamp":"2026-02-25 00:45:46"}
+{"level":"error","message":"BadRequestException [400] \"Email, token, and new password are required\" {}","timestamp":"2026-02-25 00:50:26"}
+{"level":"warn","message":"PUT /auth/update-pass 400","timestamp":"2026-02-25 00:50:26"}
+{"level":"info","message":"Password reset attempt for email: hussienzoughaib@gmail.com","timestamp":"2026-02-25 00:51:37"}
+{"level":"info","message":"PostgreSQL pool initialized (Neon)","timestamp":"2026-02-25 00:51:37"}
+{"level":"info","message":"PostgreSQL connection established","timestamp":"2026-02-25 00:51:39"}
+{"level":"info","message":"User table ensured in the database","timestamp":"2026-02-25 00:51:40"}
+{"level":"info","message":"PostgreSQL connection established","timestamp":"2026-02-25 00:51:40"}
+{"level":"info","message":"PostgreSQL connection established","timestamp":"2026-02-25 00:51:40"}
+{"level":"info","message":"PostgreSQL connection established","timestamp":"2026-02-25 00:51:40"}
+{"level":"info","message":"User table ensured in the database","timestamp":"2026-02-25 00:51:40"}
+{"level":"info","message":"PostgreSQL connection established","timestamp":"2026-02-25 00:51:40"}
+{"level":"info","message":"Password updated successfully for email: hussienzoughaib@gmail.com","timestamp":"2026-02-25 00:51:41"}
+{"level":"info","message":"PUT /update-pass 200","timestamp":"2026-02-25 00:51:41"}
+{"level":"info","message":"Validating user with email: hussienzoughaib@gmail.com","timestamp":"2026-02-25 00:51:49"}
+{"level":"info","message":"PostgreSQL connection established","timestamp":"2026-02-25 00:51:49"}
+{"level":"info","message":"Setting email in UserBuilder: hussienzoughaib@gmail.com","timestamp":"2026-02-25 00:51:49"}
+{"level":"error","message":"BadRequestException [400] \"Invalid password\" {}","timestamp":"2026-02-25 00:51:49"}
+{"level":"warn","message":"POST /auth/login 400","timestamp":"2026-02-25 00:51:49"}
+{"level":"info","message":"Validating user with email: hussienzoughaib@gmail.com","timestamp":"2026-02-25 00:51:57"}
+{"level":"info","message":"PostgreSQL connection established","timestamp":"2026-02-25 00:51:57"}
+{"level":"info","message":"Setting email in UserBuilder: hussienzoughaib@gmail.com","timestamp":"2026-02-25 00:51:57"}
+{"level":"info","message":"PostgreSQL connection established","timestamp":"2026-02-25 00:51:57"}
+{"level":"info","message":"POST /login 200","timestamp":"2026-02-25 00:51:57"}
+{"level":"info","message":"PostgreSQL connection established","timestamp":"2026-02-25 00:51:58"}

@@ -225,3 +225,5 @@
 {"level":"error","message":"PUT /auth/update-pass 500","timestamp":"2026-02-25 00:14:14"}
 {"level":"error","message":"NotFoundException [404] \"User with token 661083 not found\" { token: '661083' }","timestamp":"2026-02-25 00:17:29"}
 {"level":"error","message":"BadRequestException [400] \"Email, token, and new password are required\" {}","timestamp":"2026-02-25 00:45:01"}
+{"level":"error","message":"BadRequestException [400] \"Email, token, and new password are required\" {}","timestamp":"2026-02-25 00:50:26"}
+{"level":"error","message":"BadRequestException [400] \"Invalid password\" {}","timestamp":"2026-02-25 00:51:49"}
