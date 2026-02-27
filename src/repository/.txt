@@ -1,6 +1,269 @@
-okk i wana do the following endoints:
-1>user authentication and auharization and verfication 
-2>user resert password
-4>mail service using barvo here is there link:https://app.brevo.com/
-5>make endpints for login verfry email and forget password
-6>use jtw token and give me steo by step with explanations for every deatil and what did u did
+i did the following so far:
+1>created a pdf model having the following atributes:
+// src/models/PdfDocument.model.ts
+import { idGenerater } from "../util/IDgenerater";
+
+export class PdfDocument {
+    private id: string;
+    private userId: string;
+    private filename: string;
+  
+    private fileSize: number;
+    private summary: string | null;
+    private createdAt: Date;
+
+
+    constructor(
+        id:string,
+        userId: string,
+        filename: string,
+
+        fileSize: number,
+        summary: string | null = null
+    ) {
+        this.id = id;
+        this.userId = userId;
+        this.filename = filename;
+   
+        this.fileSize = fileSize;
+        this.summary = summary;
+        this.createdAt = new Date();
+    
+    }
+
+    // Getters
+    getId(): string { return this.id; }
+    getUserId(): string { return this.userId; }
+    getFilename(): string { return this.filename; }
+   
+    getFileSize(): number { return this.fileSize; }
+    getSummary(): string | null { return this.summary; }
+    getCreatedAt(): Date { return this.createdAt; }
+ 
+
+    // Setters
+    setId(id: string): void { 
+        this.id = id; 
+    }
+
+    setUserId(userId: string): void { 
+        this.userId = userId; 
+    }
+
+    setFilename(filename: string): void { 
+        this.filename = filename; 
+     
+    }
+
+
+
+    setFileSize(fileSize: number): void { 
+        this.fileSize = fileSize; 
+        
+    }
+
+    setSummary(summary: string | null): void { 
+        this.summary = summary; 
+     
+    }
+
+    setCreatedAt(date: Date): void { 
+        this.createdAt = date; 
+    }
+
+
+
+    // Batch update method (optional but useful)
+   
+}
+2>a builder that i used in the mapper:
+import { PdfDocument } from "models/Pdfmodel";
+
+export class PdfBuilder{
+      private id!: string;
+    private userId!: string;
+    private filename!: string;
+  
+    private fileSize!: number;
+    private summary!: string | null;
+    private createdAt!: Date;
+     // Setters
+     
+    public static createBuilder(): PdfBuilder {
+        return new PdfBuilder();
+    }
+    setId(id: string): this { 
+        this.id = id;
+        return this; 
+    }
+
+    setUserId(userId: string): this { 
+        this.userId = userId; 
+        return this;
+    }
+
+    setFilename(filename: string): this { 
+        this.filename = filename;
+        return this; 
+     
+    }
+
+
+
+    setFileSize(fileSize: number): this { 
+        this.fileSize = fileSize;
+        return this; 
+        
+    }
+
+    setSummary(summary: string | null): this { 
+        this.summary = summary; 
+        return this;
+    }
+     build(): PdfDocument {
+            const required = [this.id,this.userId,this.filename,this.fileSize,this.summary]
+            for (const field of required) {
+                if (field === undefined) {
+                    throw new Error("Missing required fields to build User");
+                }
+            }
+            return new PdfDocument(this.id,this.userId,this.filename,this.fileSize,this.summary)
+        }
+
+}
+3>a Mapper that maps an sql object to a pdf object:import { PdfDocument } from "models/Pdfmodel";
+import { IMapper } from "./IMapper";
+import { PdfBuilder } from "builder/PdfBuilder";
+import { idGenerater } from "util/IDgenerater";
+
+export interface SQLPDF{
+     id: string;
+     userId: string;
+     filename: string;
+  
+     fileSize: number;
+     summary: string | null;
+     createdAt: Date;
+}
+export class PDFMAPPer implements IMapper<SQLPDF,PdfDocument>{
+    map(input: SQLPDF): PdfDocument {
+       return PdfBuilder.createBuilder().
+       setId(idGenerater('pdf'))
+       .setUserId(input.userId)
+       .setFilename(input.filename)
+       .setFileSize(input.fileSize)
+       .setSummary(input.summary)
+       .build();
+    }
+    reversemap(input: PdfDocument): SQLPDF {
+      return {
+      id:input.getId(),
+        userId:input.getUserId(),
+        filename:input.getFilename(),
+        fileSize:input.getFileSize(),
+        summary:input.getSummary(),
+        createdAt:input.getCreatedAt()
+      }
+    }
+
+}
+4>a repo that connects to db:import { PdfDocument } from "models/Pdfmodel";
+import { id, Intiazable, IRepository } from "./IRepo";
+import { ConnectionManager } from "./ConnectionManger";
+import logger from "../util/logger";
+import { RepositoryInitializationException } from "util/exceptions/RepoException";
+
+const CREATE_PDF_TABLE = `
+CREATE TABLE IF NOT EXISTS pdf_documents (
+    id TEXT PRIMARY KEY,
+    user_id TEXT NOT NULL REFERENCES "user"(id) ON DELETE CASCADE,
+    filename VARCHAR(255) NOT NULL,
+    original_filename VARCHAR(255) NOT NULL,
+    file_size INTEGER NOT NULL,
+    summary TEXT,
+    created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+    updated_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP
+);
+
+CREATE INDEX IF NOT EXISTS idx_pdf_documents_user_id ON pdf_documents(user_id);
+`;
+
+const INSERT_PDF = `
+INSERT INTO pdf_documents (id, user_id, filename, original_filename, file_size, summary)
+VALUES ($1, $2, $3, $4, $5, $6)
+`;
+
+export class PdfRepo implements IRepository<PdfDocument>,Intiazable{
+    async init(): Promise<void> {
+           let connection;
+     try{
+        connection=await ConnectionManager.getConnection();
+        await connection.query(CREATE_PDF_TABLE);
+        logger.info('intialized the  repo');
+     
+
+     }
+     catch(error){
+        logger.error(error);
+          throw new RepositoryInitializationException(
+                        "Failed to initialize repository",
+                        error as Error
+                    );
+
+     }
+     finally{
+        connection?.release()
+
+     }
+    }
+   async create(item: PdfDocument): Promise<id> {
+        let connection;
+     try{
+        connection=await ConnectionManager.getConnection()
+        await connection.query('Begin');
+        await connection.query(INSERT_PDF,[item.getId(),item.getUserId(),item.getFilename(),item.getFileSize(),item.getSummary()]);
+        logger.info('intialized the  repo');
+        return item.getId()
+
+     }
+     catch(error){
+        logger.error(error);
+          throw new RepositoryInitializationException(
+                        "Failed to initialize repository",
+                        error as Error
+                    );
+
+     }
+     finally{
+        connection?.release()
+
+     }
+    }
+    get(id: id): Promise<PdfDocument> {
+        throw new Error("Method not implemented.");
+    }
+    getALL(): Promise<PdfDocument[]> {
+        throw new Error("Method not implemented.");
+    }
+    update(item: PdfDocument): Promise<void> {
+        throw new Error("Method not implemented.");
+    }
+    delete(id: id): Promise<void> {
+        throw new Error("Method not implemented.");
+    }
+
+}
+so i wana do the following:
+1>make a json mapper using a json interface having atribures if whata user must enter 
+it will mapp any--->pdf PdfDocumen
+and in revermap:pdfdocument-->json
+2>implment service lauyer for upploading the fil it will go for the following:
+the user will upload the pdf i have to options 1 as link or as an ctuall pdf
+2>it will scan this pdf extracting attributes of it and store in i db
+the scan will also have to make a summary of it based on a main pints of the pdf
+thee user id ofcourse will be extracted frpm the jwt cookie since he is logged in
+make neccsaery validation pints i willd develop later
+after summary has ben extravetd it will return the id of pdf created in the db
+key ponts:
+the summray that is extracted must conatin mai points of pdf
+give a step by step with the reasoning u made and why u choose it

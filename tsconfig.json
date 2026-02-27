@@ -3,7 +3,7 @@
     "target": "ES6",
     "module": "commonjs",
     "strict": true,
-    "types": ["node"],
+    "types": ["node","multer"],
     "baseUrl": "./src",
     "outDir": "build",
     "sourceMap": true,

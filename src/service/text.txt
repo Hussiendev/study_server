@@ -1,51 +1,217 @@
-steps for authentication and authrization:
-1>install dependecies:npm install jsonwebtoken
-2>create the token payload
-3>create sekret key and expirationdaate inside the config file
-3>create Authentication SERVICE that will do the following:CreateToken,VerfyToken,LogoutToken(clear token)
-4>use jwtsign for creatoin and jwtverfy for verfication
-5>make new exception called Authentication ecxeption in http folder 
-6>make authroutes
-7>when jenrated the tokem and login is succesful when the frontend should give u the request it must be authenticated with the gnerated token and in order to read that token u must have a auth middlware
-8>the token genrated will be inside the header after he bearer so you need when accesing it to put split
-9>the auth middleware will do the following:
---->get the token from the header
--->verfy token
---->add payload
----->call next 
-10>make a cookie generater ti store the token inside the cookir
-11>cont logout function
-12>download the cookie parser
-13>make refresh token so till know u have 3 tokens:login token logout and refresh token
-14>the refresh token is the same as generate token but it diifer with expiration here will put refresh token
-15>Autharzation part
----->make role.ts file containing roles and permisions and adpat the rest of prject to it
----->change the validate to have a user and return a user and add role tp persist function
--->adjusgt the token payload so it have both iserid and role
-........
-Till know in my project i have made the following:
-User repo that connects with the db
-User service for crud operation
-aUTH SERVICE for token genration ,the auth token is store in cookie and refresh token is stored in db
-user controller
-auth controler
-for login till know the suer enter emiale and pass upon  it the follwing wil hapen:
-   public async login(req:Request,res:Response){
-    
-            const {email,password} = req.body;
-            if(!email || !password){
-               throw new BadRequestException ("Email and password are required");
-            }
-            const user= await this.userService.validate(email,password);
-          this.authService.persistAuthentication(res,{userId:user.id,role:toRole(user.role)} );
-            await this.userService.updatedLoggedUser(user.email);
-            res.json({message:'Login successful'});
+give me the test cases for userController:
+import logger from "../util/logger";
+import { JSONMapper } from "../mapper/User.Mapper";
+import { User } from "../models/Usermodel";
+import { UserService } from "../service/userService";
+import { BadRequestException } from "../util/exceptions/http/BadRequestException";
+import { Request, Response } from "express";
+import { hash } from "bcrypt";
+import { InsufficientPermissionsException } from "../util/exceptions/http/AutharizationException";
+import { ROLE } from "../config/roles";
+import { AuthRequest } from "../config/authRequest";
+
+export class UserController {
+    constructor(private readonly userService: UserService) {}
+
+    // -------------------------
+    // CREATE USER
+    // -------------------------
+    public async createUser(req: Request, res: Response): Promise<void> {
+        logger.info("Received request to create user");
+
+        const userData: User = new JSONMapper().map(req.body);
+
+        // Always hash password before saving
+        userData.setPassword(await hash(userData.getPassword(), 10));
+
+        const createdUser = await this.userService.createUser(userData);
+
+        res.status(201).json({
+            message: "User created successfully",
+            user: new JSONMapper().reversemap(createdUser)
+        });
+    }
+
+    // -------------------------
+    // GET USER BY ID
+    // -------------------------
+    public async getUser(req: Request, res: Response): Promise<void> {
+           const authReq = req as AuthRequest;
+    const userId = req.params.id;
+
+    this.enforceOwnership(authReq, userId);
         
+        if (!userId) {
+            throw new BadRequestException("User ID is required", { userId });
+        }
+
+        logger.info(`Fetching user with id: ${userId}`);
+
+        const user = await this.userService.getUser(userId);
+
+        res.status(200).json({
+            message: "User retrieved successfully",
+            user: new JSONMapper().reversemap(user)
+        });
+    }
+
+    // -------------------------
+    // GET ALL USERS
+    // -------------------------
+    public async getAllUsers(req: Request, res: Response): Promise<void> {
+        logger.info("Fetching all users");
       
-      
+
+   
+        const users = await this.userService.getAllUsers();
+        const mappedUsers = users.map(user =>
+            new JSONMapper().reversemap(user)
+        );
+
+        res.status(200).json({
+            message: "Users retrieved successfully",
+            count: mappedUsers.length,
+            users: mappedUsers
+        });
+    }
+
+    // -------------------------
+    // UPDATE USER
+    // -------------------------
+    public async updateUser(req: Request, res: Response): Promise<void> {
+        const authReq = req as AuthRequest;        
+    
+        const userId = req.params.id;
+        this.enforceOwnership(authReq, userId);
+
+        if (!userId) {
+            throw new BadRequestException("User ID is required", { userId });
+        }
+
+        logger.info(`Updating user with id: ${userId}`);
+
+        const userData: User = new JSONMapper().map(req.body);
+        userData.setId(userId);
+
+        // Hash password only if provided
+        if (userData.getPassword()) {
+            userData.setPassword(await hash(userData.getPassword(), 10));
+        }
+
+        await this.userService.updateUser(userData);
+
+        res.status(200).json({
+            message: "User updated successfully"
+        });
+    }
+
+    // -------------------------
+    // DELETE USER
+    // -------------------------
+    public async deleteUser(req: Request, res: Response): Promise<void> {
+        const userId = req.params.id;
+            const authReq = req as AuthRequest;
+        this.enforceOwnership(authReq, userId);
+        if (!userId) {
+            throw new BadRequestException("User ID is required", { userId });
+        }
+
+        logger.info(`Deleting user with id: ${userId}`);
+
+        await this.userService.deleteUser(userId);
+
+        res.status(200).json({
+            message: "User deleted successfully",
+            userId
+        });
+    }
+    private enforceOwnership(authReq: AuthRequest, targetUserId: string) {
+    if (
+        authReq.user!.role === ROLE.USER &&
+        authReq.user!.userId !== targetUserId
+    ) {
+        throw new InsufficientPermissionsException();
+    }
+}
+
+}
+
+these ar related files:import { createUserRepo, UserRepo } from "../repository/User.repo";
+import { User } from "../models/Usermodel";
+
+import { BadRequestException } from "../util/exceptions/http/BadRequestException";
+
+import logger from "../util/logger";
+import bcrypt from "bcrypt";
+
+export class UserService {
+
+    private userRepo!: UserRepo;
+
+    // -------------------------
+    // CREATE USER
+    // -------------------------
+    public async createUser(user: User): Promise<User> {
+        logger.info(`Creating user with email: ${user.getEmail()}`);
+
+        this.validateNewUser(user);
+
+        await (await this.getRepo()).create(user);
+
+        return user;
+    }
+
+    // -------------------------
+    // GET USER
+    // -------------------------
+    public async getUser(id: string): Promise<User> {
+        logger.info(`Fetching user with id: ${id}`);
+        return await (await this.getRepo()).get(id);
+    }
+    public async get_user_bymail(email:string):Promise<User>{
+        return await(await this.getRepo()).getsUserbyEmail(email);
+    }
+
+   
+    public async updateuserpass(email:string,pass:string){
+        return await(await this.getRepo()).updatePassword(email,await bcrypt.hash(pass,10));
+
+
         
     }
-step 1: i will validate the email and pass using validation function inn user service:blic async validate(email: string, password: string): Promise<User> {
+  
+
+    // -------------------------
+    // GET ALL USERS
+    // -------------------------
+    public async getAllUsers(): Promise<User[]> {
+        logger.info("Fetching all users");
+        return await (await this.getRepo()).getALL();
+    }
+
+    // -------------------------
+    // UPDATE USER
+    // -------------------------
+    public async updateUser(user: User): Promise<void> {
+        logger.info(`Updating user with id: ${user.getId()}`);
+
+        this.validateUpdateUser(user);
+
+        await (await this.getRepo()).update(user);
+    }
+
+    // -------------------------
+    // DELETE USER
+    // -------------------------
+    public async deleteUser(id: string): Promise<void> {
+        logger.info(`Deleting user with id: ${id}`);
+        await (await this.getRepo()).delete(id);
+    }
+
+    // -------------------------
+    // LOGIN VALIDATION
+    // -------------------------
+    public async validate(email: string, password: string): Promise<User> {
         logger.info(`Validating user with email: ${email}`);
 
         const user = await (await this.getRepo()).getsUserbyEmail(email);
@@ -59,29 +225,347 @@ step 1: i will validate the email and pass using validation function inn user se
 
         return user;
     }
-step 2:i will genrate the token that have userID and role for both auth and refresh and store them occasionly:async persistAuthentication(
-        res: Response,
-        payload: UserPayload,
-       
-    ) {
-        const accessToken = this.generateAccessToken(payload);
-        const refreshToken = this.generateRefreshToken(payload);
-
-        const hashedRefresh = await bcrypt.hash(refreshToken, 10);
-
-        this.setAccessCookie(res, accessToken);
-        this.setRefreshCookie(res, refreshToken);
-               const expired=new Date(
-  Date.now() + ms(this.refreshExpiration)
-)
-        await (await this.getRepo()).updateRefreshToken(payload.userId, hashedRefresh,expired);
-
-      
-    }
-    step 3:i will update user is verfied and tokens:  async updatedLoggedUser(email:string):Promise<void>{
+    async updatedLoggedUser(email:string):Promise<void>{
         await (await this.getRepo()).Update_USER_VERF(email);
 
-    }async Update_USER_VERF(email:string):Promise<void>{
+    }
+
+    // -------------------------
+    // VALIDATION FOR CREATE
+    // -------------------------
+    private validateNewUser(user: User): void {
+        const email = user.getEmail();
+        const name = user.getName();
+        const password = user.getPassword();
+
+        if (!name || !email || !password) {
+            throw new BadRequestException(
+                "Name, email, and password are required."
+            );
+        }
+
+        this.validateEmail(email);
+
+        if (password.length < 6) {
+            throw new BadRequestException(
+                "Password must be at least 6 characters long."
+            );
+        }
+    }
+
+    // -------------------------
+    // VALIDATION FOR UPDATE
+    // -------------------------
+    private validateUpdateUser(user: User): void {
+        if (!user.getId()) {
+            throw new BadRequestException("User ID is required for update.");
+        }
+
+        if (user.getEmail()) {
+            this.validateEmail(user.getEmail());
+        }
+
+        if (user.getPassword() && user.getPassword().length < 6) {
+            throw new BadRequestException(
+                "Password must be at least 6 characters long."
+            );
+        }
+    }
+
+    private validateEmail(email: string): void {
+        const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+
+        if (!emailRegex.test(email)) {
+            throw new BadRequestException("Invalid email format.");
+        }
+    }
+
+    private async getRepo(): Promise<UserRepo> {
+        if (!this.userRepo) {
+            this.userRepo = await createUserRepo();
+        }
+        return this.userRepo;
+    }
+}
+import { User } from "../models/Usermodel";
+import { id,  Intiazable, IRepository } from "./IRepo";
+import { DBException, RepositoryInitializationException } from "../util/exceptions/RepoException";
+import logger from "../util/logger";
+import { ConnectionManager } from "./ConnectionManger";
+import { NotFoundException } from "../util/exceptions/http/NotFoundException";
+
+import { idGenerater } from "../util/IDgenerater";
+import { SQLMapper, SQLUser } from "../mapper/User.Mapper";
+import { ROLE } from "../config/roles";
+
+export const createUser = `
+CREATE TABLE IF NOT EXISTS "user" (
+    id TEXT PRIMARY KEY,
+    name VARCHAR(255) NOT NULL ,
+    email VARCHAR(255) NOT NULL UNIQUE,
+    password VARCHAR(255) NOT NULL,
+    role VARCHAR(50) DEFAULT 'user',
+    last_login TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+    is_verified BOOLEAN DEFAULT FALSE,
+   reset_token TEXT,
+reset_token_expiration TIMESTAMP,
+    refresh_token VARCHAR(255),
+    refresh_token_expires_at TIMESTAMP,
+    created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+    updated_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP
+);
+`;
+
+export const insert_query = `
+INSERT INTO "user" (id,name, email,password,role)
+VALUES ($1, $2, $3,$4,$5);
+`;
+const addRoleColumn = `
+ALTER TABLE "user" ADD COLUMN IF NOT EXISTS role TEXT DEFAULT '${ROLE.USER}';
+`;
+const Get_User='SELECT * FROM "user" WHERE id = $1;';
+const Get_All_Users='SELECT * FROM "user";';
+const Update_User='UPDATE "user" SET name = $1, email = $2, password = $3, role = $4, updated_at = CURRENT_TIMESTAMP WHERE id = $5;';
+const Delete_User='DELETE FROM "user" WHERE id = $1;';
+const Get_User_By_Email='SELECT * FROM "user" WHERE email = $1;';
+const Update_Refresh_Token =
+'UPDATE "user" SET refresh_token=$1,    refresh_token_expires_at=$2 WHERE id=$3;';
+const Update_VeerfyEmail='UPDATE "user" SET is_verified =$1, last_login=CURRENT_TIMESTAMP WHERE email=$2;'
+const Update_logout='UPDATE "user" SET is_verified =$1  WHERE id=$2;'
+
+export class UserRepo implements IRepository<User>, Intiazable {
+
+    async init(): Promise<void> {
+        let connection;
+        try {
+            connection = await ConnectionManager.getConnection();
+            await connection.query(createUser);
+            await connection.query(addRoleColumn);
+            logger.info("User table ensured in the database");
+        } catch (error) {
+            logger.error("Failed to initialize repository", error as Error);
+            throw new RepositoryInitializationException(
+                "Failed to initialize repository",
+                error as Error
+            );
+        } finally {
+            connection?.release();
+        }
+    }
+
+    // -------------------------
+    // CREATE
+    // -------------------------
+    async create(item: User): Promise<id> {
+        let connection;
+        const generatedId = idGenerater("user");
+
+        try {
+            connection = await ConnectionManager.getConnection();
+            await connection.query("BEGIN");
+
+            await connection.query(insert_query, [
+                generatedId,
+                item.getName(),
+                item.getEmail(),
+                item.getPassword(),
+                item.getRole()
+            ]);
+
+            await connection.query("COMMIT");
+
+            item.setId(generatedId);
+            logger.info(`User created successfully: ${generatedId}`);
+            return generatedId;
+
+        } catch (error) {
+            if (connection) await connection.query("ROLLBACK");
+
+            logger.error("DB error during create", error as Error);
+            throw new DBException("Error creating user", error as Error);
+
+        } finally {
+            connection?.release();
+        }
+    }
+
+    // -------------------------
+    // GET BY ID
+    // -------------------------
+    async get(id: id): Promise<User> {
+        let connection;
+
+        try {
+            connection = await ConnectionManager.getConnection();
+            const result = await connection.query<SQLUser>(Get_User, [id]);
+
+            const row = result.rows[0];
+            if (!row) {
+                throw new NotFoundException(
+                    `User with id ${id} not found`,
+                    { userId: id }
+                );
+            }
+           
+
+
+            return new SQLMapper().map(row);
+
+        } catch (error) {
+
+            if (error instanceof NotFoundException) throw error;
+
+            logger.error("DB error fetching user", error as Error);
+            throw new DBException("Error fetching user", error as Error);
+
+        } finally {
+            connection?.release();
+        }
+    }
+
+    // -------------------------
+    // GET BY EMAIL
+    // -------------------------
+    async getsUserbyEmail(email: string): Promise<User> {
+        let connection;
+
+        try {
+            connection = await ConnectionManager.getConnection();
+            const result = await connection.query<SQLUser>(Get_User_By_Email, [email]);
+
+            const row = result.rows[0];
+            if (!row) {
+                throw new NotFoundException(
+                    `User with email ${email} not found`,
+                    { email }
+                );
+            }
+        
+
+            return new SQLMapper().map(row);
+
+        } catch (error) {
+
+            if (error instanceof NotFoundException) throw error;
+
+            logger.error("DB error fetching user by email", error as Error);
+            throw new DBException("Error fetching user by email", error as Error);
+
+        } finally {
+            connection?.release();
+        }
+    }
+
+    // -------------------------
+    // GET ALL
+    // -------------------------
+    async getALL(): Promise<User[]> {
+        let connection;
+
+        try {
+            connection = await ConnectionManager.getConnection();
+            const result = await connection.query<SQLUser>(Get_All_Users);
+
+            if (!result.rows.length) {
+                return [];
+            }
+
+            const mapper = new SQLMapper();
+            return result.rows.map(row => mapper.map(row));
+
+        } catch (error) {
+            logger.error("DB error fetching all users", error as Error);
+            throw new DBException("Error fetching users", error as Error);
+
+        } finally {
+            connection?.release();
+        }
+    }
+
+    // -------------------------
+    // UPDATE
+    // -------------------------
+    async update(item: User): Promise<void> {
+        let connection;
+
+        try {
+            connection = await ConnectionManager.getConnection();
+            await connection.query("BEGIN");
+
+            const result = await connection.query(Update_User, [
+                item.getName(),
+                item.getEmail(),
+                item.getPassword(),
+                item.getRole(),
+                item.getId()
+            ]);
+
+            if (result.rowCount === 0) {
+                throw new NotFoundException(
+                    `User with id ${item.getId()} not found`,
+                    { userId: item.getId() }
+                );
+            }
+
+            await connection.query("COMMIT");
+            logger.info(`User updated: ${item.getId()}`);
+
+        } catch (error) {
+            if (connection) await connection.query("ROLLBACK");
+
+            if (error instanceof NotFoundException) throw error;
+
+            logger.error("DB error during update", error as Error);
+            throw new DBException("Error updating user", error as Error);
+
+        } finally {
+            connection?.release();
+        }
+    }
+
+    // -------------------------
+    // DELETE
+    // -------------------------
+    async delete(id: id): Promise<void> {
+        let connection;
+
+        try {
+            connection = await ConnectionManager.getConnection();
+            await connection.query("BEGIN");
+
+            const result = await connection.query(Delete_User, [id]);
+
+            if (result.rowCount === 0) {
+                throw new NotFoundException(
+                    `User with id ${id} not found`,
+                    { userId: id }
+                );
+            }
+
+            await connection.query("COMMIT");
+            logger.info(`User deleted: ${id}`);
+
+        } catch (error) {
+            if (connection) await connection.query("ROLLBACK");
+
+            if (error instanceof NotFoundException) throw error;
+
+            logger.error("DB error during delete", error as Error);
+            throw new DBException("Error deleting user", error as Error);
+
+        } finally {
+            connection?.release();
+        }
+    }
+    async updateRefreshToken(userId: string, token: string | null,expired:Date|null): Promise<void> {
+    const connection = await ConnectionManager.getConnection();
+    try {
+        await connection.query(Update_Refresh_Token, [token, expired,userId]);
+    } finally {
+        connection.release();
+    }
+}
+async Update_USER_VERF(email:string):Promise<void>{
     const connection = await ConnectionManager.getConnection();
     try {
         await connection.query(Update_VeerfyEmail, [true, email]);
@@ -90,83 +574,88 @@ step 2:i will genrate the token that have userID and role for both auth and refr
     }
 
 }
-and return succes ,but know i want to integrate emmail sending system at the same amnenr,service-->controller
-i want to use brevo for smtp and api
-all my secrete stuff is inside a cnfoge folder:import dotnev from "dotenv";
-import path from "path";
-import {StringValue} from "ms"
-dotnev.config({path:path.join(__dirname,'../ ../.env')});
-export default {
-NODE_ENV: process.env.NODE_ENV || 'development',
-is_Production: process.env.NODE_ENV === 'production',
-logDir: 'logs', // Specifies the folder where log files will be saved.
-port: process.env.PORT ? parseInt(process.env.PORT) : 4000, // Sets the port number for the application to listen on. It checks if a PORT environment variable is set; if not, it defaults to 3000.
-host: process.env.HOST || 'localhost', // Sets the host address for the application. It checks if a HOST environment variable is set; if not, it defaults to 'localhost'.
-Storage:{
-      postgres:'postgresql://neondb_owner:npg_Q0eGUgSc9bYx@ep-still-violet-a4smcvre-pooler.us-east-1.aws.neon.tech/neondb?sslmode=require&channel_binding=require'
-
-},
-auth:{
-    jwtSecret: process.env.JWT_SECRET || 'secret_90909090',
-     RefreshSecret: process.env.JWT_REFRESH_SECRET || 'secret_90909090', // Sets the secret key used for signing JSON Web Tokens (JWTs). It checks if a JWT_SECRET environment variable is set; if not, it defaults to
-    expiration:(process.env.JWT_EXPIRATION || '15m') as StringValue,
-      refreshExpiration:(process.env.JWT_REFRESH_EXPIRATION || '7d') as StringValue, // Sets the expiration time for JWTs. It checks if a JWT_EXPIRATION environment variable is set; if not, it defaults to '1h' (1 hour).
-}
-  
-};i want to alter the login to do following and also add some routes:
-user will still have same steps but the verf token is sent to his email
-login-->verfy email-->use update user login function
-note addd also permsions im using a role based method:// Define roles clearly
-// roles.ts
-
-export enum ROLE {
-  ADMIN = 'admin',
-  USER = 'user',
-}
-
-// Define all possible permissions
-export enum PERMISSION {
-  // User management
-  CREATE_USER = 'user:create',
-  READ_USER = 'user:read',
-  UPDATE_USER = 'user:update',
-  DELETE_USER = 'user:delete',
-  READ_ALL_USERS = 'user:read:all',
-
-  // Auth
-  LOGIN = 'auth:login',
-  LOGOUT = 'auth:logout',
-}
-
-// Map roles to their allowed permissions
-type RolePermissions = {
-  [key in ROLE]: PERMISSION[];
-};
-
-export const ROLE_PERMISSIONS: RolePermissions = {
-  [ROLE.ADMIN]: [
-    ...Object.values(PERMISSION), // Admin can do everything
-  ],
-
-  [ROLE.USER]: [
-    PERMISSION.CREATE_USER,   // Can create his own account
-    PERMISSION.READ_USER,     // Can read his own account
-    PERMISSION.UPDATE_USER,   // Can update his own account
-    PERMISSION.DELETE_USER,   // Can delete his own account
-    PERMISSION.LOGIN,
-    PERMISSION.LOGOUT,
-  ],
-};
-
-export const toRole = (role: string): ROLE => {
-    switch(role){
-        case ROLE.ADMIN:
-            return ROLE.ADMIN;
-        case ROLE.USER:
-            return ROLE.USER;
-        default:
-            throw new Error(`Invalid role: ${role}`);
-    }
+async Logout(userId:string):Promise<void>{
+     const connection = await ConnectionManager.getConnection();
+try {
+        await connection.query(Update_logout, [false, userId]);
+    } finally {
+        connection.release();
     }
 
-give me step by step guide
+}
+async updateResetToken(userId: string, token: string, expiration: Date) {
+    const connection = await ConnectionManager.getConnection();
+    try {
+        await connection.query(
+            `UPDATE "user" 
+             SET reset_token=$1, reset_token_expiration=$2 
+             WHERE id=$3`,
+            [token, expiration, userId]
+        );
+    } finally {
+        connection.release();
+    }
+}
+
+async clearResetToken(email: string): Promise<void> {
+    const connection = await ConnectionManager.getConnection();
+    try {
+        await connection.query(
+            `UPDATE "user" 
+             SET reset_token = NULL, reset_token_expiration = NULL 
+             WHERE email = $1`,
+            [email]
+        );
+    } finally {
+        connection.release();
+    }
+}
+// In User.repo.ts - ADD THIS METHOD
+async getResetDataByEmail(email: string): Promise<{ 
+    hashedToken: string; 
+    expiresAt: Date 
+} | null> {
+    const connection = await ConnectionManager.getConnection();
+    try {
+        const result = await connection.query(
+            `SELECT reset_token, reset_token_expiration 
+             FROM "user" 
+             WHERE email = $1`,
+            [email]
+        );
+        
+        if (result.rows.length === 0 || !result.rows[0].reset_token) {
+            return null;
+        }
+        
+        return {
+            hashedToken: result.rows[0].reset_token,
+            expiresAt: new Date(result.rows[0].reset_token_expiration)
+        };
+    } finally {
+        connection.release();
+    }
+}
+
+async updatePassword(email: string, newPassword: string) {
+    const connection = await ConnectionManager.getConnection();
+    try {
+        await connection.query(
+            `UPDATE "user" 
+             SET password=$1, reset_token=NULL, reset_token_expiration=NULL 
+             WHERE email=$2`,
+            [newPassword, email]
+        );
+    } finally {
+        connection.release();
+    }
+}
+
+}
+
+
+ export async function createUserRepo(): Promise<UserRepo> {
+    const repo = new UserRepo();
+    await repo.init();
+    return repo;
+    }

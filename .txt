@@ -1,0 +1,7 @@
+write now i finished the regstration system give me the following so i can build give me reasinsing steps:
+1>i want to make pdf reader where user updload a pdf and it reads it then give a summary
+right now im making a backend part of it so the follow of where im making is the following
+router->controller->service->repo->database
+i have mapper and a builder
+do i need to store pdf in my db canty i hust read and give the summary
+give me endpints routs and examples i musing typscript express.js and neon server for postgr sql

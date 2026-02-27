@@ -1865,3 +1865,151 @@
 {"level":"info","message":"Password reset attempt for email: test@mail.com","timestamp":"2026-02-25 21:38:02"}
 {"level":"info","message":"Password reset attempt for email: test@mail.com","timestamp":"2026-02-25 21:38:03"}
 {"level":"info","message":"Password updated successfully for email: test@mail.com","timestamp":"2026-02-25 21:38:03"}
+{"level":"info","message":"Server running at http://localhost:4000","timestamp":"2026-02-26 21:51:14"}
+{"level":"info","message":"Server running at http://localhost:4000","timestamp":"2026-02-26 22:01:02"}
+{"level":"info","message":"Received request to create user","timestamp":"2026-02-26 22:06:46"}
+{"level":"info","message":"Mapping JSON to User: {\"name\":\"hussien\",\"email\":\"hussienzoughaib@gmail.com\",\"password\":\"mynameishussien330\"}","timestamp":"2026-02-26 22:06:46"}
+{"level":"info","message":"Setting email in UserBuilder: hussienzoughaib@gmail.com","timestamp":"2026-02-26 22:06:46"}
+{"level":"info","message":"Creating user with email: hussienzoughaib@gmail.com","timestamp":"2026-02-26 22:06:46"}
+{"level":"info","message":"PostgreSQL pool initialized (Neon)","timestamp":"2026-02-26 22:06:46"}
+{"level":"info","message":"PostgreSQL connection established","timestamp":"2026-02-26 22:06:47"}
+{"level":"info","message":"User table ensured in the database","timestamp":"2026-02-26 22:06:47"}
+{"level":"info","message":"PostgreSQL connection established","timestamp":"2026-02-26 22:06:47"}
+{"level":"info","message":"User created successfully: user-30aa254c-6866-44a2-9686-b548879bac68","timestamp":"2026-02-26 22:06:47"}
+{"level":"info","message":"POST / 201","timestamp":"2026-02-26 22:06:48"}
+{"level":"info","message":"Validating user with email: hussienzoughaib@gmail.com","timestamp":"2026-02-26 22:06:57"}
+{"level":"info","message":"PostgreSQL connection established","timestamp":"2026-02-26 22:06:57"}
+{"level":"info","message":"User table ensured in the database","timestamp":"2026-02-26 22:06:57"}
+{"level":"info","message":"PostgreSQL connection established","timestamp":"2026-02-26 22:06:57"}
+{"level":"info","message":"Setting email in UserBuilder: hussienzoughaib@gmail.com","timestamp":"2026-02-26 22:06:57"}
+{"level":"info","message":"PostgreSQL connection established","timestamp":"2026-02-26 22:06:58"}
+{"level":"info","message":"POST /login 200","timestamp":"2026-02-26 22:06:58"}
+{"level":"info","message":"PostgreSQL connection established","timestamp":"2026-02-26 22:06:58"}
+{"level":"info","message":"User table ensured in the database","timestamp":"2026-02-26 22:06:59"}
+{"level":"info","message":"PostgreSQL connection established","timestamp":"2026-02-26 22:06:59"}
+{"level":"error","message":"AuthenticationFailedException [401] \"Authentication failed\" {}","timestamp":"2026-02-26 22:22:20"}
+{"level":"warn","message":"POST /pdf/upload 401","timestamp":"2026-02-26 22:22:20"}
+{"level":"info","message":"Validating user with email: hussienzoughaib@gmail.com","timestamp":"2026-02-26 22:22:37"}
+{"level":"info","message":"PostgreSQL connection established","timestamp":"2026-02-26 22:22:40"}
+{"level":"info","message":"Setting email in UserBuilder: hussienzoughaib@gmail.com","timestamp":"2026-02-26 22:22:41"}
+{"level":"info","message":"PostgreSQL connection established","timestamp":"2026-02-26 22:22:41"}
+{"level":"info","message":"POST /login 200","timestamp":"2026-02-26 22:22:41"}
+{"level":"info","message":"PostgreSQL connection established","timestamp":"2026-02-26 22:22:43"}
+{"level":"info","message":"PDF upload request from user: user-30aa254c-6866-44a2-9686-b548879bac68","timestamp":"2026-02-26 22:22:56"}
+{"level":"info","message":"Processing PDF upload for user: user-30aa254c-6866-44a2-9686-b548879bac68","timestamp":"2026-02-26 22:22:56"}
+{"level":"info","message":"Extracting PDF from file: C:\\cv project\\study_server\\uploads\\pdf-d05bd0de-5a3d-420d-9211-964ee3437c46.pdf","timestamp":"2026-02-26 22:22:56"}
+{"level":"error","message":"Error extracting PDF from file: pdfParse is not a function","stack":"TypeError: pdfParse is not a function\n    at PdfExtractorService.<anonymous> (C:\\cv project\\study_server\\src\\service\\PdfExtraction.Service.ts:49:32)\n    at Generator.next (<anonymous>)\n    at C:\\cv project\\study_server\\src\\service\\PdfExtraction.Service.ts:8:71\n    at new Promise (<anonymous>)\n    at __awaiter (C:\\cv project\\study_server\\src\\service\\PdfExtraction.Service.ts:4:12)\n    at PdfExtractorService.extractFromFile (C:\\cv project\\study_server\\src\\service\\PdfExtraction.Service.ts:28:16)\n    at PdfService.<anonymous> (C:\\cv project\\study_server\\src\\service\\Pdf.Service.ts:46:54)\n    at Generator.next (<anonymous>)\n    at C:\\cv project\\study_server\\src\\service\\Pdf.Service.ts:8:71\n    at new Promise (<anonymous>)","timestamp":"2026-02-26 22:22:56"}
+{"level":"error","message":"Error in uploadPDF: Failed to extract content from PDF file","name":"BadRequestException","stack":"BadRequestException: Failed to extract content from PDF file\n    at PdfExtractorService.<anonymous> (C:\\cv project\\study_server\\src\\service\\PdfExtraction.Service.ts:66:19)\n    at Generator.next (<anonymous>)\n    at C:\\cv project\\study_server\\src\\service\\PdfExtraction.Service.ts:8:71\n    at new Promise (<anonymous>)\n    at __awaiter (C:\\cv project\\study_server\\src\\service\\PdfExtraction.Service.ts:4:12)\n    at PdfExtractorService.extractFromFile (C:\\cv project\\study_server\\src\\service\\PdfExtraction.Service.ts:28:16)\n    at PdfService.<anonymous> (C:\\cv project\\study_server\\src\\service\\Pdf.Service.ts:46:54)\n    at Generator.next (<anonymous>)\n    at C:\\cv project\\study_server\\src\\service\\Pdf.Service.ts:8:71\n    at new Promise (<anonymous>)","status":400,"timestamp":"2026-02-26 22:22:56"}
+{"level":"error","message":"BadRequestException [400] \"Failed to extract content from PDF file\" {}","timestamp":"2026-02-26 22:22:56"}
+{"level":"warn","message":"POST /pdf/upload 400","timestamp":"2026-02-26 22:22:56"}
+{"level":"info","message":"Server running at http://localhost:4000","timestamp":"2026-02-26 23:20:52"}
+{"level":"info","message":"Validating user with email: hussienzoughaib@gmail.com","timestamp":"2026-02-26 23:22:07"}
+{"level":"info","message":"PostgreSQL pool initialized (Neon)","timestamp":"2026-02-26 23:22:07"}
+{"level":"info","message":"PostgreSQL connection established","timestamp":"2026-02-26 23:22:15"}
+{"level":"info","message":"User table ensured in the database","timestamp":"2026-02-26 23:22:15"}
+{"level":"info","message":"PostgreSQL connection established","timestamp":"2026-02-26 23:22:15"}
+{"level":"info","message":"Setting email in UserBuilder: hussienzoughaib@gmail.com","timestamp":"2026-02-26 23:22:16"}
+{"level":"info","message":"PostgreSQL connection established","timestamp":"2026-02-26 23:22:16"}
+{"level":"info","message":"POST /login 200","timestamp":"2026-02-26 23:22:16"}
+{"level":"info","message":"PostgreSQL connection established","timestamp":"2026-02-26 23:22:17"}
+{"level":"info","message":"User table ensured in the database","timestamp":"2026-02-26 23:22:17"}
+{"level":"info","message":"PostgreSQL connection established","timestamp":"2026-02-26 23:22:17"}
+{"level":"info","message":"PDF upload request from user: user-30aa254c-6866-44a2-9686-b548879bac68","timestamp":"2026-02-26 23:23:27"}
+{"level":"info","message":"Processing PDF upload for user: user-30aa254c-6866-44a2-9686-b548879bac68","timestamp":"2026-02-26 23:23:27"}
+{"level":"info","message":"Extracting PDF from file: C:\\cv project\\study_server\\uploads\\pdf-72b9ef3d-5d16-403b-8a21-3af7672410b3.pdf","timestamp":"2026-02-26 23:23:27"}
+{"level":"info","message":"PDF extracted successfully: 2 pages, 219 words","timestamp":"2026-02-26 23:23:27"}
+{"level":"info","message":"PostgreSQL connection established","timestamp":"2026-02-26 23:23:28"}
+{"level":"info","message":"intialized the  repo","timestamp":"2026-02-26 23:23:29"}
+{"level":"info","message":"PostgreSQL connection established","timestamp":"2026-02-26 23:23:29"}
+{"code":"08P01","file":"postgres.c","length":137,"level":"error","line":"1735","message":"bind message supplies 5 parameters, but prepared statement \"\" requires 6","name":"error","routine":"exec_bind_message","severity":"ERROR","stack":"error: bind message supplies 5 parameters, but prepared statement \"\" requires 6\n    at C:\\cv project\\study_server\\node_modules\\pg\\lib\\client.js:545:17\n    at processTicksAndRejections (node:internal/process/task_queues:105:5)","timestamp":"2026-02-26 23:23:29"}
+{"level":"error","message":"Error in uploadPDF: Failed to initialize repository: bind message supplies 5 parameters, but prepared statement \"\" requires 6","name":"RepositoryInitializationException","stack":"error: bind message supplies 5 parameters, but prepared statement \"\" requires 6\n    at C:\\cv project\\study_server\\node_modules\\pg\\lib\\client.js:545:17\n    at processTicksAndRejections (node:internal/process/task_queues:105:5)","timestamp":"2026-02-26 23:23:29"}
+{"level":"error","message":"Unhandled Error: Failed to initialize repository: bind message supplies 5 parameters, but prepared statement \"\" requires 6\nerror: bind message supplies 5 parameters, but prepared statement \"\" requires 6\n    at C:\\cv project\\study_server\\node_modules\\pg\\lib\\client.js:545:17\n    at processTicksAndRejections (node:internal/process/task_queues:105:5)","timestamp":"2026-02-26 23:23:29"}
+{"level":"error","message":"POST /pdf/upload 500","timestamp":"2026-02-26 23:23:29"}
+{"level":"info","message":"Server running at http://localhost:4000","timestamp":"2026-02-26 23:28:06"}
+{"level":"info","message":"Server running at http://localhost:4000","timestamp":"2026-02-26 23:28:13"}
+{"level":"info","message":"Server running at http://localhost:4000","timestamp":"2026-02-26 23:28:43"}
+{"level":"info","message":"Server running at http://localhost:4000","timestamp":"2026-02-26 23:28:53"}
+{"level":"info","message":"Server running at http://localhost:4000","timestamp":"2026-02-26 23:29:01"}
+{"level":"info","message":"Server running at http://localhost:4000","timestamp":"2026-02-26 23:29:06"}
+{"level":"info","message":"PDF upload request from user: user-30aa254c-6866-44a2-9686-b548879bac68","timestamp":"2026-02-26 23:29:35"}
+{"level":"info","message":"Processing PDF upload for user: user-30aa254c-6866-44a2-9686-b548879bac68","timestamp":"2026-02-26 23:29:35"}
+{"level":"info","message":"Extracting PDF from file: C:\\cv project\\study_server\\uploads\\pdf-7418ea87-edcd-4f7c-9258-da1271548dc9.pdf","timestamp":"2026-02-26 23:29:35"}
+{"level":"info","message":"PDF extracted successfully: 2 pages, 219 words","timestamp":"2026-02-26 23:29:35"}
+{"level":"info","message":"PostgreSQL pool initialized (Neon)","timestamp":"2026-02-26 23:29:35"}
+{"level":"info","message":"PostgreSQL connection established","timestamp":"2026-02-26 23:29:36"}
+{"level":"info","message":"intialized the  repo","timestamp":"2026-02-26 23:29:37"}
+{"level":"info","message":"PostgreSQL connection established","timestamp":"2026-02-26 23:29:37"}
+{"level":"info","message":"intialized the  repo","timestamp":"2026-02-26 23:29:37"}
+{"level":"info","message":"PDF uploaded successfully. ID: pdf-aad5cbbe-d173-4d91-a410-4911767d2727","timestamp":"2026-02-26 23:29:37"}
+{"level":"info","message":"POST /upload 201","timestamp":"2026-02-26 23:29:37"}
+{"level":"info","message":"Server running at http://localhost:4000","timestamp":"2026-02-27 01:20:42"}
+{"level":"info","message":"Server running at http://localhost:4000","timestamp":"2026-02-27 01:21:22"}
+{"level":"info","message":"Server running at http://localhost:4000","timestamp":"2026-02-27 01:21:41"}
+{"level":"info","message":"Server running at http://localhost:4000","timestamp":"2026-02-27 01:21:55"}
+{"level":"info","message":"Server running at http://localhost:4000","timestamp":"2026-02-27 01:22:16"}
+{"level":"info","message":"Validating user with email: hussienzoughaib@gmail.com","timestamp":"2026-02-27 01:23:04"}
+{"level":"info","message":"PostgreSQL pool initialized (Neon)","timestamp":"2026-02-27 01:23:04"}
+{"level":"info","message":"PostgreSQL connection established","timestamp":"2026-02-27 01:23:06"}
+{"level":"info","message":"User table ensured in the database","timestamp":"2026-02-27 01:23:06"}
+{"level":"info","message":"PostgreSQL connection established","timestamp":"2026-02-27 01:23:06"}
+{"level":"info","message":"Setting email in UserBuilder: hussienzoughaib@gmail.com","timestamp":"2026-02-27 01:23:07"}
+{"level":"info","message":"PostgreSQL connection established","timestamp":"2026-02-27 01:23:07"}
+{"level":"info","message":"POST /login 200","timestamp":"2026-02-27 01:23:07"}
+{"level":"info","message":"PostgreSQL connection established","timestamp":"2026-02-27 01:23:08"}
+{"level":"info","message":"User table ensured in the database","timestamp":"2026-02-27 01:23:08"}
+{"level":"info","message":"PostgreSQL connection established","timestamp":"2026-02-27 01:23:08"}
+{"level":"info","message":"PDF upload request from user: user-30aa254c-6866-44a2-9686-b548879bac68","timestamp":"2026-02-27 01:25:08"}
+{"level":"info","message":"Processing PDF upload for user: user-30aa254c-6866-44a2-9686-b548879bac68","timestamp":"2026-02-27 01:25:08"}
+{"level":"info","message":"Extracting PDF from file: C:\\cv project\\study_server\\uploads\\pdf-12ec5ce8-1a72-4cbf-8064-639e417fbf76.pdf","timestamp":"2026-02-27 01:25:08"}
+{"level":"info","message":"PDF extracted successfully: 2 pages, 219 words","timestamp":"2026-02-27 01:25:09"}
+{"level":"info","message":"PostgreSQL connection established","timestamp":"2026-02-27 01:25:10"}
+{"level":"info","message":"intialized the  repo","timestamp":"2026-02-27 01:25:11"}
+{"level":"info","message":"PostgreSQL connection established","timestamp":"2026-02-27 01:25:11"}
+{"level":"info","message":"intialized the  repo","timestamp":"2026-02-27 01:25:12"}
+{"level":"info","message":"inserted succefuly","timestamp":"2026-02-27 01:25:12"}
+{"level":"info","message":"PDF uploaded successfully. ID: pdf-5394f6be-a764-48ac-a5aa-9e10f6a3a1d2","timestamp":"2026-02-27 01:25:12"}
+{"level":"info","message":"POST /upload 201","timestamp":"2026-02-27 01:25:12"}
+{"level":"info","message":"Password reset attempt for email: test@mail.com","timestamp":"2026-02-27 01:35:40"}
+{"level":"info","message":"Password reset attempt for email: test@mail.com","timestamp":"2026-02-27 01:35:40"}
+{"level":"info","message":"Password updated successfully for email: test@mail.com","timestamp":"2026-02-27 01:35:40"}
+{"level":"info","message":"Password reset attempt for email: test@mail.com","timestamp":"2026-02-27 01:47:58"}
+{"level":"info","message":"Password reset attempt for email: test@mail.com","timestamp":"2026-02-27 01:47:58"}
+{"level":"info","message":"Password updated successfully for email: test@mail.com","timestamp":"2026-02-27 01:47:58"}
+{"level":"info","message":"Server running at http://localhost:4000","timestamp":"2026-02-27 01:54:14"}
+{"level":"info","message":"Validating user with email: hussienzoughaib@gmail.com","timestamp":"2026-02-27 01:57:13"}
+{"level":"info","message":"PostgreSQL pool initialized (Neon)","timestamp":"2026-02-27 01:57:13"}
+{"level":"info","message":"PostgreSQL connection established","timestamp":"2026-02-27 01:57:16"}
+{"level":"info","message":"User table ensured in the database","timestamp":"2026-02-27 01:57:17"}
+{"level":"info","message":"PostgreSQL connection established","timestamp":"2026-02-27 01:57:17"}
+{"level":"info","message":"Setting email in UserBuilder: hussienzoughaib@gmail.com","timestamp":"2026-02-27 01:57:17"}
+{"level":"info","message":"PostgreSQL connection established","timestamp":"2026-02-27 01:57:17"}
+{"level":"info","message":"POST /login 200","timestamp":"2026-02-27 01:57:17"}
+{"level":"info","message":"PostgreSQL connection established","timestamp":"2026-02-27 01:57:19"}
+{"level":"info","message":"User table ensured in the database","timestamp":"2026-02-27 01:57:19"}
+{"level":"info","message":"PostgreSQL connection established","timestamp":"2026-02-27 01:57:19"}
+{"level":"info","message":"PDF upload request from user: user-30aa254c-6866-44a2-9686-b548879bac68","timestamp":"2026-02-27 02:00:21"}
+{"level":"info","message":"Processing PDF upload for user: user-30aa254c-6866-44a2-9686-b548879bac68","timestamp":"2026-02-27 02:00:21"}
+{"level":"info","message":"Extracting PDF from file: C:\\cv project\\study_server\\uploads\\pdf-e049a65a-915c-4a56-aa8e-cfd45d072d89.pdf","timestamp":"2026-02-27 02:00:21"}
+{"level":"info","message":"PDF extracted successfully: 87 pages, 4274 words","timestamp":"2026-02-27 02:00:23"}
+{"level":"info","message":"PostgreSQL connection established","timestamp":"2026-02-27 02:00:24"}
+{"level":"info","message":"intialized the  repo","timestamp":"2026-02-27 02:00:24"}
+{"level":"info","message":"PostgreSQL connection established","timestamp":"2026-02-27 02:00:24"}
+{"level":"info","message":"intialized the  repo","timestamp":"2026-02-27 02:00:25"}
+{"level":"info","message":"inserted succefuly","timestamp":"2026-02-27 02:00:25"}
+{"level":"info","message":"PDF uploaded successfully. ID: pdf-43f15644-17d4-4468-a222-d9a10dbbe1c6","timestamp":"2026-02-27 02:00:25"}
+{"level":"info","message":"POST /upload 201","timestamp":"2026-02-27 02:00:25"}
+{"level":"info","message":"Password reset attempt for email: test@mail.com","timestamp":"2026-02-27 02:39:26"}
+{"level":"info","message":"Password reset attempt for email: test@mail.com","timestamp":"2026-02-27 02:39:26"}
+{"level":"info","message":"Password updated successfully for email: test@mail.com","timestamp":"2026-02-27 02:39:26"}
+{"level":"info","message":"Password reset attempt for email: test@mail.com","timestamp":"2026-02-27 21:20:02"}
+{"level":"info","message":"Password reset attempt for email: test@mail.com","timestamp":"2026-02-27 21:20:02"}
+{"level":"info","message":"Password updated successfully for email: test@mail.com","timestamp":"2026-02-27 21:20:02"}
+{"level":"info","message":"Password reset attempt for email: test@mail.com","timestamp":"2026-02-27 21:39:39"}
+{"level":"info","message":"Password reset attempt for email: test@mail.com","timestamp":"2026-02-27 21:39:39"}
+{"level":"info","message":"Password updated successfully for email: test@mail.com","timestamp":"2026-02-27 21:39:39"}
+{"level":"info","message":"Password reset attempt for email: test@mail.com","timestamp":"2026-02-27 21:47:26"}
+{"level":"info","message":"Password reset attempt for email: test@mail.com","timestamp":"2026-02-27 21:47:26"}
+{"level":"info","message":"Password updated successfully for email: test@mail.com","timestamp":"2026-02-27 21:47:26"}
+{"level":"info","message":"Password reset attempt for email: test@mail.com","timestamp":"2026-02-27 21:50:59"}
+{"level":"info","message":"Password reset attempt for email: test@mail.com","timestamp":"2026-02-27 21:50:59"}
+{"level":"info","message":"Password updated successfully for email: test@mail.com","timestamp":"2026-02-27 21:50:59"}

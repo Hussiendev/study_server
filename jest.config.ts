@@ -15,6 +15,11 @@ const config: Config = {
       functions: 80,
       statements: 75
     }
-  }
+  },
+  // Add this to handle ES modules in node_modules
+  transformIgnorePatterns: [
+    'node_modules/(?!(uuid)/)'  // Transform uuid package even though it's in node_modules
+  ]
 };
+
 export default config;

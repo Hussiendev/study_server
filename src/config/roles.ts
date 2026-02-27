@@ -19,7 +19,9 @@ export enum PERMISSION {
   LOGIN = 'auth:login',
   LOGOUT = 'auth:logout',
   Forget_PASS='auth:forget_pass',
-  Update_PAsss='auth:update_pass'
+  Update_PAsss='auth:update_pass',
+  //pdf MANGEMNET
+  UPLOAD='pdf:upload'
 }
 
 // Map roles to their allowed permissions
@@ -40,7 +42,8 @@ export const ROLE_PERMISSIONS: RolePermissions = {
     PERMISSION.LOGIN,
     PERMISSION.LOGOUT,
     PERMISSION.Forget_PASS,
-    PERMISSION.Update_PAsss
+    PERMISSION.Update_PAsss,
+    PERMISSION.UPLOAD
   ],
 };
 
