@@ -19,8 +19,8 @@ const authController = new AuthController(authService,userService,emailService);
 
 // Define your routes here
 router.post('/login',asyncHandler(authController.login.bind(authController)));
-router.post("/forgot-password",authenticate,hasPermission(PERMISSION.Forget_PASS),asyncHandler(authController.forgetpass.bind(authController)));
-router.put("/update-pass",authenticate,hasPermission(PERMISSION.Forget_PASS),asyncHandler(authController.updatePass.bind(authController)));
+router.post("/forgot-password",asyncHandler(authController.forgetpass.bind(authController)));
+router.put("/update-pass",asyncHandler(authController.updatePass.bind(authController)));
 router.get(
   '/logout',
   authenticate,

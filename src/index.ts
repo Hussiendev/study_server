@@ -19,7 +19,15 @@ const app = express();
 app.use(helmet());
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));
-app.use(cors({ origin: "*" }));
+
+// FIXED CORS CONFIGURATION - No wildcard, with credentials support
+app.use(cors({
+    origin: 'http://localhost:3000', // Your frontend URL exactly
+    credentials: true, // Allow cookies
+    methods: ['GET', 'POST', 'PUT', 'DELETE', 'OPTIONS'],
+    allowedHeaders: ['Content-Type', 'Authorization', 'X-Requested-With']
+}));
+
 app.use(cookieParser());
 app.use(requestLogger);
 
@@ -74,4 +82,3 @@ app.use((err: Error, req: Request, res: Response, next: NextFunction) => {
 app.listen(config.port, config.host, () => {
     logger.info(`Server running at http://${config.host}:${config.port}`);
 });
-

@@ -1,269 +1,736 @@
-i did the following so far:
-1>created a pdf model having the following atributes:
-// src/models/PdfDocument.model.ts
-import { idGenerater } from "../util/IDgenerater";
+here is my current frontend:
+in my service folder:
+import axios from 'axios';
 
-export class PdfDocument {
-    private id: string;
-    private userId: string;
-    private filename: string;
-  
-    private fileSize: number;
-    private summary: string | null;
-    private createdAt: Date;
+// Use port 4000 instead of 3000
+const API_URL = 'http://localhost:4000'; // Your backend URL on port 4000
 
+const api = axios.create({
+  baseURL: API_URL,
+  headers: {
+    'Content-Type': 'application/json',
+  },
+});
 
-    constructor(
-        id:string,
-        userId: string,
-        filename: string,
-
-        fileSize: number,
-        summary: string | null = null
-    ) {
-        this.id = id;
-        this.userId = userId;
-        this.filename = filename;
-   
-        this.fileSize = fileSize;
-        this.summary = summary;
-        this.createdAt = new Date();
-    
+// Request interceptor to add token
+api.interceptors.request.use(
+  (config) => {
+    const token = localStorage.getItem('accessToken');
+    if (token) {
+      config.headers.Authorization = `Bearer ${token}`;
     }
-
-    // Getters
-    getId(): string { return this.id; }
-    getUserId(): string { return this.userId; }
-    getFilename(): string { return this.filename; }
-   
-    getFileSize(): number { return this.fileSize; }
-    getSummary(): string | null { return this.summary; }
-    getCreatedAt(): Date { return this.createdAt; }
- 
-
-    // Setters
-    setId(id: string): void { 
-        this.id = id; 
-    }
-
-    setUserId(userId: string): void { 
-        this.userId = userId; 
-    }
-
-    setFilename(filename: string): void { 
-        this.filename = filename; 
-     
-    }
-
-
-
-    setFileSize(fileSize: number): void { 
-        this.fileSize = fileSize; 
-        
-    }
-
-    setSummary(summary: string | null): void { 
-        this.summary = summary; 
-     
-    }
-
-    setCreatedAt(date: Date): void { 
-        this.createdAt = date; 
-    }
-
-
-
-    // Batch update method (optional but useful)
-   
-}
-2>a builder that i used in the mapper:
-import { PdfDocument } from "models/Pdfmodel";
-
-export class PdfBuilder{
-      private id!: string;
-    private userId!: string;
-    private filename!: string;
-  
-    private fileSize!: number;
-    private summary!: string | null;
-    private createdAt!: Date;
-     // Setters
-     
-    public static createBuilder(): PdfBuilder {
-        return new PdfBuilder();
-    }
-    setId(id: string): this { 
-        this.id = id;
-        return this; 
-    }
-
-    setUserId(userId: string): this { 
-        this.userId = userId; 
-        return this;
-    }
-
-    setFilename(filename: string): this { 
-        this.filename = filename;
-        return this; 
-     
-    }
-
-
-
-    setFileSize(fileSize: number): this { 
-        this.fileSize = fileSize;
-        return this; 
-        
-    }
-
-    setSummary(summary: string | null): this { 
-        this.summary = summary; 
-        return this;
-    }
-     build(): PdfDocument {
-            const required = [this.id,this.userId,this.filename,this.fileSize,this.summary]
-            for (const field of required) {
-                if (field === undefined) {
-                    throw new Error("Missing required fields to build User");
-                }
-            }
-            return new PdfDocument(this.id,this.userId,this.filename,this.fileSize,this.summary)
-        }
-
-}
-3>a Mapper that maps an sql object to a pdf object:import { PdfDocument } from "models/Pdfmodel";
-import { IMapper } from "./IMapper";
-import { PdfBuilder } from "builder/PdfBuilder";
-import { idGenerater } from "util/IDgenerater";
-
-export interface SQLPDF{
-     id: string;
-     userId: string;
-     filename: string;
-  
-     fileSize: number;
-     summary: string | null;
-     createdAt: Date;
-}
-export class PDFMAPPer implements IMapper<SQLPDF,PdfDocument>{
-    map(input: SQLPDF): PdfDocument {
-       return PdfBuilder.createBuilder().
-       setId(idGenerater('pdf'))
-       .setUserId(input.userId)
-       .setFilename(input.filename)
-       .setFileSize(input.fileSize)
-       .setSummary(input.summary)
-       .build();
-    }
-    reversemap(input: PdfDocument): SQLPDF {
-      return {
-      id:input.getId(),
-        userId:input.getUserId(),
-        filename:input.getFilename(),
-        fileSize:input.getFileSize(),
-        summary:input.getSummary(),
-        createdAt:input.getCreatedAt()
-      }
-    }
-
-}
-4>a repo that connects to db:import { PdfDocument } from "models/Pdfmodel";
-import { id, Intiazable, IRepository } from "./IRepo";
-import { ConnectionManager } from "./ConnectionManger";
-import logger from "../util/logger";
-import { RepositoryInitializationException } from "util/exceptions/RepoException";
-
-const CREATE_PDF_TABLE = `
-CREATE TABLE IF NOT EXISTS pdf_documents (
-    id TEXT PRIMARY KEY,
-    user_id TEXT NOT NULL REFERENCES "user"(id) ON DELETE CASCADE,
-    filename VARCHAR(255) NOT NULL,
-    original_filename VARCHAR(255) NOT NULL,
-    file_size INTEGER NOT NULL,
-    summary TEXT,
-    created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
-    updated_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP
+    return config;
+  },
+  (error) => Promise.reject(error)
 );
 
-CREATE INDEX IF NOT EXISTS idx_pdf_documents_user_id ON pdf_documents(user_id);
-`;
-
-const INSERT_PDF = `
-INSERT INTO pdf_documents (id, user_id, filename, original_filename, file_size, summary)
-VALUES ($1, $2, $3, $4, $5, $6)
-`;
-
-export class PdfRepo implements IRepository<PdfDocument>,Intiazable{
-    async init(): Promise<void> {
-           let connection;
-     try{
-        connection=await ConnectionManager.getConnection();
-        await connection.query(CREATE_PDF_TABLE);
-        logger.info('intialized the  repo');
-     
-
-     }
-     catch(error){
-        logger.error(error);
-          throw new RepositoryInitializationException(
-                        "Failed to initialize repository",
-                        error as Error
-                    );
-
-     }
-     finally{
-        connection?.release()
-
-     }
+// Response interceptor for error handling
+api.interceptors.response.use(
+  (response) => response,
+  (error) => {
+    if (error.response?.status === 401) {
+      // Unauthorized - clear tokens and redirect to login
+      localStorage.removeItem('auth_token');
+      localStorage.removeItem('refreshToken');
+      localStorage.removeItem('user');
+      window.location.href = '/login';
     }
-   async create(item: PdfDocument): Promise<id> {
-        let connection;
-     try{
-        connection=await ConnectionManager.getConnection()
-        await connection.query('Begin');
-        await connection.query(INSERT_PDF,[item.getId(),item.getUserId(),item.getFilename(),item.getFileSize(),item.getSummary()]);
-        logger.info('intialized the  repo');
-        return item.getId()
+    return Promise.reject(error);
+  }
+);
 
-     }
-     catch(error){
-        logger.error(error);
-          throw new RepositoryInitializationException(
-                        "Failed to initialize repository",
-                        error as Error
-                    );
+export default api;
+in my authcontext:import React, { createContext, useState, useContext, ReactNode, useEffect } from 'react';
+import api from '../service/api';  // Make sure this path is correct
+import { User, LoginResponse } from '../types/auth.types';
 
-     }
-     finally{
-        connection?.release()
-
-     }
-    }
-    get(id: id): Promise<PdfDocument> {
-        throw new Error("Method not implemented.");
-    }
-    getALL(): Promise<PdfDocument[]> {
-        throw new Error("Method not implemented.");
-    }
-    update(item: PdfDocument): Promise<void> {
-        throw new Error("Method not implemented.");
-    }
-    delete(id: id): Promise<void> {
-        throw new Error("Method not implemented.");
-    }
-
+interface AuthContextType {
+  user: User | null;
+  loading: boolean;
+  error: string | null;
+  register: (email: string, name: string, password: string) => Promise<void>;
+  login: (email: string, password: string) => Promise<void>;
+  logout: () => void;
+  isAuthenticated: boolean;
 }
-so i wana do the following:
-1>make a json mapper using a json interface having atribures if whata user must enter 
-it will mapp any--->pdf PdfDocumen
-and in revermap:pdfdocument-->json
-2>implment service lauyer for upploading the fil it will go for the following:
-the user will upload the pdf i have to options 1 as link or as an ctuall pdf
-2>it will scan this pdf extracting attributes of it and store in i db
-the scan will also have to make a summary of it based on a main pints of the pdf
-thee user id ofcourse will be extracted frpm the jwt cookie since he is logged in
-make neccsaery validation pints i willd develop later
-after summary has ben extravetd it will return the id of pdf created in the db
-key ponts:
-the summray that is extracted must conatin mai points of pdf
-give a step by step with the reasoning u made and why u choose it
+
+const AuthContext = createContext<AuthContextType | undefined>(undefined);
+
+export const AuthProvider: React.FC<{ children: ReactNode }> = ({ children }) => {
+  const [user, setUser] = useState<User | null>(null);
+  const [loading, setLoading] = useState(false);
+  const [error, setError] = useState<string | null>(null);
+  const [isAuthenticated, setIsAuthenticated] = useState(false);
+
+  // Check for stored user on mount
+  useEffect(() => {
+    try {
+      const storedUser = localStorage.getItem('user');
+      const token = localStorage.getItem('accessToken');
+      
+      console.log('Checking stored user:', { storedUser, token });
+      
+      if (storedUser && storedUser !== 'undefined' && token) {
+        const parsedUser = JSON.parse(storedUser);
+        console.log('Parsed stored user:', parsedUser);
+        setUser(parsedUser);
+        setIsAuthenticated(true);
+      } else {
+        // Clear any invalid data
+        localStorage.removeItem('user');
+        localStorage.removeItem('accessToken');
+        localStorage.removeItem('refreshToken');
+      }
+    } catch (error) {
+      console.error('Error parsing user from localStorage:', error);
+      localStorage.removeItem('user');
+      localStorage.removeItem('accessToken');
+      localStorage.removeItem('refreshToken');
+    }
+  }, []);
+
+  const register = async (email: string, name: string, password: string) => {
+    try {
+      setLoading(true);
+      setError(null);
+      
+      console.log('Sending signup request to:', '/users/');
+      console.log('Request data:', { name, email, password });
+      
+      const response = await api.post('/users/', {
+        name,
+        email,
+        password
+      });
+
+      console.log('Signup response:', response.data);
+      
+    } catch (err: any) {
+      console.error('Signup error:', err.response?.data || err.message);
+      
+      const errorMessage = err.response?.data?.message || 
+                          err.response?.data?.error || 
+                          err.message ||
+                          'Signup failed';
+      setError(errorMessage);
+      throw err;
+    } finally {
+      setLoading(false);
+    }
+  };
+
+  const login = async (email: string, password: string) => {
+    try {
+      setLoading(true);
+      setError(null);
+      
+      console.log('Sending login request to:', '/auth/login');
+      
+      const response = await api.post<LoginResponse>('/auth/login', {
+        email,
+        password
+      });
+
+      console.log('Login response:', response.data);
+
+      // Store tokens and user data
+      localStorage.setItem('accessToken', response.data.accessToken);
+      localStorage.setItem('refreshToken', response.data.refreshToken);
+      localStorage.setItem('user', JSON.stringify(response.data.user));
+      
+      // IMPORTANT: Set both user and isAuthenticated
+      console.log('Setting user:', response.data.user);
+      setUser(response.data.user);
+      setIsAuthenticated(true);
+      
+    } catch (err: any) {
+      console.error('Login error:', err.response?.data || err.message);
+      
+      const errorMessage = err.response?.data?.message || 
+                          err.response?.data?.error || 
+                          err.message ||
+                          'Login failed';
+      setError(errorMessage);
+      throw err;
+    } finally {
+      setLoading(false);
+    }
+  };
+
+  const logout = () => {
+    localStorage.removeItem('accessToken');
+    localStorage.removeItem('refreshToken');
+    localStorage.removeItem('user');
+    setUser(null);
+    setIsAuthenticated(false);
+  };
+
+  return (
+    <AuthContext.Provider value={{ 
+      user, 
+      loading, 
+      error, 
+      register, 
+      login, 
+      logout, 
+      isAuthenticated 
+    }}>
+      {children}
+    </AuthContext.Provider>
+  );
+};
+
+export const useAuth = () => {
+  const context = useContext(AuthContext);
+  if (context === undefined) {
+    throw new Error('useAuth must be used within an AuthProvider');
+  }
+  return context;
+}; my login when i logg in and want to go to my dashboard althoughnim verfiedf the db response is called anutherized here is my dash oard componnet:
+import React, { useState, useEffect } from 'react';
+import { motion, AnimatePresence } from 'framer-motion';
+import { 
+  Users, 
+  UserPlus, 
+  LogOut, 
+  Search,
+  Edit,
+  Trash2,
+  ChevronLeft,
+  ChevronRight,
+  Plus
+} from 'lucide-react';
+import { useNavigate } from 'react-router-dom';
+import { useAuth } from '../contexts/AuthContext';
+import api from '../service/api';
+import { User } from '../types/auth.types';
+
+// Extended User interface for dashboard display
+interface DashboardUser extends User {
+  status?: string;
+  lastActive?: string;
+  avatar?: string;
+}
+
+const Dashboard: React.FC = () => {
+  const navigate = useNavigate();
+  const { user, logout, isAuthenticated } = useAuth();
+  const [sidebarOpen, setSidebarOpen] = useState(true);
+  const [searchTerm, setSearchTerm] = useState('');
+  const [selectedUser, setSelectedUser] = useState<string | null>(null);
+  const [showDeleteModal, setShowDeleteModal] = useState(false);
+  const [userToDelete, setUserToDelete] = useState<string | null>(null);
+  const [users, setUsers] = useState<DashboardUser[]>([]);
+  const [loading, setLoading] = useState(true);
+  const [error, setError] = useState<string | null>(null);
+
+  // Check if user is authenticated and is admin
+  useEffect(() => {
+    if (!isAuthenticated) {
+      navigate('/login', { replace: true });
+    } else if (user?.role?.toLowerCase() !== 'admin') {
+      navigate('/unauthorized', { replace: true });
+    }
+  }, [isAuthenticated, user, navigate]);
+
+  // Fetch users from database
+  useEffect(() => {
+    const fetchUsers = async () => {
+      try {
+        setLoading(true);
+        
+        console.log('Fetching users with cookie auth...');
+        
+        const response = await api.get('/users/');
+        console.log('API Response:', response.data);
+        
+        // Transform the data to match DashboardUser interface
+        if (response.data && response.data.users) {
+          const transformedUsers: DashboardUser[] = response.data.users.map((dbUser: any) => ({
+            id: dbUser._id || dbUser.id || dbUser.userId,
+            name: dbUser.name,
+            email: dbUser.email,
+            role: dbUser.role === 'admin' ? 'Admin' : 
+                  dbUser.role === 'user' ? 'User' : 
+                  dbUser.role || 'User',
+            status: 'Active',
+            lastActive: new Date().toLocaleDateString(),
+            avatar: dbUser.name.split(' ').map((n: string) => n[0]).join('').toUpperCase().slice(0, 2),
+            createdAt: dbUser.createdAt ? new Date(dbUser.createdAt) : undefined
+          }));
+          setUsers(transformedUsers);
+        }
+        
+        setError(null);
+      } catch (err: any) {
+        console.error('Error fetching users:', {
+          message: err.message,
+          response: err.response?.data,
+          status: err.response?.status,
+        });
+        
+        if (err.response?.status === 401) {
+          setError('Authentication failed. Please log in again.');
+          // Redirect to login after 2 seconds
+          setTimeout(() => navigate('/login', { replace: true }), 2000);
+        } else {
+          setError(err.response?.data?.message || 'Failed to fetch users');
+        }
+      } finally {
+        setLoading(false);
+      }
+    };
+
+    if (isAuthenticated) {
+      fetchUsers();
+    }
+  }, [isAuthenticated, navigate]);
+
+  const handleLogout = async () => {
+    await logout();
+    navigate('/login', { replace: true });
+  };
+
+  const handleDeleteClick = (userId: string) => {
+    setUserToDelete(userId);
+    setShowDeleteModal(true);
+  };
+
+  const handleDeleteConfirm = async () => {
+    if (userToDelete) {
+      try {
+        await api.delete(`/users/${userToDelete}`, {
+          withCredentials: true
+        });
+        setUsers(users.filter(user => user.id !== userToDelete));
+        setShowDeleteModal(false);
+        setUserToDelete(null);
+      } catch (err: any) {
+        console.error('Error deleting user:', err);
+        alert(err.response?.data?.message || 'Failed to delete user');
+      }
+    }
+  };
+
+  const handleDeleteCancel = () => {
+    setShowDeleteModal(false);
+    setUserToDelete(null);
+  };
+
+  const handleAddUser = () => {
+    navigate('/signup');
+  };
+
+  const handleEditUser = (userId: string) => {
+    alert(`Edit user ${userId} - to be connected to backend`);
+  };
+
+  const filteredUsers = users.filter(user => 
+    user.name.toLowerCase().includes(searchTerm.toLowerCase()) ||
+    user.email.toLowerCase().includes(searchTerm.toLowerCase()) ||
+    user.role.toLowerCase().includes(searchTerm.toLowerCase())
+  );
+
+  // Show loading state
+  if (loading) {
+    return (
+      <div className="flex h-screen w-full bg-gray-50 items-center justify-center">
+        <div className="text-center">
+          <div className="w-16 h-16 border-4 border-blue-600 border-t-transparent rounded-full animate-spin mx-auto mb-4"></div>
+          <p className="text-gray-600">Loading users...</p>
+        </div>
+      </div>
+    );
+  }
+
+  // Show error state
+  if (error) {
+    return (
+      <div className="flex h-screen w-full bg-gray-50 items-center justify-center">
+        <div className="text-center bg-white p-8 rounded-xl shadow-xl">
+          <div className="w-16 h-16 bg-red-100 rounded-full flex items-center justify-center mx-auto mb-4">
+            <Users className="w-8 h-8 text-red-600" />
+          </div>
+          <h3 className="text-lg font-semibold text-gray-800 mb-2">Error Loading Users</h3>
+          <p className="text-gray-600 mb-4">{error}</p>
+          <button
+            onClick={() => window.location.reload()}
+            className="px-4 py-2 bg-blue-600 text-white rounded-lg hover:bg-blue-700 transition-colors"
+          >
+            Try Again
+          </button>
+        </div>
+      </div>
+    );
+  }
+
+  return (
+    <div className="flex h-screen w-full bg-gray-50">
+      {/* Sidebar */}
+      <motion.div
+        initial={{ width: sidebarOpen ? 280 : 80 }}
+        animate={{ width: sidebarOpen ? 280 : 80 }}
+        transition={{ duration: 0.3 }}
+        className="bg-white shadow-2xl h-full relative overflow-hidden"
+        style={{ boxShadow: '4px 0 20px rgba(0,0,0,0.08)' }}
+      >
+        {/* Sidebar Header */}
+        <div className="h-20 flex items-center justify-between px-4 border-b border-gray-100">
+          <AnimatePresence>
+            {sidebarOpen && (
+              <motion.div
+                initial={{ opacity: 0 }}
+                animate={{ opacity: 1 }}
+                exit={{ opacity: 0 }}
+                className="flex items-center gap-2"
+              >
+                <div className="w-8 h-8 bg-gradient-to-r from-blue-600 to-cyan-500 rounded-lg flex items-center justify-center">
+                  <Users className="w-5 h-5 text-white" />
+                </div>
+                <span className="font-bold text-xl bg-gradient-to-r from-blue-600 to-cyan-500 text-transparent bg-clip-text">
+                  Admin Panel
+                </span>
+              </motion.div>
+            )}
+          </AnimatePresence>
+          <button
+            onClick={() => setSidebarOpen(!sidebarOpen)}
+            className="p-2 hover:bg-gray-100 rounded-lg transition-colors"
+          >
+            {sidebarOpen ? <ChevronLeft size={20} /> : <ChevronRight size={20} />}
+          </button>
+        </div>
+
+        {/* User Info */}
+        {sidebarOpen && user && (
+          <div className="p-4 border-b border-gray-100">
+            <div className="flex items-center gap-3">
+              <div className="w-10 h-10 bg-gradient-to-r from-blue-600 to-cyan-500 rounded-lg flex items-center justify-center text-white font-semibold">
+                {user.name?.charAt(0) || 'U'}
+              </div>
+              <div>
+                <p className="font-medium text-gray-800">{user.name}</p>
+                <p className="text-sm text-gray-500">{user.email}</p>
+                <span className="text-xs bg-purple-100 text-purple-700 px-2 py-0.5 rounded-full mt-1 inline-block">
+                  {user.role}
+                </span>
+              </div>
+            </div>
+          </div>
+        )}
+
+        {/* Sidebar Menu */}
+        <div className="p-4">
+          <ul className="space-y-2">
+            <li>
+              <button
+                className={`w-full flex items-center gap-3 px-4 py-3 rounded-lg transition-all ${
+                  selectedUser === null 
+                    ? 'bg-gradient-to-r from-blue-600 to-cyan-500 text-white shadow-lg' 
+                    : 'hover:bg-gray-100 text-gray-700'
+                }`}
+                onClick={() => setSelectedUser(null)}
+              >
+                <Users size={20} />
+                <AnimatePresence>
+                  {sidebarOpen && (
+                    <motion.span
+                      initial={{ opacity: 0 }}
+                      animate={{ opacity: 1 }}
+                      exit={{ opacity: 0 }}
+                    >
+                      All Users ({users.length})
+                    </motion.span>
+                  )}
+                </AnimatePresence>
+              </button>
+            </li>
+            <li>
+              <button
+                className="w-full flex items-center gap-3 px-4 py-3 rounded-lg hover:bg-gray-100 text-gray-700 transition-all"
+                onClick={handleAddUser}
+              >
+                <UserPlus size={20} />
+                <AnimatePresence>
+                  {sidebarOpen && (
+                    <motion.span
+                      initial={{ opacity: 0 }}
+                      animate={{ opacity: 1 }}
+                      exit={{ opacity: 0 }}
+                    >
+                      Add User
+                    </motion.span>
+                  )}
+                </AnimatePresence>
+              </button>
+            </li>
+            <li className="pt-4 mt-4 border-t border-gray-100">
+              <button
+                className="w-full flex items-center gap-3 px-4 py-3 rounded-lg hover:bg-red-50 text-red-600 transition-all"
+                onClick={handleLogout}
+              >
+                <LogOut size={20} />
+                <AnimatePresence>
+                  {sidebarOpen && (
+                    <motion.span
+                      initial={{ opacity: 0 }}
+                      animate={{ opacity: 1 }}
+                      exit={{ opacity: 0 }}
+                    >
+                      Logout
+                    </motion.span>
+                  )}
+                </AnimatePresence>
+              </button>
+            </li>
+          </ul>
+        </div>
+      </motion.div>
+
+      {/* Main Content */}
+      <div className="flex-1 overflow-auto">
+        <div className="p-8">
+          {/* Header */}
+          <div className="flex justify-between items-center mb-8">
+            <div>
+              <h1 className="text-3xl font-bold bg-gradient-to-r from-blue-600 to-cyan-500 text-transparent bg-clip-text">
+                User Management
+              </h1>
+              <p className="text-gray-500 mt-1">
+                Manage your users and their permissions • {users.length} total users
+              </p>
+            </div>
+            
+            {/* Search Bar */}
+            <div className="relative">
+              <Search className="absolute left-3 top-1/2 transform -translate-y-1/2 text-gray-400" size={20} />
+              <input
+                type="text"
+                placeholder="Search users..."
+                value={searchTerm}
+                onChange={(e) => setSearchTerm(e.target.value)}
+                className="pl-10 pr-4 py-2 border border-gray-200 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent w-64"
+              />
+            </div>
+          </div>
+
+          {/* Add User Button (Mobile/Tablet) */}
+          <div className="md:hidden mb-4">
+            <button
+              onClick={handleAddUser}
+              className="w-full flex items-center justify-center gap-2 px-4 py-3 bg-gradient-to-r from-blue-600 to-cyan-500 text-white rounded-lg shadow-lg hover:from-blue-700 hover:to-cyan-600 transition-all"
+            >
+              <Plus size={20} />
+              Add New User
+            </button>
+          </div>
+
+          {/* Users Table */}
+          <div className="bg-white rounded-xl shadow-xl overflow-hidden">
+            <div className="overflow-x-auto">
+              <table className="w-full">
+                <thead>
+                  <tr className="bg-gray-50 border-b border-gray-200">
+                    <th className="px-6 py-4 text-left text-sm font-semibold text-gray-600">User</th>
+                    <th className="px-6 py-4 text-left text-sm font-semibold text-gray-600">Email</th>
+                    <th className="px-6 py-4 text-left text-sm font-semibold text-gray-600">Role</th>
+                    <th className="px-6 py-4 text-left text-sm font-semibold text-gray-600">Status</th>
+                    <th className="px-6 py-4 text-left text-sm font-semibold text-gray-600">Last Active</th>
+                    <th className="px-6 py-4 text-right text-sm font-semibold text-gray-600">Actions</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  {filteredUsers.map((user, index) => (
+                    <motion.tr
+                      key={user.id}
+                      initial={{ opacity: 0, y: 20 }}
+                      animate={{ opacity: 1, y: 0 }}
+                      transition={{ delay: index * 0.05 }}
+                      className="border-b border-gray-100 hover:bg-gray-50 transition-colors"
+                    >
+                      <td className="px-6 py-4">
+                        <div className="flex items-center gap-3">
+                          <div className="w-10 h-10 bg-gradient-to-r from-blue-600 to-cyan-500 rounded-lg flex items-center justify-center text-white font-semibold">
+                            {user.avatar || user.name.charAt(0).toUpperCase()}
+                          </div>
+                          <span className="font-medium text-gray-800">{user.name}</span>
+                        </div>
+                      </td>
+                      <td className="px-6 py-4 text-gray-600">{user.email}</td>
+                      <td className="px-6 py-4">
+                        <span className={`px-3 py-1 rounded-full text-xs font-medium ${
+                          user.role === 'Admin' ? 'bg-purple-100 text-purple-700' :
+                          user.role === 'Editor' ? 'bg-blue-100 text-blue-700' :
+                          'bg-gray-100 text-gray-700'
+                        }`}>
+                          {user.role}
+                        </span>
+                      </td>
+                      <td className="px-6 py-4">
+                        <span className={`px-3 py-1 rounded-full text-xs font-medium ${
+                          user.status === 'Active' ? 'bg-green-100 text-green-700' : 'bg-red-100 text-red-700'
+                        }`}>
+                          {user.status || 'Active'}
+                        </span>
+                      </td>
+                      <td className="px-6 py-4 text-gray-600">{user.lastActive || 'N/A'}</td>
+                      <td className="px-6 py-4">
+                        <div className="flex items-center justify-end gap-2">
+                          <button
+                            onClick={() => handleEditUser(user.id)}
+                            className="p-2 hover:bg-blue-100 text-blue-600 rounded-lg transition-colors"
+                            title="Edit user"
+                          >
+                            <Edit size={18} />
+                          </button>
+                          <button
+                            onClick={() => handleDeleteClick(user.id)}
+                            className="p-2 hover:bg-red-100 text-red-600 rounded-lg transition-colors"
+                            title="Delete user"
+                            disabled={user.email === 'hussienzoughaib@gmail.com'}
+                          >
+                            <Trash2 size={18} />
+                          </button>
+                        </div>
+                      </td>
+                    </motion.tr>
+                  ))}
+                </tbody>
+              </table>
+            </div>
+
+            {/* Empty State */}
+            {filteredUsers.length === 0 && (
+              <div className="text-center py-12">
+                <Users className="w-16 h-16 text-gray-300 mx-auto mb-4" />
+                <h3 className="text-lg font-semibold text-gray-700 mb-2">No users found</h3>
+                <p className="text-gray-500">
+                  {searchTerm ? 'Try adjusting your search' : 'Add a new user to get started'}
+                </p>
+              </div>
+            )}
+
+            {/* Table Footer */}
+            <div className="px-6 py-4 bg-gray-50 border-t border-gray-200">
+              <div className="flex justify-between items-center text-sm text-gray-600">
+                <span>Showing {filteredUsers.length} of {users.length} users</span>
+                <button
+                  onClick={handleAddUser}
+                  className="hidden md:flex items-center gap-2 px-4 py-2 bg-gradient-to-r from-blue-600 to-cyan-500 text-white rounded-lg hover:from-blue-700 hover:to-cyan-600 transition-all text-sm"
+                >
+                  <Plus size={16} />
+                  Add New User
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      {/* Delete Confirmation Modal */}
+      <AnimatePresence>
+        {showDeleteModal && (
+          <motion.div
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            exit={{ opacity: 0 }}
+            className="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center z-50"
+            onClick={handleDeleteCancel}
+          >
+            <motion.div
+              initial={{ scale: 0.9, opacity: 0 }}
+              animate={{ scale: 1, opacity: 1 }}
+              exit={{ scale: 0.9, opacity: 0 }}
+              className="bg-white rounded-2xl shadow-2xl p-6 max-w-md w-full mx-4"
+              onClick={(e) => e.stopPropagation()}
+            >
+              <div className="w-16 h-16 bg-red-100 rounded-full flex items-center justify-center mx-auto mb-4">
+                <Trash2 className="w-8 h-8 text-red-600" />
+              </div>
+              <h3 className="text-xl font-bold text-gray-800 text-center mb-2">Delete User</h3>
+              <p className="text-gray-600 text-center mb-6">
+                Are you sure you want to delete this user? This action cannot be undone.
+              </p>
+              <div className="flex gap-3">
+                <button
+                  onClick={handleDeleteCancel}
+                  className="flex-1 px-4 py-2 border border-gray-300 text-gray-700 rounded-lg hover:bg-gray-50 transition-colors"
+                >
+                  Cancel
+                </button>
+                <button
+                  onClick={handleDeleteConfirm}
+                  className="flex-1 px-4 py-2 bg-red-600 text-white rounded-lg hover:bg-red-700 transition-colors"
+                >
+                  Delete
+                </button>
+              </div>
+            </motion.div>
+          </motion.div>
+        )}
+      </AnimatePresence>
+    </div>
+  );
+};
+
+export default Dashboard;
+for backend here is my get user endpoint the cookie set is called auth_token :
+router.route('/')
+    .post(asyncHandler(userController.createUser.bind(userController)))
+    .get(authenticate,hasPermission(PERMISSION.READ_ALL_USERS),asyncHandler(userController.getAllUsers.bind(userController)));
+public async getAllUsers(req: Request, res: Response): Promise<void> {
+        logger.info("Fetching all users");
+      
+
+   
+        const users = await this.userService.getAllUsers();
+        const mappedUsers = users.map(user =>
+            new JSONMapper().reversemap(user)
+        );
+
+        res.status(200).json({
+            message: "Users retrieved successfully",
+            count: mappedUsers.length,
+            users: mappedUsers
+        });
+    } my midlle ware auth:import { AuthenticationFailedException} from "../util/exceptions/http/AuthenticationException";
+import { AuthenticationServiceSingleton } from "../service/AuthenticationServiceSingleton";
+import { NextFunction, Request, Response } from "express";
+import { AuthRequest } from "../config/authRequest";
+
+// From: src/middleware/auth.ts
+const authService = AuthenticationServiceSingleton.getInstance();
+
+export async function authenticate(req: Request, res: Response, next: NextFunction) {
+
+    const authToken = req.cookies.auth_token;
+    const refreshToken = req.cookies.refreshToken;
+  
+
+    try {
+
+        if (authToken) {
+            const payload = authService.verifyAccessToken(authToken);
+            (req as AuthRequest).user = payload;
+            return next();
+        }
+
+        if (!refreshToken) {
+            return next(new AuthenticationFailedException());
+        }
+
+        const { newAccess, newRefresh } =
+            await authService.refresh(refreshToken);
+
+        authService.setAccessCookie(res, newAccess);
+        authService.setRefreshCookie(res, newRefresh);
+
+        const payload = authService.verifyAccessToken(newAccess);
+        (req as AuthRequest).user = payload;
+
+        next();
+
+    } catch (error) {
+        return next(new AuthenticationFailedException());
+    }
+}

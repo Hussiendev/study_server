@@ -20,7 +20,7 @@ import { ROLE, toRole } from "../config/roles";
     refresh_token_expires_at?: Date;
 }
 export interface JSONUSER {
-   
+    id:string;
     name: string;
     email: string;
     password: string;
@@ -66,7 +66,7 @@ export class JSONMapper implements IMapper<any,User > {
     reversemap(input: User):JSONUSER {
         return {
             
-       
+            id: input.getId(),  
             name: input.getName(),
               email: input.getEmail(),
               password: input.getPassword(),

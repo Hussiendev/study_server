@@ -21,7 +21,19 @@ export class AuthController {
             const user= await this.userService.validate(email,password);
           this.authService.persistAuthentication(res,{userId:user.id,role:toRole(user.role)} );
             await this.userService.updatedLoggedUser(user.email);
-            res.json({message:'Login successful'});
+         // In your login method
+res.status(200).json({
+    message: "Login successful",
+    accessToken: "your-jwt-token",
+    refreshToken: "your-refresh-token",
+    user: {
+        id: user.getId(),
+        name: user.getName(),
+        email: user.getEmail(),
+        role: user.getRole(),
+        createdAt: user.getCreatedAt()
+    }
+});
         
       
       
