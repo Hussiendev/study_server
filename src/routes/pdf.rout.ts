@@ -1,28 +1,46 @@
-// src/routes/pdf.routes.ts
+// routes/pdf.routes.ts
 import { Router } from 'express';
 import { PdfController } from '../controller/PdfController';
 import { PdfService } from '../service/Pdf.Service';
-
-import { upload } from '../midlleware/upload';
-import { asyncHandler } from "../midlleware/asynchandler";
+import { AiService } from '../service/AI.Service';
+import { asyncHandler } from '../midlleware/asynchandler';
+import { authenticate } from '../midlleware/auth';
 import { hasPermission } from '../midlleware/autharize';
 import { PERMISSION } from '../config/roles';
+import { uploadPDF } from '../midlleware/upload';
+import config from '../config';
 
 const router = Router();
-const pdfService = new PdfService();
+
+// Lazy initialization of AI service and PDF service
+const aiService = new AiService(config.geminiApiKey || '',  'gemini-2.5-flash');
+const uploadDir = 'uploads'; // ensure this directory exists (create in app bootstrap)
+const pdfService = new PdfService(aiService, uploadDir);
 const pdfController = new PdfController(pdfService);
 
-
-
-// Upload PDF (multipart/form-data for file, JSON for link)
+// Upload PDF – returns summary
 router.post(
-    '/upload',
-    hasPermission(PERMISSION.UPLOAD),
-    upload.single('pdf'), // 'pdf' is the field name for file upload
-    asyncHandler(pdfController.uploadPDF)
+  '/upload',
+  authenticate,
+  hasPermission(PERMISSION.UPLOAD_PDF),
+  uploadPDF,
+  asyncHandler(pdfController.uploadPdf.bind(pdfController))
 );
 
+// (Optional) Get summary of a specific PDF by ID
+router.get(
+  '/:id/summary',
+  authenticate,
+  hasPermission(PERMISSION.READ_PDF),
+  asyncHandler(pdfController.getPdfSummary.bind(pdfController))
+);
 
-
+// Get all PDFs of the current user
+router.get(
+  '/',
+  authenticate,
+  hasPermission(PERMISSION.READ_PDF),
+  asyncHandler(pdfController.getUserPdfs.bind(pdfController))
+);
 
 export default router;

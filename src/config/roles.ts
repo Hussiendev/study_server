@@ -15,13 +15,16 @@ export enum PERMISSION {
   DELETE_USER = 'user:delete',
   READ_ALL_USERS = 'user:read:all',
 
+  // PDF + AI
+  UPLOAD_PDF = 'pdf:upload',
+  READ_PDF = 'pdf:read',
+  READ_ALL_PDFS = 'pdf:read:all',
+
   // Auth
   LOGIN = 'auth:login',
   LOGOUT = 'auth:logout',
   Forget_PASS='auth:forget_pass',
-  Update_PAsss='auth:update_pass',
-  //pdf MANGEMNET
-  UPLOAD='pdf:upload'
+  Update_PAsss='auth:update_pass'
 }
 
 // Map roles to their allowed permissions
@@ -43,7 +46,8 @@ export const ROLE_PERMISSIONS: RolePermissions = {
     PERMISSION.LOGOUT,
     PERMISSION.Forget_PASS,
     PERMISSION.Update_PAsss,
-    PERMISSION.UPLOAD
+    PERMISSION.UPLOAD_PDF,
+    PERMISSION.READ_PDF
   ],
 };
 

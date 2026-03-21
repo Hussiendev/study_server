@@ -1,38 +1,63 @@
-// src/controller/PdfController.ts
+// controller/Pdf.controller.ts
 import { Request, Response } from 'express';
 import { PdfService } from '../service/Pdf.Service';
-import { AuthRequest } from '../config/authRequest';
-import { PdfJsonMapper, UploadPDFInput } from '../mapper/PdfMapper';
-import { BadRequestException } from '../util/exceptions/http/BadRequestException';
+import { JSONMapper } from '../mapper/PDFDocument.Mapper';
 import logger from '../util/logger';
+import { AuthRequest } from 'config/authRequest';
 
 export class PdfController {
-    private jsonMapper = new PdfJsonMapper();
+  private jsonMapper: JSONMapper;
 
-    constructor(private pdfService: PdfService) {}
+  constructor(private pdfService: PdfService) {
+    this.jsonMapper = new JSONMapper();
+  }
 
-    /**
-     * POST /api/pdf/upload
-     * Upload a PDF file or provide a URL
-     */
-    uploadPDF = async (req: Request, res: Response): Promise<void> => {
-        const authReq = req as AuthRequest;
-        const userId = authReq.user?.userId;
-        
-        logger.info(`PDF upload request from user: ${userId}`);
+  async uploadPdf(req: Request, res: Response): Promise<void> {
+    try {
+      if (!req.file) {
+        res.status(400).json({ error: 'No PDF file uploaded' });
+        return;
+      }
 
-        // Convert request to input format using mapper
-        const input: UploadPDFInput = this.jsonMapper.fromRequest(req);
+          const authReq = req as AuthRequest;
+          const userId = authReq.user.userId
 
-        // Process the upload
-        const result = await this.pdfService.uploadPDF(userId, input);
+      const pdf = await this.pdfService.uploadPdf(userId, req.file);
 
-        res.status(201).json({
-            success: true,
-            message: 'PDF uploaded and processed successfully',
-            data: result
-        });
-    };
+      const jsonOutput = this.jsonMapper.reversemap(pdf);
 
- 
+      res.status(201).json({
+        message: 'PDF uploaded and summary generated',
+        pdf: jsonOutput,
+      });
+    } catch (error: any) {
+      logger.error('Upload error', error);
+      res.status(500).json({ error: error.message || 'Upload failed' });
+    }
+  }
+
+  async getPdfSummary(req: Request, res: Response): Promise<void> {
+    try {
+      const { id } = req.params;
+      const pdf = await this.pdfService.getPdfById(id);
+      if (!pdf) {
+        res.status(404).json({ error: 'PDF not found' });
+        return;
+      }
+      res.json({ summary: pdf.getSummary() });
+    } catch (error: any) {
+      res.status(500).json({ error: error.message });
+    }
+  }
+
+  async getUserPdfs(req: Request, res: Response): Promise<void> {
+    try {
+      const userId = (req as any).user.id;
+      const pdfs = await this.pdfService.getUserPdfs(userId);
+      const jsonOutput = pdfs.map(pdf => this.jsonMapper.reversemap(pdf));
+      res.json({ pdfs: jsonOutput });
+    } catch (error: any) {
+      res.status(500).json({ error: error.message });
+    }
+  }
 }

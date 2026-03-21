@@ -1,10 +1,10 @@
 import { AuthenticationService } from "../service/Authentication.service";
-import { UserService } from "../service/userService";
+import { UserService } from "../service/user.Service";
 import { Request, Response } from "express";
 import { BadRequestException } from "../util/exceptions/http/BadRequestException";
 import { AuthRequest } from "config/authRequest";
 import { toRole } from "../config/roles";
-import { EmailService } from "../service/Emailservice";
+import { EmailService } from "../service/Email.Service";
 import logger from "../util/logger";
 export class AuthController {
     constructor(

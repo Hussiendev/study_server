@@ -48,7 +48,7 @@ export interface IRepository<T> {
      * @throws {ItemNotFoundException} if the item to update does not exist
      *  @throws {DBException} if a database error occurs during initialization
      */
-    update(item:T):Promise<void>;
+    update(item:T):Promise<id>;
   
     /**
      * Delete an item by id.

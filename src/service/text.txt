@@ -1,6 +1,11 @@
-okk nright now make dlete button to connect to this api in order to delet the user:
-
-router.route('/:id')
-    .get(authenticate,hasPermission(PERMISSION.READ_USER),asyncHandler(userController.getUser.bind(userController)))
-    .put(authenticate,hasPermission(PERMISSION.UPDATE_USER),asyncHandler(userController.updateUser.bind(userController)))
-    .delete(authenticate,hasPermission(PERMISSION.DELETE_USER),asyncHandler(userController.deleteUser.bind(userController)));
+now make the following:
+Services:ai service that use will use the gemnin ai in order to make a summary
+PdfService:make upload method in uplaod method i want w ay to extract the user_id form the auth token and add the pdf then return the summary summary will be m form of bullet points
+use the apropiet mapper in the service
+controller that will use when the user uplaod the pdf
+uplaod midlleware used too check weather the uplaoded pdf is a pdf or not
+routs:
+called /uplaod/pdf
+add authintocate middlware with ahs PERMISSION ad appopriet roles
+use same pattern as i used in the user from get repo method and etc
+.install apropiet packages for these

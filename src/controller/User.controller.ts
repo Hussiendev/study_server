@@ -1,7 +1,7 @@
 import logger from "../util/logger";
 import { JSONMapper } from "../mapper/User.Mapper";
 import { User } from "../models/Usermodel";
-import { UserService } from "../service/userService";
+import { UserService } from "../service/user.Service";
 import { BadRequestException } from "../util/exceptions/http/BadRequestException";
 import { Request, Response } from "express";
 import { hash } from "bcrypt";
@@ -97,11 +97,12 @@ export class UserController {
             userData.setPassword(await hash(userData.getPassword(), 10));
         }
 
-        await this.userService.updateUser(userData);
+       const updatedUserData = await this.userService.updateUser(userData);
 
-        res.status(200).json({
-            message: "User updated successfully"
-        });
+         res.status(200).json({
+        message: "User updated successfully",
+        user: new JSONMapper().reversemap(updatedUserData)
+    });
     }
 
     // -------------------------

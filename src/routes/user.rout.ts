@@ -2,7 +2,7 @@ import { UserController } from "../controller/User.controller";
 import { Router } from "express";
 
 
-import { UserService } from "../service/userService";
+import { UserService } from "../service/user.Service";
 import { asyncHandler } from "../midlleware/asynchandler";
 import { authenticate } from "../midlleware/auth";
 import { hasPermission } from "../midlleware/autharize";

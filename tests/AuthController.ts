@@ -1,9 +1,9 @@
 import { AuthController } from "../src/controller/AuthController";
 import { AuthenticationService } from "../src/service/Authentication.service";
-import { UserService } from "../src/service/userService";
-import { EmailService } from "../src/service/Emailservice";
+import { UserService } from "../src/service/user.Service";
+import { EmailService } from "../src/service/Email.Service";
 import { BadRequestException } from "../src/util/exceptions/http/BadRequestException";
-import { jest, describe, expect, beforeEach, it ,afterEach} from '@jest/globals';
+import { jest, describe, expect, beforeEach, it, afterEach } from '@jest/globals';
 
 describe("AuthController", () => {
   let authService: jest.Mocked<AuthenticationService>;
@@ -20,15 +20,14 @@ describe("AuthController", () => {
       logout: jest.fn(),
       persistReset: jest.fn(),
       getRepo: jest.fn(),
-       verifyResetToken: jest.fn(),
-      clearResetToken :jest.fn()
+      verifyResetToken: jest.fn(),
+      clearResetToken: jest.fn()
     } as any;
 
     userService = {
       validate: jest.fn(),
       updatedLoggedUser: jest.fn(),
       get_user_bymail: jest.fn(),
-    
       updateuserpass: jest.fn()
     } as any;
 
@@ -55,7 +54,6 @@ describe("AuthController", () => {
   // ================================
 
   describe("login", () => {
-
     it("should throw if email or password missing", async () => {
       req.body = { email: "" };
 
@@ -65,20 +63,41 @@ describe("AuthController", () => {
     });
 
     it("should login successfully", async () => {
-      const fakeUser = { id: "123", role: "user", email: "test@mail.com" };
+      // Create a mock user that includes the methods expected by AuthenticationService
+      const mockUser = {
+        id: "123",
+        role: "user",
+        email: "test@mail.com",
+        // These methods are required by the real AuthenticationService.persistAuthentication
+        getId: jest.fn().mockReturnValue("123"),
+        getName: jest.fn().mockReturnValue("Test User"),
+        getEmail: jest.fn().mockReturnValue("test@mail.com"),
+        getRole: jest.fn().mockReturnValue("user"),
+        getCreatedAt: jest.fn().mockReturnValue(new Date().toISOString())
+      };
 
       req.body = { email: "test@mail.com", password: "123456" };
 
-      userService.validate.mockResolvedValue(fakeUser as any);
+      userService.validate.mockResolvedValue(mockUser as any);
 
       await controller.login(req, res);
 
       expect(userService.validate).toHaveBeenCalled();
       expect(authService.persistAuthentication).toHaveBeenCalled();
       expect(userService.updatedLoggedUser).toHaveBeenCalled();
-      expect(res.json).toHaveBeenCalledWith({ message: "Login successful" });
+  expect(res.json).toHaveBeenCalledWith(expect.objectContaining({
+  message: "Login successful",
+  accessToken: expect.any(String),
+  refreshToken: expect.any(String),
+  user: expect.objectContaining({
+    id: "123",
+    email: "test@mail.com",
+    role: "user",
+    name: "Test User",
+    createdAt: expect.any(String)
+  })
+}));
     });
-
   });
 
   // ================================
@@ -86,7 +105,6 @@ describe("AuthController", () => {
   // ================================
 
   describe("logout", () => {
-
     it("should logout and clear cookies", async () => {
       req.user = { userId: "123" };
 
@@ -97,7 +115,6 @@ describe("AuthController", () => {
       expect(res.clearCookie).toHaveBeenCalledWith("refreshToken");
       expect(res.json).toHaveBeenCalledWith({ message: "Logout successful" });
     });
-
   });
 
   // ================================
@@ -105,7 +122,6 @@ describe("AuthController", () => {
   // ================================
 
   describe("forgetpass", () => {
-
     it("should throw if email missing", async () => {
       req.body = {};
 
@@ -131,7 +147,6 @@ describe("AuthController", () => {
       expect(res.status).toHaveBeenCalledWith(200);
       expect(res.json).toHaveBeenCalledWith("sent mail");
     });
-
   });
 
   // ================================
@@ -139,7 +154,6 @@ describe("AuthController", () => {
   // ================================
 
   describe("updatePass", () => {
-
     it("should throw if fields missing", async () => {
       req.body = { email: "test@mail.com" };
 
@@ -162,28 +176,26 @@ describe("AuthController", () => {
         .toThrow(BadRequestException);
     });
 
- it("should update password successfully", async () => {
-  req.body = {
-    email: "test@mail.com",
-    token: "111111",
-    pass: "newPass"
-  };
+    it("should update password successfully", async () => {
+      req.body = {
+        email: "test@mail.com",
+        token: "111111",
+        pass: "newPass"
+      };
 
-  authService.verifyResetToken.mockResolvedValue(true);
+      authService.verifyResetToken.mockResolvedValue(true);
 
-  await controller.updatePass(req, res);
+      await controller.updatePass(req, res);
 
-  expect(userService.updateuserpass)
-    .toHaveBeenCalledWith("test@mail.com", "newPass");
+      expect(userService.updateuserpass)
+        .toHaveBeenCalledWith("test@mail.com", "newPass");
 
-  expect(authService.clearResetToken)
-    .toHaveBeenCalledWith("test@mail.com");
+      expect(authService.clearResetToken)
+        .toHaveBeenCalledWith("test@mail.com");
 
-  expect(res.status).toHaveBeenCalledWith(200);
-  expect(res.json)
-    .toHaveBeenCalledWith({ message: "Password updated successfully" });
-});
-
+      expect(res.status).toHaveBeenCalledWith(200);
+      expect(res.json)
+        .toHaveBeenCalledWith({ message: "Password updated successfully" });
+    });
   });
-
 });

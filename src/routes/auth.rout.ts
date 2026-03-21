@@ -5,11 +5,11 @@ import { asyncHandler } from "../midlleware/asynchandler";
 import { AuthenticationServiceSingleton } from "../service/AuthenticationServiceSingleton";
 
 import { AuthController } from "../controller/AuthController";
-import { UserService } from "../service/userService";
+import { UserService } from "../service/user.Service";
 import { authenticate } from "../midlleware/auth";
 import { hasPermission } from "../midlleware/autharize";
 import { PERMISSION } from "../config/roles";
-import { EmailService } from "../service/Emailservice"
+import { EmailService } from "../service/Email.Service"
 const router = Router();
 const authService= AuthenticationServiceSingleton.getInstance();
 const userService= new UserService();

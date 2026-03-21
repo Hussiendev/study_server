@@ -1,123 +1,84 @@
-// src/service/pdfService.ts
-import { PdfRepo ,createPdfRepo} from '../repository/Pdf.repo'
-
-import { 
-    PdfJsonMapper, 
-    UploadPDFInput, 
-    UploadPDFResponse,
-    PDFMAPPer 
-} from '../mapper/PdfMapper';
-
-import { PdfExtractorService } from '../service/PdfExtraction.Service';
-import { BadRequestException } from '../util/exceptions/http/BadRequestException';
+import { PDFDocumentRepo, createPDFDocumentRepo } from '../repository/PDFDocument.repo';
+import { AiService } from './AI.Service';
+import { JSONMapper } from '../mapper/PDFDocument.Mapper';
+import { PDFDocument } from '../models/PDFDocument';
 import logger from '../util/logger';
-import fs from 'fs';
-import util from 'util';
-import { create } from 'domain';
+import fs from 'fs/promises';
+import path from 'path';
+import { NotFoundException } from '../util/exceptions/http/NotFoundException';
 
-const unlinkFile = util.promisify(fs.unlink);
+// Use require because it's a CommonJS module that exports a function
+const pdfParse = require('pdf-parse');
 
 export class PdfService {
-    private pdfRepo!: PdfRepo;
-    private jsonMapper = new PdfJsonMapper();
-    private sqlMapper = new PDFMAPPer(); // For DB operations
-    private extractor = new PdfExtractorService();
+  private pdfRepo: PDFDocumentRepo | null = null;
+  private jsonMapper: JSONMapper;
 
-    /**
-     * Upload and process PDF - handles both file and URL uploads
-     */
-    async uploadPDF(userId: string, input: UploadPDFInput): Promise<UploadPDFResponse> {
-        logger.info(`Processing PDF upload for user: ${userId}`);
+  constructor(
+    private aiService: AiService,
+    private uploadDir: string
+  ) {
+    this.jsonMapper = new JSONMapper();
+  }
 
-        // Validate input
-        this.validateInput(input);
-
-        let filePathToClean: string | null = null;
-
-        try {
-            // STEP 1: Create initial PDF document (without summary)
-            const pdfDoc = this.jsonMapper.mapToDomain(input, userId);
-            
-            // STEP 2: Extract PDF content based on input type
-            let extractedData;
-            if (input.pdfFile) {
-                // Handle file upload
-                filePathToClean = input.pdfFile.path;
-                extractedData = await this.extractor.extractFromFile(input.pdfFile.path);
-            } else {
-                // Handle URL upload
-                extractedData = await this.extractor.extractFromUrl(input.pdfLink!);
-            }
-
-            // STEP 3: Generate summary from extracted content
-            const summary = this.extractor.generateSummary(extractedData);
-            const formattedSummary = this.extractor.formatSummaryForStorage(summary);
-
-            // STEP 4: Set the summary on the PDF document
-            pdfDoc.setSummary(formattedSummary);
-
-            // STEP 5: Save to database using SQL mapper
-            await (await this.getRepo()).create(pdfDoc);
-
-            // STEP 6: Clean up temp file if it was a file upload
-            if (filePathToClean) {
-                await unlinkFile(filePathToClean).catch(e => 
-                    logger.error('Error cleaning up temp file:', e)
-                );
-            }
-
-            logger.info(`PDF uploaded successfully. ID: ${pdfDoc.getId()}`);
-
-            // STEP 7: Return response using JSON mapper
-            return this.jsonMapper.mapToResponse(pdfDoc);
-
-        } catch (error) {
-            // Clean up temp file on error
-            if (filePathToClean) {
-                await unlinkFile(filePathToClean).catch(e => 
-                    logger.error('Error cleaning up temp file on error:', e)
-                );
-            }
-            
-            logger.error('Error in uploadPDF:', error);
-            throw error;
-        }
+  private async getRepo(): Promise<PDFDocumentRepo> {
+    if (!this.pdfRepo) {
+      this.pdfRepo = await createPDFDocumentRepo();
     }
+    return this.pdfRepo;
+  }
 
-   
-    /**
-     * Validate input
-     */
-    private validateInput(input: UploadPDFInput): void {
-        const hasFile = !!input.pdfFile;
-        const hasLink = !!input.pdfLink;
+  async uploadPdf(userId: string, file: Express.Multer.File): Promise<PDFDocument> {
+    const safeFileName = `${Date.now()}_${file.originalname.replace(/[^a-zA-Z0-9.]/g, '_')}`;
+    const storagePath = path.join(this.uploadDir, safeFileName);
+    await fs.writeFile(storagePath, file.buffer);
 
-        if (!hasFile && !hasLink) {
-            throw new BadRequestException('Either a PDF file or a PDF link must be provided');
-        }
+    try {
+      // Extract text from PDF buffer – pdfParse returns a Promise with { text }
+      const pdfData = await pdfParse(file.buffer);
+      const extractedText = pdfData.text;
 
-        if (hasFile && hasLink) {
-            throw new BadRequestException('Provide either a file OR a link, not both');
-        }
 
-        // Validate file size if file provided
-        if (hasFile && input.pdfFile!.size > 10 * 1024 * 1024) {
-            throw new BadRequestException('PDF file size cannot exceed 10MB');
-        }
+      // Generate summary
+      const summary = await this.aiService.generateSummary(extractedText);
 
-        // Validate file type if file provided
-        if (hasFile && input.pdfFile!.mimetype !== 'application/pdf') {
-            throw new BadRequestException('Uploaded file must be a PDF');
-        }
+      // Prepare object for JSONMapper
+      const inputObject = {
+        filename: file.originalname,
+        file_size: file.size,
+        mime_type: file.mimetype,
+        storage_path: storagePath,
+        original_text: extractedText,
+        summary: summary,
+      };
+      logger.info('Input object for PDFDocument:', inputObject);
+      // Build PDFDocument via JSONMapper
+      const pdfDocument = this.jsonMapper.map(inputObject, userId);
+
+      // Save to database
+      const repo = await this.getRepo();
+      await repo.create(pdfDocument);
+
+      return pdfDocument;
+    } catch (error) {
+      // Clean up file on error
+      await fs.unlink(storagePath).catch(e => logger.error('Cleanup error', e));
+      throw error;
     }
+  }
 
-    /**
-     * Get repository instance
-     */
-    private async getRepo(): Promise<PdfRepo> {
-        if (!this.pdfRepo) {
-            this.pdfRepo = await createPdfRepo();
-        }
-        return this.pdfRepo;
+  async getPdfById(id: string): Promise<PDFDocument | null> {
+    try {
+      const repo = await this.getRepo();
+      return await repo.get(id);
+    } catch (error) {
+      if (error instanceof NotFoundException) return null;
+      throw error;
     }
+  }
+
+  async getUserPdfs(userId: string): Promise<PDFDocument[]> {
+    const repo = await this.getRepo();
+    return await repo.getByUserId(userId);
+  }
 }

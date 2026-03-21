@@ -196,7 +196,7 @@ export class UserRepo implements IRepository<User>, Intiazable {
     // -------------------------
     // UPDATE
     // -------------------------
-    async update(item: User): Promise<void> {
+    async update(item: User): Promise<id> {
         let connection;
 
         try {
@@ -220,6 +220,7 @@ export class UserRepo implements IRepository<User>, Intiazable {
 
             await connection.query("COMMIT");
             logger.info(`User updated: ${item.getId()}`);
+            return item.getId();
 
         } catch (error) {
             if (connection) await connection.query("ROLLBACK");
