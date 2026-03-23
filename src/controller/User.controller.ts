@@ -125,6 +125,7 @@ export class UserController {
             userId
         });
     }
+
     private enforceOwnership(authReq: AuthRequest, targetUserId: string) {
     if (
         authReq.user!.role === ROLE.USER &&

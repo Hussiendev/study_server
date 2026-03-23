@@ -23,4 +23,4 @@ router.route('/:id')
     .put(authenticate,hasPermission(PERMISSION.UPDATE_USER),asyncHandler(userController.updateUser.bind(userController)))
     .delete(authenticate,hasPermission(PERMISSION.DELETE_USER),asyncHandler(userController.deleteUser.bind(userController)));
 
-export default router;
+export default router;   

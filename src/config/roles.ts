@@ -20,6 +20,10 @@ export enum PERMISSION {
   READ_PDF = 'pdf:read',
   READ_ALL_PDFS = 'pdf:read:all',
 
+  // Flashcard
+  GENERATE_FLASHCARDS = 'flashcard:generate',
+  READ_FLASHCARDS = 'flashcard:read',
+
   // Auth
   LOGIN = 'auth:login',
   LOGOUT = 'auth:logout',
@@ -47,7 +51,9 @@ export const ROLE_PERMISSIONS: RolePermissions = {
     PERMISSION.Forget_PASS,
     PERMISSION.Update_PAsss,
     PERMISSION.UPLOAD_PDF,
-    PERMISSION.READ_PDF
+    PERMISSION.READ_PDF,
+    PERMISSION.GENERATE_FLASHCARDS,
+    PERMISSION.READ_FLASHCARDS
   ],
 };
 
