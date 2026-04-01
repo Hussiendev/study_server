@@ -22,7 +22,7 @@ app.use(bodyParser.urlencoded({ extended: true }));
 
 // FIXED CORS CONFIGURATION - No wildcard, with credentials support
 app.use(cors({
-    origin: 'http://localhost:3000', // Your frontend URL exactly
+    origin: process.env.FRONTEND_URL, // Your frontend URL exactly
     credentials: true, // Allow cookies
     methods: ['GET', 'POST', 'PUT', 'DELETE', 'OPTIONS'],
     allowedHeaders: ['Content-Type', 'Authorization', 'X-Requested-With']

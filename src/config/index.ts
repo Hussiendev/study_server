@@ -1,7 +1,7 @@
 import dotnev from "dotenv";
-import path from "path";
+
 import {StringValue} from "ms"
-dotnev.config({path:path.join(__dirname,'../ ../.env')});
+dotnev.config();
 export default {
 NODE_ENV: process.env.NODE_ENV || 'development',
 is_Production: process.env.NODE_ENV === 'production',
@@ -11,8 +11,7 @@ host: process.env.HOST || 'localhost',
  geminiApiKey: process.env.GEMINI_API_KEY,
 // Sets the host address for the application. It checks if a HOST environment variable is set; if not, it defaults to 'localhost'.
 Storage:{
-      postgres:'postgresql://neondb_owner:npg_Q0eGUgSc9bYx@ep-still-violet-a4smcvre-pooler.us-east-1.aws.neon.tech/neondb?sslmode=require&channel_binding=require'
-
+      postgres: process.env.DATABASE_URL
 },
 auth:{
     jwtSecret: process.env.JWT_SECRET || 'secret_90909090',
