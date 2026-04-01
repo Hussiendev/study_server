@@ -12,7 +12,7 @@ import config from '../config';
 const router = Router();
 
 // Service wiring
-const aiService = new AiService(config.geminiApiKey || '', 'gemini-2.5-flash');
+const aiService = new AiService(config.geminiApiKey || '', 'gemini-3.1-pro-preview');
 const pdfService = new PdfService(aiService, 'uploads');
 const flashcardService = new FlashcardService(aiService, pdfService);
 const flashcardController = new FlashcardController(flashcardService);
