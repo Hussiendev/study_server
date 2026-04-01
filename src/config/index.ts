@@ -1,31 +1,39 @@
 import dotnev from "dotenv";
+import { StringValue } from "ms";
 
-import {StringValue} from "ms"
 dotnev.config();
-export default {
-NODE_ENV: process.env.NODE_ENV || 'development',
-is_Production: process.env.NODE_ENV === 'production',
-logDir: 'logs', // Specifies the folder where log files will be saved.
-port: process.env.PORT ? parseInt(process.env.PORT) : 4000, // Sets the port number for the application to listen on. It checks if a PORT environment variable is set; if not, it defaults to 3000.
-host: process.env.HOST || 'localhost',
- geminiApiKey: process.env.GEMINI_API_KEY,
-// Sets the host address for the application. It checks if a HOST environment variable is set; if not, it defaults to 'localhost'.
-Storage:{
-      postgres: process.env.DATABASE_URL
-},
-auth:{
-    jwtSecret: process.env.JWT_SECRET || 'secret_90909090',
-     RefreshSecret: process.env.JWT_REFRESH_SECRET || 'secret_90909090', // Sets the secret key used for signing JSON Web Tokens (JWTs). It checks if a JWT_SECRET environment variable is set; if not, it defaults to
-    expiration:(process.env.JWT_EXPIRATION || '15m') as StringValue,
-      refreshExpiration:(process.env.JWT_REFRESH_EXPIRATION || '7d') as StringValue, 
-      resetExpiration:(process.env.JWT_REFRESH_EXPIRATION || '15min') as StringValue
-      // Sets the expiration time for JWTs. It checks if a JWT_EXPIRATION environment variable is set; if not, it defaults to '1h' (1 hour).
-},
-mail: {
-  host: process.env.MAIL_HOST,
-  port: Number(process.env.MAIL_PORT),
-  user: process.env.MAIL_USER,
-  pass: process.env.MAIL_PASS,
-  from: process.env.MAIL_FROM
+
+// Parse port safely
+const rawPort = process.env.PORT;
+const port = rawPort ? parseInt(rawPort, 10) : 4000;
+
+if (isNaN(port)) {
+  console.error(`Invalid PORT environment variable: "${rawPort}"`);
+  process.exit(1);
 }
+
+export default {
+  NODE_ENV: process.env.NODE_ENV || "development",
+  is_Production: process.env.NODE_ENV === "production",
+  logDir: "logs",
+  port, // Now guaranteed to be a valid number
+  host: process.env.HOST || "localhost",
+  geminiApiKey: process.env.GEMINI_API_KEY,
+  Storage: {
+    postgres: process.env.DATABASE_URL,
+  },
+  auth: {
+    jwtSecret: process.env.JWT_SECRET || "secret_90909090",
+    RefreshSecret: process.env.JWT_REFRESH_SECRET || "secret_90909090",
+    expiration: (process.env.JWT_EXPIRATION || "15m") as StringValue,
+    refreshExpiration: (process.env.JWT_REFRESH_EXPIRATION || "7d") as StringValue,
+    resetExpiration: (process.env.JWT_REFRESH_EXPIRATION || "15min") as StringValue,
+  },
+  mail: {
+    host: process.env.MAIL_HOST,
+    port: Number(process.env.MAIL_PORT),
+    user: process.env.MAIL_USER,
+    pass: process.env.MAIL_PASS,
+    from: process.env.MAIL_FROM,
+  },
 };

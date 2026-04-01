@@ -20,13 +20,14 @@ app.use(helmet());
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));
 
-// FIXED CORS CONFIGURATION - No wildcard, with credentials support
-app.use(cors({
-    origin: process.env.FRONTEND_URL, // Your frontend URL exactly
-    credentials: true, // Allow cookies
-    methods: ['GET', 'POST', 'PUT', 'DELETE', 'OPTIONS'],
-    allowedHeaders: ['Content-Type', 'Authorization', 'X-Requested-With']
-}));
+app.use(
+  cors({
+    origin: process.env.FRONTEND_URL,
+    credentials: true,
+    methods: ["GET", "POST", "PUT", "DELETE", "OPTIONS"],
+    allowedHeaders: ["Content-Type", "Authorization", "X-Requested-With"],
+  })
+);
 
 app.use(cookieParser());
 app.use(requestLogger);
@@ -40,45 +41,41 @@ app.use("/", router);
 // 404 HANDLER
 // -------------------------
 app.use((req: Request, res: Response, next: NextFunction) => {
-    next(new NotFoundException("Route not found", {
-        path: req.originalUrl
-    }));
+  next(new NotFoundException("Route not found", { path: req.originalUrl }));
 });
 
 // -------------------------
 // GLOBAL ERROR HANDLER
 // -------------------------
 app.use((err: Error, req: Request, res: Response, next: NextFunction) => {
-
-    if (err instanceof HttpException) {
-
-        logger.error(
-            "%s [%d] \"%s\" %o",
-            err.name,
-            err.status,
-            err.message,
-            err.details || {}
-        );
-
-        return res.status(err.status).json({
-            message: err.message,
-            details: err.details || undefined
-        });
-    }
-
-    // Unexpected error
-    logger.error("Unhandled Error: %s\n%s", err.message, err.stack);
-
-    return res.status(500).json({
-        message: config.is_Production
-            ? "Internal Server Error"
-            : err.message
+  if (err instanceof HttpException) {
+    logger.error(
+      "%s [%d] \"%s\" %o",
+      err.name,
+      err.status,
+      err.message,
+      err.details || {}
+    );
+    return res.status(err.status).json({
+      message: err.message,
+      details: err.details || undefined,
     });
+  }
+
+  // Unexpected error
+  logger.error("Unhandled Error: %s\n%s", err.message, err.stack);
+
+  return res.status(500).json({
+    message: config.is_Production
+      ? "Internal Server Error"
+      : err.message,
+  });
 });
 
 // -------------------------
 // START SERVER
 // -------------------------
-app.listen(config.port, config.host, () => {
-    logger.info(`Server running at http://${config.host}:${config.port}`);
+// Bind to '0.0.0.0' to accept connections from outside the container
+app.listen(config.port, "0.0.0.0", () => {
+  logger.info(`Server running on port ${config.port}`);
 });
