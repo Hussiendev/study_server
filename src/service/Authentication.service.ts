@@ -169,6 +169,7 @@ async persistReset(
         res.cookie('auth_token', token, {
             httpOnly: true,
             secure: config.is_Production,
+            sameSite: config.is_Production ? 'none' : 'lax',
             maxAge: ms(this.expiration)
         });
     }
@@ -177,6 +178,7 @@ async persistReset(
         res.cookie('refreshToken', token, {
             httpOnly: true,
             secure: config.is_Production,
+            sameSite: config.is_Production ? 'none' : 'lax',
             maxAge: ms(this.resetExpiration)
         });
     }
@@ -184,6 +186,7 @@ async persistReset(
           res.cookie('resetToken', token, {
             httpOnly: true,
             secure: config.is_Production,
+            sameSite: config.is_Production ? 'none' : 'lax',
             maxAge: ms(this.refreshExpiration)
         });
     
