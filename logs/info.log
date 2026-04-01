@@ -5774,3 +5774,5 @@
 {"level":"info","message":"PostgreSQL connection established","timestamp":"2026-03-23 21:03:25"}
 {"level":"info","message":"Flashcard created successfully: flashcard-a3bb24ff-5d93-460a-8fc6-23c20c0b3430","timestamp":"2026-03-23 21:03:26"}
 {"level":"info","message":"POST /generate 201","timestamp":"2026-03-23 21:03:26"}
+{"level":"info","message":"CORS configured to allow origin: https://studyspark-zcog.onrender.com","timestamp":"2026-04-02 00:14:41"}
+{"level":"info","message":"Server running on port 4000","timestamp":"2026-04-02 00:14:41"}
