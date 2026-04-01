@@ -19,7 +19,7 @@ export class AuthController {
                throw new BadRequestException ("Email and password are required");
             }
             const user= await this.userService.validate(email,password);
-          this.authService.persistAuthentication(res,{userId:user.id,role:toRole(user.role)} );
+         await  this.authService.persistAuthentication(res,{userId:user.id,role:toRole(user.role)} );
             await this.userService.updatedLoggedUser(user.email);
          // In your login method
 res.status(200).json({
@@ -41,7 +41,7 @@ res.status(200).json({
     }
     public async  logout(req:Request,res:Response){
         const auth_request=req as AuthRequest;
-        this.authService.logout(auth_request.user.userId);
+        await this.authService.logout(auth_request.user.userId);
             res.clearCookie('auth_token');
     res.clearCookie('refreshToken');
         res.json({message:'Logout successful'});
