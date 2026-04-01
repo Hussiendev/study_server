@@ -13,6 +13,7 @@ if (isNaN(port)) {
 }
 
 export default {
+  frontendUrl: process.env.FRONTEND_URL || "http://localhost:3000",
   NODE_ENV: process.env.NODE_ENV || "development",
   is_Production: process.env.NODE_ENV === "production",
   logDir: "logs",
