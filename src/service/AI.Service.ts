@@ -6,7 +6,7 @@ export class AiService {
   private genAI: GoogleGenerativeAI;
   private model: GenerativeModel;
 
-  constructor(apiKey: string, modelName: string = 'gemini-3.1-pro-preview') {
+  constructor(apiKey: string, modelName: string = 'gemini-2.0-flash-lite') {
     this.genAI = new GoogleGenerativeAI(apiKey);
     this.model = this.genAI.getGenerativeModel({ model: modelName });
   }
